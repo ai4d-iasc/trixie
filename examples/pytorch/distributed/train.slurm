@@ -13,7 +13,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=6
 #SBATCH --exclusive
-#SBATCH --output=out_%j.out
+#SBATCH --output=%x-%j.out
 
 
 # USEFUL Bookmarks
@@ -24,11 +24,11 @@ readonly MASTER_ADDR_JOB=$SLURMD_NODENAME
 readonly MASTER_PORT_JOB="12234"
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
-readonly srun='srun --output=%x-%j_%t.out'
+readonly srun='srun --output=%x-%j.%t.out'
 
 env
 
-srun bash \
+$srun bash \
    task.sh \
       $MASTER_ADDR_JOB \
       $MASTER_PORT_JOB &
