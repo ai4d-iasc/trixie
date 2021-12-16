@@ -14,7 +14,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 python \
    -m torch.distributed.launch \
-      --nproc_per_node=4 \
+      --nproc_per_node=$SLURM_TASKS_PER_NODE \
       --nnodes=$SLURM_NTASKS \
       --node_rank=$SLURM_NODEID \
       --master_addr=$MASTER_ADDR_JOB \
