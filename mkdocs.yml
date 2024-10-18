@@ -1,0 +1,48 @@
+site_name: Trixie Wiki
+nav:
+  - Home: index.md
+  - Trixie Status: Trixie-Status.md
+  - Account Codes: Account-Codes.md
+  - General Info:
+    - Available Software: Available-Software.md
+    - Hardware: Hardware.md
+    - External Access Configuration:
+      - Advanced: External-Access-Advanced-Configuration.md
+      - Basic: External-Access-Setup.md
+      - External HPC: External-HPC-Systems.md 
+    - Transfer Files: File-Transfers.md
+    - TMP FS Backup: Temporary-Filesystem-Backups.md
+    - Network and Connection: Networking-and-connectivity.md
+  - FAQ & Example Workflows:
+    - Quickstart: Running-jobs.md
+    - Requeue Job: Automatically-Resuming-Requeueing.md
+    - python venv: jobs-python-virtualenv.md
+    - abinit: jobs-abinit.md
+    - conda-jupyterlab: jobs-conda-jupyterlab.md
+    - conda-RAPIDS: jobs-conda-RAPIDS.md
+    - Pytorch Distrbuted on Multiple Nodes: SLURM,-pytorch-distributed-and-Multiple-Nodes.md
+    - conda-pytorch: Jobs-conda-pytorch.md
+
+theme:
+  name: 'material'
+  palette:
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+markdown_extensions:
+  - toc:
+      permalink: True
+      toc_depth: 3
+
+plugins:
+  - search
