@@ -2,6 +2,7 @@ name: ci
 on:
   push:
     branches:
+      - github-pages
       - master 
       - main
 permissions:
