@@ -3,6 +3,8 @@ nav:
   - Home: index.md
   - Trixie Status: Trixie-Status.md
   - Account Codes: Account-Codes.md
+  - Presentations:
+    - Be a Good Cluster Citizen: BeAGoodClusterCitizen.html
   - General Info:
     - Available Software: Available-Software.md
     - Hardware: Hardware.md
