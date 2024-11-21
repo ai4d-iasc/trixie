@@ -24,6 +24,7 @@ nav:
       - conda-RAPIDS: jobs-conda-RAPIDS.md
       - Pytorch Distrbuted on Multiple Nodes: SLURM,-pytorch-distributed-and-Multiple-Nodes.md
       - conda-pytorch: Jobs-conda-pytorch.md
+  - Contribute: Contribute.md
 
 theme:
   name: "material"
