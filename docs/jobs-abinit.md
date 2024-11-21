@@ -1,18 +1,18 @@
 This examples will show you how to setup and prepare an environment for Abinit jobs using conda on Trixie:
 
-### 1. Use existing miniconda install of abinit:
+### 1. Use existing miniconda install of abinit
 
 ```bash
 #!/bin/bash
 # load spack
 module load spack
 # load the miniconda module
-module load miniconda3-4.8.2-gcc-9.2.0-sbqd2xu
-# create a conda environment named abinit 
+module load conda/3-24.9.0
+# create a conda environment named abinit
 conda create --name abinit python=3.7
 source activate abinit
 # install pytorch dependencies via conda
-conda install abinit cudatoolkit=10.1 -c 
+conda install abinit cudatoolkit=10.1 -c
 ```
 
 ### 2. Copy / create a test abinit file: Si_208.files
@@ -38,7 +38,7 @@ _EOF_
 #SBATCH --mem=24000           # <-- request 24000MB to run this job.
 #SBATCH --time=160            # <-- request secs of wallclock/run.
 #SBATCH -p TrixieMain         # <-- partition
-# 
+#
 export HOSTFILE="/tmp/hosts.$SLURM_JOB_ID"
 srun hostname -s > $HOSTFILE
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
@@ -87,7 +87,7 @@ test -r $HOSTFILE && rm $HOSTFILE
 # -----------------------------------------------------------------------------
 ```
 
-### 3(b). _OR_ Module load abinit from CC stack:
+### 3(b). _OR_ Module load abinit from CC stack
 
 ```bash
 $ module avail abinit
@@ -151,31 +151,35 @@ mpirun -n $SLURM_NPROCS -wdir $work_dir $bin < $files
 CC stack cannot yet module load abinit/9.2.1 (default module), as the StdEnv/2020 and libxc/5.0.0 are required for that module. There is no abinit/9.2.1 built using gcc/9.3.0, rather only intel compiler. Instead load the current supported version tested on trixie:
 
 Attempt to load abinit/9.2.1 w/ older env:
+
 ```bash
 $ module spider abinit/9.2.1
 $ module load       nixpkgs/16.09  intel/2018.3  openmpi/3.1.4
-$ module load abinit/9.2.1 
+$ module load abinit/9.2.1
 $ which abinit
 /cvmfs/soft.computecanada.ca/easybuild/software/2017/avx512/MPI/intel2018.3/openmpi3.1/abinit/9.2.1/bin/abinit
 
 ```
 
-### 4. Submit job for execution:
+### 4. Submit job for execution
+
 ```bash
 sbatch test_abinit.sh
 ```
 
 Output will be '**Submitted batch job XXXXX**'
 
-### 5. Confirm execution results:
+### 5. Confirm execution results
+
 Local directory will contain a file '**slurm-XXXXX.out**' which is the output of the job (stdout).
 
 Output should be:
+
 ```
 cnNNN
 cnNNN
 ..
-Loading.. 
+Loading..
 spack load miniconda3@4.8.2
 . activate abinit
 which abinit
@@ -185,4 +189,3 @@ which abinit
 + mpirun -f /tmp/hosts.61574 -n 8 -launcher ssh -wdir /gpfs/share/opt/apps/abinit/examples/Si_208 /gpfs/share/opt/apps/abinit/conda/envs/abinit/bin/abinit
   ABINIT 9.0.4
 ```
-

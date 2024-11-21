@@ -1,4 +1,4 @@
-# Running pytorch.distributed on Multiple Nodes.
+# Running pytorch.distributed on Multiple Nodes
 
 Key thing to know is that srun is like a super-ssh which means that when running `srun cmd` it actually does something like `ssh node cmd`
 
@@ -43,7 +43,6 @@ $srun bash \
 wait
 ```
 
-
 ## task.sh
 
 This script will be executed on each node.
@@ -56,10 +55,10 @@ Note that we are activating the `conda` environment in this script so that each 
 # [Run PyTorch Data Parallel training on ParallelCluster](https://www.hpcworkshops.com/08-ml-on-parallelcluster/03-distributed-data-parallel.html)
 # [slurm SBATCH - Multiple Nodes, Same SLURMD_NODENAME](https://stackoverflow.com/a/51356947)
 
-#module load miniconda3-4.7.12.1-gcc-9.2.0-j2idqxp
+#module load conda/3-24.9.0
 #source activate molecule
 
-source /gpfs/projects/DT/mtp/WMT20/opt/miniconda3/bin/activate
+source /gpfs/projects/DT/mtp/WMT20/opt/miniforge3/bin/activate
 conda activate pytorch-1.7.1
 
 readonly MASTER_ADDR_JOB=$1
@@ -82,3 +81,4 @@ python \
 
 wait
 ```
+
