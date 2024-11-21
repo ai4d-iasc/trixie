@@ -1,12 +1,13 @@
 This examples will show you how to setup and prepare an environment for PyTorch jobs using conda on Trixie:
 
-### 1. Create a pytorch miniconda environment:
+### 1. Create a pytorch miniconda environment
+
 Either run from the command line or create pytorchconda-environment.sh and run it:
 
 ```bash
 #!/bin/bash
 # load the miniconda module
-module load miniconda3-4.8.2-gcc-9.2.0-sbqd2xu
+module load conda/3-24.9.0
 # create a conda environment with python 3.7 named pytorch
 conda create --name pytorch python=3.7
 source activate pytorch
@@ -40,24 +41,27 @@ hostname
 /usr/bin/nvidia-smi
 
 # Load the miniconda module on the compute node
-module load miniconda3-4.8.2-gcc-9.2.0-sbqd2xu
+module load conda/3-24.9.0
 # Activate the conda pytorch environment created in step 1
 source activate pytorch
 # Launch our test pytorch python file
 python testtorch.py
 ```
 
-### 4. Submit job for execution:
+### 4. Submit job for execution
+
 ```bash
 sbatch testpytorch.sh
 ```
 
 Output will be '**Submitted batch job XXXXX**'
 
-### 5. Confirm execution results:
+### 5. Confirm execution results
+
 Local directory will contain a file '**slurm-XXXXX.out**' which is the output of the job (stdout).
 
 Output should be:
+
 ```
 cnXXX - <nodename>
 <Date>
@@ -68,4 +72,3 @@ cnXXX - <nodename>
 
 GPU available: True
 ```
-

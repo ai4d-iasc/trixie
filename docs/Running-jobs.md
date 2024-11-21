@@ -1,5 +1,5 @@
 Trixie use the slurm scheduler to manage jobs.
-Compute Canada has a very good guide for using slurm to submit jobs to a cluster most of which is applicable for Trixie: https://docs.computecanada.ca/wiki/Running_jobs
+Compute Canada has a very good guide for using slurm to submit jobs to a cluster most of which is applicable for Trixie: <https://docs.computecanada.ca/wiki/Running_jobs>
 
 Here is a simple job which runs the python code hello.py
 
@@ -15,7 +15,7 @@ Contents of hello-job.sh
 #!/bin/bash
 #SBATCH -J helloworld
 
-module load miniconda3-4.8.2-gcc-9.2.0-sbqd2xu
+module load conda/3-24.9.0
 srun python ~/hello.py
 ```
 
@@ -31,9 +31,9 @@ In order for a job to run on Trixie, it must be "billed" against an approved pro
 
 See here for the [Account Codes](Account-Codes.md)
 
-### More jobs examples:
+### More jobs examples
 
-* [jobs-conda-pytorch](jobs-conda-pytorch.md)
-* [jobs-conda-jupyterlab](jobs-conda-jupyterlab.md)
-* [jobs-conda-RAPIDS](jobs-conda-RAPIDS.md)
-* [jobs-abinit](jobs-abinit.md)
+- [jobs-conda-pytorch](Jobs-conda-pytorch.md)
+- [jobs-jupyterlab](jobs-jupyterlab.md)
+- [jobs-conda-RAPIDS](jobs-conda-RAPIDS.md)
+- [jobs-abinit](jobs-abinit.md)
