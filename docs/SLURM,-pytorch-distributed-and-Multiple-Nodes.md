@@ -19,7 +19,6 @@ Key thing to know is that srun is like a super-ssh which means that when running
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=6
-#SBATCH --exclusive
 #SBATCH --output=%x-%j.out
 
 
@@ -81,4 +80,3 @@ python \
 
 wait
 ```
-
