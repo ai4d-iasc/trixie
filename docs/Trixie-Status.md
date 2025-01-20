@@ -2,34 +2,15 @@
 
 ## Upcoming Planned Downtime
 
-- **Thursday, October 17, 2024** - The Trixie cluster will be shutdown because of a planned electrical outage that will allow RPPM to 
-  commission the new emergency power generator.
-
-  - Start date: Thursday, October 17, 6:00 AM EDT
-  - End date: Monday, October 21, 6:00 PM EDT
- 
-  If you have any further questions, do not hesitate to contact us at your earliest convenience (rps-spr@nrc-cnrc.gc.ca).
-
-- **Tuesday, October 22nd, 2024** - As a reminder, LoginTC is used as a second authentication service for:
- 
-  - Bastion host for external access to Trixie High Performance Computing Clusters
-  - NRC external collab
-  - NetOps
- 
-  A maintenance period is required to perform system upgrades. Therefore, the LoginTC service will be unavailable on<br>
-  **Tuesday, October 22nd, from 3PM to 5PM EDT**
-
-  Consequently, you will not be able to access the service for which LoginTC provides authentication.
- 
-  Internal access to Trixie will still be available during this time.
-
-  If you have any questions regarding this maintenance, do not hesitate to communicate with us (rps-spr@nrc-cnrc.gc.ca)
+### None
 
 ## Current Issues / Outages
 
 ### None
 
 ## Past Events / Incidents
+- [RESOLVED] - Tuesday, October 22nd, 2024 - As a reminder, LoginTC is used as a second authentication service for: Bastion host for external access to Trixie High Performance Computing Clusters, NRC external collab, NetOps. A maintenance period is required to perform system upgrades. Therefore, the LoginTC service will be unavailable on Tuesday, October 22nd, from 3PM to 5PM EDT. Consequently, you will not be able to access the service for which LoginTC provides authentication. Internal access to Trixie will still be available during this time. If you have any questions regarding this maintenance, do not hesitate to communicate with us (rps-spr@nrc-cnrc.gc.ca)
+- [RESOLVED] - Thursday, October 17, 2024 - The Trixie cluster will be shutdown because of a planned electrical outage that will allow RPPM to commission the new emergency power generator. Start date: Thursday, October 17, 6:00 AM EDT. End date: Monday, October 21, 6:00 PM EDT. If you have any further questions, do not hesitate to contact us at your earliest convenience (rps-spr@nrc-cnrc.gc.ca).
 - [RESOLVED] - Friday September 20, 2024 - Yesterday evening, a Centrify outage affected the users ability to connect the to Hartree and Trixie clusters. Opened sessions at the time are also affected and are now stale and should be ended. Currently: Users trying to connect are still experiencing abnormal behaviors. We are still investigating whether the jobs that were running at the time were affected by the outage. KITS is working on fixing the issue and we will inform you as the situation evolves.
 - [RESOLVED] - Friday June 28, 2024 - The Research Platform Support team is currently proceeding with operating system and storage appliance upgrades on the cluster. In order to do the storage appliance upgrade, the cluster will be offline from the 28th of June at 6AM EDT to the afternoon of July the 2nd for a final data synchronization from the old appliance to the new appliance. Please see the email sent out to users Friday, June 21 for important details concerning this change in the Trixie infrastructure. Thank you for your patience. Research Platform Support - Update - Due to ongoing RES VPN issues affecting the upgrade of the Trixie cluster, the return to service has been delayed to end-of-business July 3rd, 2024. - Update - Due to further RES VPN issues today affecting the upgrade of the Trixie cluster, the return to service has been delayed to July 4th, 2024. A notice will be sent when Trixie is back online.
 - [RESOLVED] - Thursday, June 6, 2024 - Trixie Bastion Host Shutdown Notice - For users connecting from the Internet or the Legacy network. This bastion host upgrades will require downtime that is scheduled to start at 7:00AM EDT on June 6th and will conclude at 5PM. Although the bastion hosts will be offline during this time, jobs summitted prior to this maintenance window by users connecting through the bastion host will continue to run normally. If you have any questions or concerns about this upgrade, please let us know. Thank you for your patience. Research Platform Support
@@ -53,7 +34,7 @@
 - [RESOLVED] - Thursday Dec 2, 2021 - SSH connection to Trixie via the external bastion host are being blocked. Internal NRC network connectivity and Trixie operations continue normally. Investigation of root cause underway.
 - [RESOLVED - downtime completed successfully] - Monday August 23, 2021 - There will be a maintenance period for the Trixe AI4D Cluster on Monday August 23rd starting at 8:00 am EDT.  Access to the cluster will not be possible during the maintenance. The entire day will be reserved for the maintenance but current estimates suggest it will be returned to service by noon.  Maintenance will involve the replacement of a power distribution unit in one of the racks as well as configuration changes on the primary head node. Every effort will be made to preserve the job queue during the maintenance.
 - [RESOLVED - downtime completed successfully] - We are planning a period of scheduled downtime for the Trixie-AI4D cluster on **Monday June 28th from 8:00am to 4:00pm EDT**.  This will allow a few maintenance tasks to be performed that would interrupt service. These tasks include modifying the partition structure on the primary head node as well as some security patching. - It has become necessary to add a firmware update to this maintenance window for the Mellanox switches. This will cause the GPFS file system to become unavailable forcing us to shutdown the cluster entirely.  All jobs in the queue at the start of the maintenance period will likely be lost. - Due to unforeseen complications the maintenance period must be extended.
-- [RESOLVED - downtime completed successfully] - A period of downtime for the Trixie (AI4D) cluster is being scheduled for **Monday, May 17th from 8:00 am - 6:00 pm EDT**. Due to a hardware issue on the storage array there will need to be a scheduled maintenance period as per the vendors recommendation. Please note that the nature of the maintenance will require all jobs in the queue to be terminated at the start of the maintenance window.  
+- [RESOLVED - downtime completed successfully] - A period of downtime for the Trixie (AI4D) cluster is being scheduled for **Monday, May 17th from 8:00 am - 6:00 pm EDT**. Due to a hardware issue on the storage array there will need to be a scheduled maintenance period as per the vendors recommendation. Please note that the nature of the maintenance will require all jobs in the queue to be terminated at the start of the maintenance window.
 - [RESOLVED - nodes back in main queue] - Compute nodes cn110 and cn125 have been taken out of the main queue to troubleshoot GPU issues
 - [RESOLVED - downtime completed successfully] - A period of downtime for the Trixie (AI4D) cluster is being scheduled for **Monday, April 19th from 9:00am-3:00pm**. 
 Due to the nature of the maintenance all jobs in the queue will be terminated at the start of the maintenance window.
