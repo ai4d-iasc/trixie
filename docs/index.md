@@ -1,6 +1,6 @@
 # Welcome to the Trixie HPC wiki
 
-# [Trixie Status](Trixie-Status.md) Outages Oct 17-21, and Oct 22
+# [Trixie Status](Trixie-Status.md)
 
 # Trixie - not just an GPU Cluster
 
