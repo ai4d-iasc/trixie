@@ -28,21 +28,22 @@ indicates the current servers and what type of access is enabled.
 | gitlab.res | Yes    | Yes                          |
 | github     | No     | Yes                          |
 
-## Using Access Tokens for Gitlabc and Git-Collab
+### Using Access Tokens for Gitlabc and Git-Collab
 
 MFA is enforced on gitlabc and git-collab, which means you will not be able to pull using HTTPS the
 standard way. If you do not want to set up SSH keys and would like to pull using HTTPS, the
-following sections describe the method for accessing these servers using HTTPS and an access token.
+following procedure describes the method for accessing these servers using HTTPS and an access
+token.
 
 1. Create an access token on gitlabc or git-collab
     1. Log in to your GitLab account
-    1. Go to your Profile settings
-    1. Go to Access tokens
+    1. Go to your **Profile** settings
+    1. Go to **Access tokens**
     1. Choose a name and optionally an expiry date for the token
     1. Choose the desired scopes (api access)
-    1. Click on Create personal access token
-    1. Save the personal access token somewhere safe. Once you leave or refresh the page, you won’t
-       be able to access it again.
+    1. Click on **Create personal access token**
+    1. Save the personal access token **somewhere safe**. Once you leave or refresh the page, you
+       won't be able to access it again.
 1. Clone your Git project<br>
    ``git clone https://oauth2:PERSONAL_ACCESS_TOKEN@gitserver.nrc.gc.ca/namespace/projectname.git``
     - Replace `PERSONAL_ACCESS_TOKEN` with the token you have generated
@@ -50,7 +51,7 @@ following sections describe the method for accessing these servers using HTTPS a
     - Replace `namespace` with the appropriate group or personal name space
     - Replace `projectname` with the name of your project
 
-# Related Topics
+## Related Topics
 
 [External Access Setup](External-Access-Setup.md)
 
