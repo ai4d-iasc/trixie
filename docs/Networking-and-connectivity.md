@@ -23,18 +23,18 @@ indicates the current servers and what type of access is enabled.
 
 | Git Server | SSH    | HTTPS                        |
 | ---------- | ------ | ---------------------------- |
-| gitlabc    | Yes    | Yes                          |
+| gitlabc    | Yes    | Yes - requires access tokens |
 | git-collab | Broken | Yes - requires access tokens |
 | gitlab.res | Yes    | Yes                          |
 | github     | No     | Yes                          |
 
-## Using Access Tokens for Git-Collab
+## Using Access Tokens for Gitlabc and Git-Collab
 
-MFA is enforced on git-collab, which means you will not be able to pull using HTTPS the standard
-way. If you do not want to set up SSH keys and would like to pull using HTTPS, the following
-sections describe the method for accessing git-collab using HTTPS and an access token.
+MFA is enforced on gitlabc and git-collab, which means you will not be able to pull using HTTPS the
+standard way. If you do not want to set up SSH keys and would like to pull using HTTPS, the
+following sections describe the method for accessing these servers using HTTPS and an access token.
 
-1. Create an access token on git-collab
+1. Create an access token on gitlabc or git-collab
     1. Log in to your GitLab account
     1. Go to your Profile settings
     1. Go to Access tokens
@@ -44,8 +44,9 @@ sections describe the method for accessing git-collab using HTTPS and an access 
     1. Save the personal access token somewhere safe. Once you leave or refresh the page, you won’t
        be able to access it again.
 1. Clone your Git project<br>
-   ``git clone https://oauth2:PERSONAL_ACCESS_TOKEN@git-collab.nrc.gc.ca/namespace/projectname.git``
+   ``git clone https://oauth2:PERSONAL_ACCESS_TOKEN@gitserver.nrc.gc.ca/namespace/projectname.git``
     - Replace `PERSONAL_ACCESS_TOKEN` with the token you have generated
+    - Replace `gitserver` with either `gitlabc` or `git-collab`
     - Replace `namespace` with the appropriate group or personal name space
     - Replace `projectname` with the name of your project
 
