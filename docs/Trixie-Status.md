@@ -6,13 +6,11 @@
 
 ## Current Issues / Outages
 
-### [2025-01-24] Temporary reduction in TrixieMain and TrixieLong Queues / Réduction temporaire des files d'attente TrixieMain et TrixieLong
-At the request of a NRC project, 24 of Trixie's 36 nodes have been allocated to the use of a single large job/project. There should be no other impact on users. RPS will inform users when the queues have returned to normal.
-
-À la demande d'un projet du CNRC, 24 des 36 nœuds de Trixie ont été affectés à l'utilisation d'un seul gros projet/tâche. Il ne devrait pas y avoir d'autre impact sur les utilisateurs. SPR informera les utilisateurs lorsque les files d'attente seront revenues à la normale.
-
+### None
 
 ## Past Events / Incidents
+- [RESOLVED] [2025-01-24] Temporary reduction in TrixieMain and TrixieLong Queues / Réduction temporaire des files d'attente TrixieMain et TrixieLong
+At the request of a NRC project, 24 of Trixie's 36 nodes have been allocated to the use of a single large job/project. There should be no other impact on users. RPS will inform users when the queues have returned to normal. / À la demande d'un projet du CNRC, 24 des 36 nœuds de Trixie ont été affectés à l'utilisation d'un seul gros projet/tâche. Il ne devrait pas y avoir d'autre impact sur les utilisateurs. SPR informera les utilisateurs lorsque les files d'attente seront revenues à la normale.
 - [RESOLVED] - Tuesday, October 22nd, 2024 - As a reminder, LoginTC is used as a second authentication service for: Bastion host for external access to Trixie High Performance Computing Clusters, NRC external collab, NetOps. A maintenance period is required to perform system upgrades. Therefore, the LoginTC service will be unavailable on Tuesday, October 22nd, from 3PM to 5PM EDT. Consequently, you will not be able to access the service for which LoginTC provides authentication. Internal access to Trixie will still be available during this time. If you have any questions regarding this maintenance, do not hesitate to communicate with us (rps-spr@nrc-cnrc.gc.ca)
 - [RESOLVED] - Thursday, October 17, 2024 - The Trixie cluster will be shutdown because of a planned electrical outage that will allow RPPM to commission the new emergency power generator. Start date: Thursday, October 17, 6:00 AM EDT. End date: Monday, October 21, 6:00 PM EDT. If you have any further questions, do not hesitate to contact us at your earliest convenience (rps-spr@nrc-cnrc.gc.ca).
 - [RESOLVED] - Friday September 20, 2024 - Yesterday evening, a Centrify outage affected the users ability to connect the to Hartree and Trixie clusters. Opened sessions at the time are also affected and are now stale and should be ended. Currently: Users trying to connect are still experiencing abnormal behaviors. We are still investigating whether the jobs that were running at the time were affected by the outage. KITS is working on fixing the issue and we will inform you as the situation evolves.
