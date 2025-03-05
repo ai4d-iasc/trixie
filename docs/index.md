@@ -2,6 +2,10 @@
 
 # [Trixie Status](Trixie-Status.md)
 
+# Trixe Success Stories
+
+There is an upcoming tour of Trixie and they are looking for any success stories that you may have had using Trixie. If you have such a story, could you please post it in a reply the post in the **Trixie** channel of the **AI 4 Design** Slack workspace at your earliest convenience? Thank you.
+
 # Trixie - not just an GPU Cluster
 
 The name for this AI GPU cluster comes from a very inspirational women [Beatrice &#34;Trixie&#34; Helen Worsley](https://en.wikipedia.org/wiki/Beatrice_Worsley) who helped shape the state of computer science in Canada and abroad. She even worked briefly for the National Research Council of Canada in the late forties.
