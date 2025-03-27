@@ -43,7 +43,7 @@ website:
 For Mac OSX and Linux you can open a new terminal and connect to ``trixie.nrc-cnrc.gc.ca`` via ssh
 using your **PUB** account and the following command
 
-``ssh <firstname.lastname>@pub.nrc-cnrc.gc.ca trixie.nrc-cnrc.gc.ca``
+``ssh -l <firstname.lastname>@pub.nrc-cnrc.gc.ca trixie.nrc-cnrc.gc.ca``
 
 ## Initialize SSH Connection with Windows
 
@@ -54,7 +54,7 @@ Under **Session**
 1. Set **Host Name (or IP address)**: *<firstname.lastname\>@pub.nrc-cnrc.gc.ca@trixie.nrc-cnrc.gc.ca*
 1. Set **Port**: *22*
 1. Add a name for **Saved Sessions** – perhaps *Bastion*<br>
-   ![img](images/bastion-putty-1.png)</br>
+   ![img](images/bastion-putty-1.png)<br>
 1. Click **Save**
 
 Once the settings have been saved, you can double click on the name in the list of
@@ -147,7 +147,7 @@ questions so that you can reset your password if necessary.
 1. You will be prompted for your original (or current) password first and then you will be prompted
    to enter your new password twice. You should see a message similar to the one below – remember
    to enter your original password first and then enter your new password twice.<br>
-   ![login6](images/login6.png)</br>
+   ![login6](images/login6.png)<br>
 1. The system will automatically log you out, thus, you will need to login again using your new
    password
 
