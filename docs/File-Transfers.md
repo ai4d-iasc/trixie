@@ -52,39 +52,32 @@ If you need to install **WinSCP** then please download and install it from [this
 
 First you will need to configure **WinSCP** to connect to Trixie using an SSH tunnel. Open **WinSCP** and follow the procedure below to configure it to access Trixie via an SSH tunnel.
 
-1. Click the **New Session** button
-
-   ![winscp-1](images/trixie-winscp-1.png)</br>
-2. In the window that pops up, perform the following
-
-   1. Make sure the **File protocol** is set to *SCP*
-   2. Set the **Host name**: *trixie.res.nrc.gc.ca*
-   3. Set the **User name**: *\<admin.firstname.lastname>*`<br>`
-      The window should now look similar to the following
-
-      ![winscp-2](images/trixie-winscp-2.png)</br>
-   4. Click the **Advanced** button
-3. In the window that pops up, perform the following
-
-   1. Click the **Tunnel** item in the left pane
-   2. Select the **Connect through SSH tunnel** option
-   3. Set **Host name**: *trixie.nrc-cnrc.gc.ca*
-   4. Set **User name**: *\<username>`<span>`@pub.nrc-cnrc.gc.ca* `<br>`
-      The window should now look similar to the following
-
-      ![winscp-3](images/trixie-winscp-3.png)</br>
-   5. Click the **OK** button
-4. Click the **Save** button in the previous popup window
-5. In the window that pops up, perform the following
-
-   1. Type in a **Site name** - perhaps *Trixie* `<br>`
-      The window should now look similar to the following
-
-      ![winscp-4](images/trixie-winscp-4.png)</br>
-   2. Click the **OK** button
-6. Click the **Login** button in the previous popup window `<br>`
+1. Click the **New Session** button<br>
+   ![winscp-1](images/trixie-winscp-1.png)
+1. In the window that pops up, perform the following
+      1. Make sure the **File protocol** is set to *SCP*
+      1. Set the **Host name**: *trixie.res.nrc.gc.ca*
+      1. Set the **User name**: *<admin.firstname.lastname\>*<br>
+         The window should now look similar to the following<br>
+         ![winscp-2](images/trixie-winscp-2.png)
+      1. Click the **Advanced** button
+1. In the window that pops up, perform the following
+      1. Click the **Tunnel** item in the left pane
+      1. Select the **Connect through SSH tunnel** option
+      1. Set **Host name**: *trixie.nrc-cnrc.gc.ca*
+      1. Set **User name**: *<username\>@pub.nrc-cnrc.gc.ca*<br>
+         The window should now look similar to the following<br>
+         ![winscp-3](images/trixie-winscp-3.png)
+      1. Click the **OK** button
+1. Click the **Save** button in the previous popup window
+1. In the window that pops up, perform the following
+      1. Type in a **Site name** - perhaps *Trixie*<br>
+         The window should now look similar to the following<br>
+         ![winscp-4](images/trixie-winscp-4.png)
+      1. Click the **OK** button
+1. Click the **Login** button in the previous popup window<br>
    You will be prompted to authenticate with **LoginTC** (you will need to type **1**) and both your **Pub** and **Trixie** passwords
-7. Once you are logged into your session, you can drag and drop the files you need to transfer between the two file listings
+1. Once you are logged into your session, you can drag and drop the files you need to transfer between the two file listings
 
 ### Internal Users
 
@@ -92,28 +85,23 @@ If you need to install **WinSCP** then please install it from the **NRC Software
 
 First you will need to configure **WinSCP** to connect to Trixie. Open **WinSCP** and follow the procedure below to configure it to access Trixie.
 
-1. Click the **New Session** button
-
-   ![winscp-1](images/trixie-winscp-1.png)</br>
-2. In the window that pops up, perform the following
-
-   1. Make sure the **File protocol** is set to *SCP*
-   2. Set the **Host name**: *trixie.res.nrc.gc.ca*
-   3. Set the **User name**: *\<username>*`<br>`
-      The window should now look similar to the following
-
-      ![winscp-5](images/trixie-winscp-5.png)</br>
-   4. Click the **Save** button
-3. In the window that pops up, perform the following
-
-   1. Type in a **Site name** - perhaps *Trixie* `<br>`
-      The window should now look similar to the following
-
-      ![winscp-4](images/trixie-winscp-4.png)</br>
-   2. Click the **OK** button
-4. Click the **Login** button in the previous popup window `<br>`
+1. Click the **New Session** button<br>
+   ![winscp-1](images/trixie-winscp-1.png)
+1. In the window that pops up, perform the following
+      1. Make sure the **File protocol** is set to *SCP*
+      1. Set the **Host name**: *trixie.res.nrc.gc.ca*
+      1. Set the **User name**: *<username\>*<br>
+         The window should now look similar to the following<br>
+         ![winscp-5](images/trixie-winscp-5.png)
+      1. Click the **Save** button
+1. In the window that pops up, perform the following
+      1. Type in a **Site name** - perhaps *Trixie*<br>
+         The window should now look similar to the following<br>
+         ![winscp-4](images/trixie-winscp-4.png)
+      1. Click the **OK** button
+1. Click the **Login** button in the previous popup window<br>
    You will be prompted to authenticate with your **Trixie** password
-5. Once you are logged into your session, you can drag and drop the files you need to transfer between the two file listings
+1. Once you are logged into your session, you can drag and drop the files you need to transfer between the two file listings
 
 ## Windows Using the *pscp* Command From Putty
 
@@ -124,7 +112,7 @@ To copy a file to the Trixie server, please use the **pscp** command on your loc
 Please note that the use of this method requires that you have two Putty profiles defined.
 
 1. A profile for the bastion server
-2. A profile for the Trixie server
+1. A profile for the Trixie server
 
 #### Bastion Server Profile
 
@@ -136,29 +124,24 @@ Follow the procedure below to create the Trixie server profile.
 
 Under **Session**
 
-1. Set **Host Name (or IP address)**: *\<admin.firstname.lastname>`<span>`@trixie.res.nrc.gc.ca*
-2. Set **Port**: *22*
-3. Add a name for **Saved Sessions** – perhaps *Trixie-pscp*
-
-   ![putty1](images/trixie-pscp-putty-1.png)</br>
-4. Click **Save**
+1. Set **Host Name (or IP address)**: *<admin.firstname.lastname\>@trixie.res.nrc.gc.ca*
+1. Set **Port**: *22*
+1. Add a name for **Saved Sessions** – perhaps *Trixie-pscp*<br>
+   ![putty1](images/trixie-pscp-putty-1.png)
+1. Click **Save**
 
 Once you have the profiles created and saved, please follow the procedure below to run the **pscp** command.
 
 1. Load the *Bastion* profile and click **Open**
-2. Login to the bastion server and leave the window open
-3. Open a **Command Prompt** window
-4. Use the **pscp** command in the **Command Prompt** window to copy files to or from the trixie server using the *Trixie-pscp* putty profile
-
-   1. Copy the file ``test.txt`` from John Doe’s local machine to his **admin.john.doe** account on trixie
-
-      ``pscp test.txt Trixie-pscp:/home/admin.john.doe``
-   2. To copy a file from trixie to your local machine, you basically reverse the arguments to the **pscp** command
-
-      ``pscp Trixie-pscp:/home/admin.john.doe/test.txt test.txt ``
-   3. To copy an entire directory instead of just a file, please use the **–r** option (for recursive) to the **pscp** command
-
-      ``pscp –r myWorkFilesDir Trixie-pscp:/home/admin.john.doe``
+1. Login to the bastion server and leave the window open
+1. Open a **Command Prompt** window
+1. Use the **pscp** command in the **Command Prompt** window to copy files to or from the trixie server using the *Trixie-pscp* putty profile
+      1. Copy the file ``test.txt`` from John Doe’s local machine to his **admin.john.doe** account on trixie<br>
+         ``pscp test.txt Trixie-pscp:/home/admin.john.doe``
+      1. To copy a file from trixie to your local machine, you basically reverse the arguments to the **pscp** command<br>
+         ``pscp Trixie-pscp:/home/admin.john.doe/test.txt test.txt ``
+      1. To copy an entire directory instead of just a file, please use the **–r** option (for recursive) to the **pscp** command<br>
+         ``pscp –r myWorkFilesDir Trixie-pscp:/home/admin.john.doe``
 
 ### Internal Users
 
@@ -166,27 +149,22 @@ Please note that the use of this method requires that you have a Putty profile d
 
 Under **Session**
 
-1. Set **Host Name (or IP address)**: *\<username>`<span>`@trixie.res.nrc.gc.ca*
-2. Set **Port**: *22*
-3. Add a name for **Saved Sessions** – perhaps *Trixie-pscp*
-
-   ![putty1](images/trixie-pscp-putty-2.png)</br>
-4. Click **Save**
+1. Set **Host Name (or IP address)**: *<username\>@trixie.res.nrc.gc.ca*
+1. Set **Port**: *22*
+1. Add a name for **Saved Sessions** – perhaps *Trixie-pscp*<br>
+   ![putty1](images/trixie-pscp-putty-2.png)
+1. Click **Save**
 
 Once you have the profile created and saved, please follow the procedure below to run the **pscp** command.
 
 1. Open a **Command Prompt** window
-2. Use the **pscp** command in the **Command Prompt** window to copy files to or from the trixie server using the *Trixie-pscp* putty profile
-
-   1. Copy the file ``test.txt`` from John Doe’s local machine to his **doej** account on trixie
-
-      ``pscp test.txt Trixie-pscp:/home/doej``
-   2. To copy a file from trixie to your local machine, you basically reverse the arguments to the **pscp** command
-
-      ``pscp Trixie-pscp:/home/doej/test.txt test.txt ``
-   3. To copy an entire directory instead of just a file, please use the **–r** option (for recursive) to the **pscp** command
-
-      ``pscp –r myWorkFilesDir Trixie-pscp:/home/doej``
+1. Use the **pscp** command in the **Command Prompt** window to copy files to or from the trixie server using the *Trixie-pscp* putty profile
+      1. Copy the file ``test.txt`` from John Doe’s local machine to his **doej** account on trixie<br>
+         ``pscp test.txt Trixie-pscp:/home/doej``
+      1. To copy a file from trixie to your local machine, you basically reverse the arguments to the **pscp** command<br>
+         ``pscp Trixie-pscp:/home/doej/test.txt test.txt ``
+      1. To copy an entire directory instead of just a file, please use the **–r** option (for recursive) to the **pscp** command<br>
+         ``pscp –r myWorkFilesDir Trixie-pscp:/home/doej``
 
 # Transfers Between Trixie and Another HPC Cluster
 
@@ -195,8 +173,8 @@ Once you have the profile created and saved, please follow the procedure below t
 The procedures in this section assume that the advanced SSH configurations discussed above have been implemented. There are three options for copying files between Trixie and another HPC cluster
 
 1. Copy files directly between Trixie and the HPC cluster
-2. Login to Trixie from the other HPC cluster
-3. Copy files through your local computer
+1. Login to Trixie from the other HPC cluster
+1. Copy files through your local computer
 
 ## Copy Files Directly
 
@@ -251,7 +229,7 @@ To copy an entire directory instead of just a file, please use the **–r** opti
 Project folders have been created for users to use for a couple of purposes:
 
 1. Storage of data files to use with Trixie. Although you can use your home directory for limited storage of files, it is strongly recommended that you use the project folder instead as there are higher disk quotas for project folders.
-2. Sharing of project work and files with team members
+1. Sharing of project work and files with team members
 
 Please note that users should be diligent and remove any files and folders (in both the project folder and your home folder) once they are no longer required. This helps to optimize disk usage and avoid disk space issues for all users, not just your own usage.
 
@@ -263,17 +241,13 @@ Where **project-group** is the name of your project group – for example, **AI4
 
 To copy files to a project folder you should create a personal folder under the project directory and then copy files from your home directory to the new folder. In the example below user **John Doe** will copy two dataset files to the **AI4D/bio-01** project folder.
 
-1. Change directory to the project folder
-
+1. Change directory to the project folder<br>
    ``cd /gpfs/projects/AI4D/bio-01``
-2. Create the new folder using a unique name, perhaps your last name and first initial
-
+1. Create the new folder using a unique name, perhaps your last name and first initial<br>
    ``mkdir doej``
-3. Change back to your home directory
-
+1. Change back to your home directory<br>
    ``cd``
-4. Copy the files to your new project directory
-
+1. Copy the files to your new project directory<br>
    ``cp dataset1.dat dataset2.dat /gpfs/projects/AI4D/bio-01/doej``
 
 # Related Topics
