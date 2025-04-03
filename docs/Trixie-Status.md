@@ -2,13 +2,11 @@
 
 ## Upcoming Planned Downtime
 
-[2025-04-07 -> 2025-04-11] Planned maintenance for system update --- Maintenance planifiée pour la mise à jour du système
+[2025-04-07 -> 2025-04-11] Trixie will be offline for planned maintenance for system update --- Trixie sera hors ligne pour une maintenance planifiée pour la mise à jour du système
 
 Trixie will be updated to RHEL 9.5 to address outstanding CVEs and to remain within the support window for RHEL. User software _may_ be impacted, and RPS has provided 4 nodes for testing software stacks prior to the system update. These nodes are in the 'UpdateTest' queue. Several back-end services will be updated as well, but no user impact is expected from these changes.
 
 Trixie sera mis à jour vers RHEL 9.5 afin de corriger les CVE non résolus et de respecter la période de support de RHEL. Les logiciels utilisateurs pourraient être impactés, et RPS a fourni quatre nœuds pour tester les piles logicielles avant la mise à jour du système. Ces nœuds sont dans la file d'attente « UpdateTest ». Plusieurs services back-end seront également mis à jour, mais ces changements n'auront aucun impact sur les utilisateurs.
-
-### None
 
 ## Current Issues / Outages
 
