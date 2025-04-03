@@ -1,6 +1,6 @@
 # Welcome to the Trixie HPC wiki
 
-# [Trixie Status](Trixie-Status.md)
+# [Trixie Status](Trixie-Status.md) - Offline April 7 - April 11
 
 # Trixe Success Stories
 
