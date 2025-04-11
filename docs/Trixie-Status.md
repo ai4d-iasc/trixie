@@ -2,17 +2,14 @@
 
 ## Upcoming Planned Downtime
 
-[2025-04-07 -> 2025-04-11] Trixie will be offline for planned maintenance for system update --- Trixie sera hors ligne pour une maintenance planifiée pour la mise à jour du système
-
-Trixie will be updated to RHEL 9.5 to address outstanding CVEs and to remain within the support window for RHEL. User software _may_ be impacted, and RPS has provided 4 nodes for testing software stacks prior to the system update. These nodes are in the 'UpdateTest' queue. Several back-end services will be updated as well, but no user impact is expected from these changes.
-
-Trixie sera mis à jour vers RHEL 9.5 afin de corriger les CVE non résolus et de respecter la période de support de RHEL. Les logiciels utilisateurs pourraient être impactés, et RPS a fourni quatre nœuds pour tester les piles logicielles avant la mise à jour du système. Ces nœuds sont dans la file d'attente « UpdateTest ». Plusieurs services back-end seront également mis à jour, mais ces changements n'auront aucun impact sur les utilisateurs.
+### None
 
 ## Current Issues / Outages
 
 ### None
 
 ## Past Events / Incidents
+- [RESOLVED] [2025-04-07 -> 2025-04-11] Trixie will be offline for planned maintenance for system update --- Trixie sera hors ligne pour une maintenance planifiée pour la mise à jour du système.Trixie will be updated to RHEL 9.5 to address outstanding CVEs and to remain within the support window for RHEL. User software _may_ be impacted, and RPS has provided 4 nodes for testing software stacks prior to the system update. These nodes are in the 'UpdateTest' queue. Several back-end services will be updated as well, but no user impact is expected from these changes. --- Trixie sera mis à jour vers RHEL 9.5 afin de corriger les CVE non résolus et de respecter la période de support de RHEL. Les logiciels utilisateurs pourraient être impactés, et RPS a fourni quatre nœuds pour tester les piles logicielles avant la mise à jour du système. Ces nœuds sont dans la file d'attente « UpdateTest ». Plusieurs services back-end seront également mis à jour, mais ces changements n'auront aucun impact sur les utilisateurs.
 - [RESOLVED] [2025-01-24] Temporary reduction in TrixieMain and TrixieLong Queues / Réduction temporaire des files d'attente TrixieMain et TrixieLong
 At the request of a NRC project, 24 of Trixie's 36 nodes have been allocated to the use of a single large job/project. There should be no other impact on users. RPS will inform users when the queues have returned to normal. / À la demande d'un projet du CNRC, 24 des 36 nœuds de Trixie ont été affectés à l'utilisation d'un seul gros projet/tâche. Il ne devrait pas y avoir d'autre impact sur les utilisateurs. SPR informera les utilisateurs lorsque les files d'attente seront revenues à la normale.
 - [RESOLVED] - Tuesday, October 22nd, 2024 - As a reminder, LoginTC is used as a second authentication service for: Bastion host for external access to Trixie High Performance Computing Clusters, NRC external collab, NetOps. A maintenance period is required to perform system upgrades. Therefore, the LoginTC service will be unavailable on Tuesday, October 22nd, from 3PM to 5PM EDT. Consequently, you will not be able to access the service for which LoginTC provides authentication. Internal access to Trixie will still be available during this time. If you have any questions regarding this maintenance, do not hesitate to communicate with us (rps-spr@nrc-cnrc.gc.ca)
