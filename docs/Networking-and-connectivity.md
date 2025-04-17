@@ -26,7 +26,7 @@ indicates the current servers and what type of access is enabled.
 | gitlabc    | Yes    | Yes - requires access tokens |
 | git-collab | Broken | Yes - requires access tokens |
 | gitlab.res | Yes    | Yes                          |
-| github     | Yes     | Yes                          |
+| github     | Yes    | Yes                          |
 
 ### Using Access Tokens for Gitlabc and Git-Collab
 
