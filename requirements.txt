@@ -1,0 +1,27 @@
+# [mkdocs](https://github.com/mkdocs/mkdocs):
+# Project documentation with Markdown.
+mkdocs>=1.5.2
+
+# [mkdocs-click](https://github.com/mkdocs/mkdocs-click):
+# An MkDocs extension to generate documentation for Click command line applications.
+#mkdocs-click>=0.8.0
+
+# [mkdocs-typer](https://github.com/bruce-szalwinski/mkdocs-typer):
+# An MkDocs extension to generate documentation for Typer command line applications.
+#mkdocs-typer>=0.0.3
+
+# [mkdocs-material](https://github.com/squidfunk/mkdocs-material):
+# Documentation that simply works.
+mkdocs-material>=9.2.5
+
+# [mkdocstrings](https://github.com/mkdocstrings/mkdocstrings):
+# 📘 Automatic documentation from sources, for MkDocs.
+#mkdocstrings[python]>=0.22.0
+
+# [mkdocs-macros-plugin](https://github.com/fralau/mkdocs_macros_plugin):
+# Create richer and more beautiful pages in MkDocs, by using variables and calls to macros in the markdown code.
+#mkdocs-macros-plugin>=1.0.4
+
+# [mike](Manage multiple versions of your MkDocs-powered documentation via Git):
+# Manage multiple versions of your MkDocs-powered documentation via Git
+#mike>=1.1.2
