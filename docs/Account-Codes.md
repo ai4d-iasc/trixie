@@ -50,6 +50,7 @@ project.
 | dt-asec-01     | Large Satellite Image Classification         |
 | dt-caisi-01    | Data Contamination Detection                 |
 | dt-wat-ai      | AI Enabled Security for IoT Networks         |
+| irap-larus-01  | SME project                                  |
 
 ## Teams
 
