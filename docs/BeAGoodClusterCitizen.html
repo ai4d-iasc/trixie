@@ -3,31 +3,45 @@
   <head>
     <title>Presentation: Trixie - Be a Good Cluster Citizen</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css"
-      integrity="sha512-0AUO8B5ll9y1ERV/55xq3HeccBGnvAJQsVGitNac/iQCLyDTGLUBMPqlupIWp/rJg0hV3WWHusXchEIdqFAv1Q=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css"
+      integrity="sha512-ZIo9ivf88U0L1S+0D/npMNTTkjez5B9cK5xIecN4IA2OmtbTNBbPAZo/0cBC195sq7FU7cEOVPwtit37f/+1rQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/dracula.min.css"
-      integrity="sha512-RPqCDyRPg34CE04QpEtt720zRNPR9oZElahfl1OrNl+pxERwvXw7usOOsR+vP6HnDQEmw+ioz2Nh/XOGP8aV0w=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/dracula.min.css"
+      integrity="sha512-z3Sd/5xZxnlQgNwMsvuE8OJ/EY83taM+YPl/TqNIfq3BDj6V2LoIlszakfn/OHxiJXV10CeBmZDGw+ODNgHZbQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/monokai.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/highlight/monokai.min.css"
       integrity="sha512-z8wQkuDRFwCBfoj7KOiu1MECaRVoXx6rZQWL21x0BsVVH7JkqCp1Otf39qve6CrCycOOL5o9vgfII5Smds23rg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300..700&family=Signika+Negative:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      code.cli::before {
+        content: "\1F449  ";
+      }
       table {
         color: white;
+      }
+      .reveal table {
+        border: none;
+      }
+
+      .reveal table td,
+      .reveal table th {
+        border: none;
       }
       code {
         color: lime;
@@ -73,6 +87,32 @@
         margin-left: 1em;
         margin-right: 1em;
       }
+
+      .reveal pre {
+        box-shadow: none;
+        margin: 0em;
+      }
+      .row {
+        display: flex;
+      }
+
+      /* Create two equal columns that sits next to each other */
+      .column {
+        flex: 50%;
+      }
+
+      .cli_output {
+        color: darkgrey;
+        font-family:
+          Courier Prime,
+          Fira Code,
+          Menlo,
+          Consolas,
+          Monaco,
+          Liberation Mono,
+          Lucida Console,
+          monospace;
+      }
     </style>
   </head>
 
@@ -89,63 +129,66 @@
           <h1>Trixie</h1>
 
           <div style="text-align: left" class="r-fit-text">
-            <p>
-              <em>trixie.res.nrc.gc.ca</em> from the
-              <b style="color: black">black</b> &
-              <b style="color: orange">orange</b> networks
-            </p>
+            <ul>
+              <li>
+                <em>trixie.res.nrc.gc.ca</em> from the
+                <b style="color: black">black</b> &
+                <b style="color: orange">orange</b> networks
+              </li>
 
-            <p>
-              <code> &gt; /gpfs/work/onboarding.sh </code>
-            </p>
+              <li>
+                <code class="cli language-bash">
+                  /gpfs/work/onboarding.sh
+                </code>
+              </li>
 
-            <p>
-              <b><samp>/gpfs/projects</samp></b> will remain as-is and should be
-              in-sync with the previous storage appliance, as such there should
-              be no apparent change
-            </p>
+              <li>
+                <b><samp>/home/${USER}</samp></b> has a quota of 50GB and has
+                <b>snapshots disabled</b>.
+              </li>
 
-            <p>
-              <b><code>/home/${USER}</code></b> will now have a quota of 50GB
-              and will have <b>snapshots disabled</b>.
-            </p>
+              <li>
+                <b><samp>/gpfs/work/${USER}</samp> </b> is your primary
+                work-space and has a quota of 500GB and 1M inodes with snapshots
+                enabled
+              </li>
 
-            <p>
-              <b><samp>/gpfs/work/${USER}</samp> </b> will be the primary
-              work-space for users and will have a quota of 500GB and 1M inodes
-              with snapshots enabled
-            </p>
+              <li>
+                <b><samp>/gpfs/projects</samp></b> a common work-space
+              </li>
 
-            <p>
-              <b
-                >We request that users not create conda, mamba, venvs, etc
-                within the <samp>/gpfs/work</samp> space</b
-              >, and instead use their <samp>/home</samp> and create symlinks to
-              their projects. The snapshot feature of GPFS does not perform
-              optimally when many small files are created and destroyed as with
-              such utilities. We understand that some workflows on Trixie have
-              this behaviour inherently, but an effort to reduce this behaviour
-              is appreciated
-            </p>
+              <li>
+                <b
+                  >We request that users not create conda, mamba, venvs, etc
+                  within the <samp>/gpfs/work</samp> space</b
+                >, and instead use their <samp>$HOME</samp> and create symlinks
+                to their projects. The snapshot feature of GPFS does not perform
+                optimally when many small files are created and destroyed as
+                with such utilities. We understand that some workflows on Trixie
+                have this behaviour inherently, but an effort to reduce this
+                behaviour is appreciated
+              </li>
+            </ul>
           </div>
 
           <aside class="notes">
             Running RHEL 9
 
-            <code>&gt; sbatch --version</code><samp> slurm 22.05.9 </samp>
+            <code class="cli language-bash">sbatch --version</code
+            ><samp> slurm 22.05.9 </samp>
 
-            https://github.com/ai4d-iasc/trixie/wiki/Hardware
+            https://ai4d-iasc.github.io/trixie/Hardware/
 
-            <samp>
-              ************************************************************************
-              ** On first log-in to the RHEL9 setup, please run onboarding.sh in
-              ** ** your /home/${USER} directory. If you do not have
-              onboarding.sh in ** ** your home directory, copy it from
-              /gpfs/work/ ** ** ** ** Note the new quotas: ** ** /home/${USER} :
-              50GiB/1M inodes ** ** /gpfs/work/${USER} : 500GiB/1M inodes ** **
-              **
-              ************************************************************************
-            </samp>
+            <pre>
+************************************************************************
+** On first log-in to the RHEL9 setup, please run onboarding.sh in    **
+** your /home/${USER} directory. If you do not have onboarding.sh in  **
+** your home directory, copy it from /gpfs/work/                      **
+** Note the new quotas:                                               **
+** /home/${USER} : 50GiB/1M inodes                                    **
+** /gpfs/work/${USER} : 500GiB/1M inodes                              **
+************************************************************************
+            </pre>
           </aside>
         </section>
 
@@ -154,10 +197,10 @@
             <h1>Getting some Software</h1>
 
             <p>
-              <code>&gt; module avail </code>
+              <code class="cli language-bash">module avail </code>
             </p>
 
-            <div style="font-size: 0.32em">
+            <div class="cli_output" style="font-size: 0.32em">
               <h2 class="striked">
                 <span class="modulepath"> /usr/share/Modules/modulefiles </span>
               </h2>
@@ -345,7 +388,7 @@
             </div>
 
             <p>
-              <code>&gt; module load MODULE </code>
+              <code class="cli language-bash">module load MODULE </code>
             </p>
           </div>
 
@@ -360,9 +403,9 @@
             <h1>Partitions, JobTesting</h1>
 
             <p>
-              <code>&gt; sinfo</code>
+              <code class="cli language-bash">sinfo</code>
             </p>
-            <table>
+            <table class="cli_output" style="font-size: 0.7em">
               <tr>
                 <th>PARTITION</th>
                 <th>AVAIL</th>
@@ -429,7 +472,9 @@
               </tr>
             </table>
             <p>
-              <code>&gt; sbatch --partition=JobTesting ... </code>
+              <code class="cli language-bash"
+                >sbatch --partition=JobTesting ...
+              </code>
             </p>
           </div>
 
@@ -448,8 +493,8 @@
           <div style="text-align: left" class="r-fit-text">
             <p>
               See
-              <a @href="https://github.com/ai4d-iasc/trixie/wiki/Account-Codes "
-                >Account-Codes</a
+              <a @href="https://ai4d-iasc.github.io/trixie/Account-Codes/">
+                &#x1F4D1; Account-Codes</a
               >
               for a list of codes
             </p>
@@ -462,7 +507,9 @@
             </ul>
 
             <p>
-              <code>&gt; sbatch --account=account_code ...</code>
+              <code class="cli language-bash"
+                >sbatch --account=account_code ...</code
+              >
             </p>
           </div>
         </section>
@@ -471,9 +518,11 @@
           <h1>Node's Resources</h1>
 
           <div style="text-align: left" class="r-fit-text">
-            <code>&gt; sinfo --Node --responding --long</code>
+            <code class="cli language-bash"
+              >sinfo --Node --responding --long</code
+            >
 
-            <table>
+            <table class="cli_output" style="font-size: 0.7em">
               <tr>
                 <th>NODELIST</th>
                 <th>NODES</th>
@@ -558,10 +607,10 @@
             <h1>What Do Nodes Have to Offer?</h1>
 
             <p>
-              <code>&gt; scontrol show nodes</code>
+              <code class="cli language-bash">scontrol show nodes</code>
             </p>
 
-            <pre>
+            <pre class="cli_output">
             <samp>
 NodeName=cn136 Arch=x86_64 CoresPerSocket=16
   CPUAlloc=0 CPUTot=64 CPULoad=0.01
@@ -584,7 +633,7 @@ NodeName=cn136 Arch=x86_64 CoresPerSocket=16
           </div>
 
           <aside class="notes">
-            <a href="https://github.com/ai4d-iasc/trixie/wiki/Hardware"
+            <a href="https://ai4d-iasc.github.io/trixie/Hardware/"
               >Trixie's Hardware Wiki page</a
             >
           </aside>
@@ -592,16 +641,18 @@ NodeName=cn136 Arch=x86_64 CoresPerSocket=16
 
         <section>
           <div class="r-fit-text">
-            <h2>The GPUs</h2>
+            <h1>The GPUs</h1>
             <div style="text-align: left; font-size: 0.8em">
-              <p>Tesla V100-SXM2-32GB</p>
-              <p>May 10, 2017</p>
-              <p>NVIDIA-SMI 550.54.15</p>
-              <p>Driver Version: 550.54.15</p>
-              <p>CUDA Version: 12.4</p>
-              <p style="color: orange">CUDA Compute Capabilities 7.0</p>
-              <p>Single Precision: 15 TFLOPS</p>
-              <p>Tensor Performance (Deep Learning): 120 TFLOPS</p>
+              <ul>
+                <li>Tesla V100-SXM2-32GB</li>
+                <li>May 10, 2017</li>
+                <li>NVIDIA-SMI 565.57.01</li>
+                <li>Driver Version: 565.57.01</li>
+                <li>CUDA Version: 12.7</li>
+                <li style="color: orange">CUDA Compute Capabilities 7.0</li>
+                <li>Single Precision: 15 TFLOPS</li>
+                <li>Tensor Performance (Deep Learning): 120 TFLOPS</li>
+              </ul>
             </div>
           </div>
 
@@ -617,7 +668,7 @@ NodeName=cn136 Arch=x86_64 CoresPerSocket=16
             https://www.anandtech.com/show/11367/nvidia-volta-unveiled-gv100-gpu-and-tesla-v100-accelerator-announced
             https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-capability-7-x
             https://www.anandtech.com/show/11559/nvidia-formally-announces-pcie-tesla-v100-available-later-this-year
-            https://github.com/ai4d-iasc/trixie/wiki/Hardware
+            https://ai4d-iasc.github.io/trixie/Hardware/
           </aside>
         </section>
 
@@ -641,15 +692,14 @@ NodeName=cn136 Arch=x86_64 CoresPerSocket=16
           <div style="text-align: left" class="r-fit-text">
             <h1>Slurm Header Example</h1>
 
-            <table>
-              <tr>
-                <td>
-                  <pre><samp data-trim data-noescape>
+            <div class="row" style="font-size: 0.8em">
+              <div class="column" style="flex: 45%">
+                <pre><code data-trim data-noescape class="language-bash">
 #!/bin/bash
 # vim:nowrap:
 
-#SBATCH --job-name=MSLC24.training
-#SBATCH --comment="Metric Score Landscape Challenge 24 NMT training"
+#SBATCH --job-name=My_Wonderful
+#SBATCH --comment="My Wonderful Script"
 
 # On Trixie
 #SBATCH --partition=TrixieMain
@@ -667,46 +717,31 @@ NodeName=cn136 Arch=x86_64 CoresPerSocket=16
 #SBATCH --requeue
 #SBATCH --signal=B:USR1@30
 #SBATCH --output=%x-%j.out
-
-# Fix SLURM environment variables.
-SLURM_JOB_CPUS_PER_NODE=${SLURM_JOB_CPUS_PER_NODE%%(*)} # '24(x2)' => 24
-SLURM_TASKS_PER_NODE=${SLURM_TASKS_PER_NODE%%(*)} # '4(x2)' => '4'
-
-# NOTE: We set OMP_NUM_THREADS or else we get the following Warning:
-# WARNING:torch.distributed.run:
-# *****************************************
-# Setting OMP_NUM_THREADS environment variable for each process to be 1 in
-# default, to avoid your system being overloaded, please further tune the
-# variable for optimal performance in your application as needed.
-# *****************************************
-export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-$(nproc)}
-                  </samp></pre>
-                </td>
-                <td>
-                  <pre><samp data-trim data-noescape>
+                  </code></pre>
+              </div>
+              <div class="column" style="flex: 55%">
+                <pre><code data-trim data-noescape class="language-bash">
 # Requeueing on Trixie
-# [source](https://www.sherlock.stanford.edu/docs/user-guide/running-jobs/)
-#
-[source](https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html#how-to-recover-files-before-a-job-times-out)
 function _requeue {
-  echo "BASH - trapping signal 10 - requeueing $SLURM_JOBID"
+  echo "~requeueing $SLURM_JOBID"
   date
   scontrol requeue $SLURM_JOBID
 }
 
 if [[ -n "$SLURM_JOBID" ]]; then
-  SACC_FORMAT="JobID,Submit,Start,End,Elapsed,ExitCode,State,CPUTime,MaxRSS,"
-  SACC_FORMAT+="MaxVMSize,MaxDiskRead,MaxDiskWrite,AllocCPUs,AllocGRES"
-  SACC_FORMAT+=",AllocTRES%-50,NodeList,JobName%-30,Comment%-80"
+  SACC_FORMAT="JobID,Submit,Start,End,Elapsed,ExitCode"
+  SACC_FORMAT+=",State,CPUTime,MaxRSS,MaxVMSize"
+  SACC_FORMAT+=",MaxDiskRead,MaxDiskWrite,AllocCPUs"
+  SACC_FORMAT+=",AllocGRES,AllocTRES%-50,NodeList"
+  SACC_FORMAT+=",JobName%-30,Comment%-80"
   trap "sacct --jobs $SLURM_JOBID --format=$SACC_FORMAT" 0
   trap _requeue USR1
 fi
-                  </samp></pre>
-                </td>
-              </tr>
-            </table>
+                  </code></pre>
+              </div>
+            </div>
 
-            <code>&gt; sbatch my_wonderful.sh</code>
+            <code class="cli language-bash">sbatch my_wonderful.sh</code>
           </div>
 
           <aside class="notes">
@@ -721,11 +756,15 @@ fi
         <section>
           <div style="text-align: left" class="r-fit-text">
             <h1>Do I Really Need a Script?</h1>
-            <pre>
-            <code>
-> sbatch \
-    --job-name=MSLC24.training \
-    --comment="Metric Score Landscape Challenge 24 NMT training" \
+            <div>
+              Explicitly specifying all options at each invocation
+              <div class="row">
+                <div class="column">
+                  <pre>
+            <code class="cli language-bash">
+sbatch \
+    --job-name=My_Wonderful \
+    --comment="My Wonderful Script" \
     --partition=TrixieMain \
     --account=dt-mtp \
     --gres=gpu:4 \
@@ -741,19 +780,32 @@ fi
     my_wonderful.sh args ...
             </code>
           </pre>
-            <code> &gt; sbatch --job-name=MSLC24.training my_wonderful.sh</code>
+                </div>
+                <div class="column">
+                  <p style="font-size: 8em">&#x1F628;</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p>Overriding what is different</p>
+              <code class="cli language-bash">
+                sbatch --job-name=OtherName my_wonderful.sh</code
+              >
+              <span style="font-size: 1.5em"> &#x1F60F; </span>
+            </div>
           </div>
         </section>
 
         <section>
-          <h3>Limit RAM to Allow no GPU Jobs to Also Run</h3>
+          <h2>Set the Expected RAM Limit</h2>
 
           <div style="text-align: left">
-            <samp> #SBATCH --mem=96G </samp>
+            <code class="language-bash"> #SBATCH --mem=96G </code>
 
             <p>
               Otherwise the scheduler assumes that you want all of the memory
-              preventing other jobs to run.
+              which implies exclusive access to that node, preventing other jobs
+              to use the remainder of the resources of that node.
             </p>
           </div>
 
@@ -771,14 +823,14 @@ fi
             <h1>Make your Job Resumable</h1>
 
             <pre>
-            <samp>
+            <code class="language-bash">
 #SBATCH --requeue
 #SBATCH --signal=B:USR1@30
 
 # Requeueing on Trixie
 # [source](https://www.sherlock.stanford.edu/docs/user-guide/running-jobs/)
 #
-[source](https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html#how-to-recover-files-before-a-job-times-out)
+[source](https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html)
 function _requeue {
   echo "BASH - trapping signal 10 - requeueing $SLURM_JOBID"
   date
@@ -786,18 +838,35 @@ function _requeue {
 }
 
 if [[ -n "$SLURM_JOBID" ]]; then
-  SACCT_FORMAT="JobID,Submit,Start,End,Elapsed,ExitCode,State,CPUTime,MaxRSS,MaxVMSize"
-  SACCT_FORMAT+=",MaxDiskRead,MaxDiskWrite,AllocCPUs,AllocGRES,AllocTRES%-50,NodeList"
-  SACCT_FORMAT+=",JobName%-30,Comment%-80"
-  trap "sacct --jobs $SLURM_JOBID --format=$ACCT_FORMAT" 0
+  # Only if the job was submitted to SLURM.
   trap _requeue USR1
 fi
-            </samp>
+            </code>
           </pre>
-            <a
-              href="https://github.com/ai4d-iasc/trixie/wiki/Automatically-Resuming-Requeueing"
-              >Automatically Resuming Requeueing</a
-            >
+            <ul>
+              <li>
+                Your code needs to be able to handle resuming from a previous
+                checkpoint.
+              </li>
+              <li>
+                <code class="language-bash">--signal=B:USR1@30</code> Ask the
+                scheduler to send a
+                <code class="language-bash">USR1</code> signal 30 seconds before
+                the time limit
+              </li>
+              <li>
+                <code class="language-bash">trap _requeue USR1</code> Act on
+                <code class="language-bash">USR1</code> signal by calling
+                <code class="language-bash">_requeue()</code>
+              </li>
+              <li>
+                <a
+                  href="https://ai4d-iasc.github.io/trixie/Automatically-Resuming-Requeueing/"
+                >
+                  &#x1F4D1; Automatically Requeueing to Resume</a
+                >
+              </li>
+            </ul>
           </div>
 
           <aside class="notes">
@@ -814,15 +883,15 @@ fi
 
             <h2>queue your job</h2>
             <p>
-              <code>&gt; sbatch my_wonderful.sh</code>
+              <code class="cli language-bash">sbatch my_wonderful.sh</code>
             </p>
 
             <h2>check that your job is running</h2>
             <p>
-              <code>&gt; squeue</code>
+              <code class="cli language-bash">squeue</code>
             </p>
 
-            <table>
+            <table class="cli_output" style="font-size: 0.7em">
               <tr>
                 <th>JOBID</th>
                 <th>NAME</th>
@@ -836,15 +905,14 @@ fi
               </tr>
               <tr>
                 <td>733</td>
-                <td>MSLC24</td>
+                <td>My_Wonderful</td>
                 <td>larkins</td>
                 <td>R</td>
                 <td>7:43:44</td>
                 <td>1</td>
                 <td>trixie-cn101</td>
                 <td>2024-07-17T02:26:0</td>
-                <td>MSLC24</td>
-                <td>Training</td>
+                <td>My Wonderful Script</td>
               </tr>
             </table>
           </div>
@@ -852,41 +920,47 @@ fi
 
         <section>
           <div style="text-align: left" class="r-fit-text">
-            <h3>Check <code> nvidia-smi -l </code> for Good GPU Usage</h3>
-            <code>&gt; ssh -t cn101 nvidia-smi -l </code>
-            <pre style="font-size: 0.35em">
+            <h2>
+              Check <code class="cli language-bash"> nvidia-smi -l </code> for
+              Good GPU Usage
+            </h2>
+            <code class="cli language-bash">ssh -t cn101 nvidia-smi -l </code>
+            <pre class="cli_output" style="font-size: 0.35em">
             <samp>
-+-----------------------------------------------------------------------------+
-| NVIDIA-SMI 510.47.03 Driver Version: 510.47.03 CUDA Version: 11.6           |
-|-------------------------------+----------------------+----------------------+
-| GPU Name Persistence-M        | Bus-Id Disp.A        | Volatile Uncorr. ECC |
-| Fan Temp Perf Pwr:Usage/Cap   | Memory-Usage         | GPU-Util Compute M.  |
-|                               |                      | MIG M.               |
-|===============================+======================+======================|
-| 0 Tesla V100-SXM2... Off      | 00000000:89:00.0 Off | 0                    |
-| N/A 27C P0 53W / 300W         | 0MiB / 32768MiB      | 0% Default           |
-|                               |                      | N/A                  |
-+-------------------------------+----------------------+----------------------+
-| 1 Tesla V100-SXM2... Off      | 00000000:8A:00.0 Off | 0                    |
-| N/A 31C P0 54W / 300W         | 0MiB / 32768MiB      | 0% Default           |
-|                               |                      | N/A                  |
-+-------------------------------+----------------------+----------------------+
-| 2 Tesla V100-SXM2... Off      | 00000000:B2:00.0 Off | 0                    |
-| N/A 31C P0 55W / 300W         | 0MiB / 32768MiB      | 0% Default           |
-|                               |                      | N/A                  |
-+-------------------------------+----------------------+----------------------+
-| 3 Tesla V100-SXM2... Off      | 00000000:B3:00.0 Off | 0                    |
-| N/A 32C P0 54W / 300W         | 0MiB / 32768MiB      | 2% Default           |
-|                               |                      | N/A                  |
-+-------------------------------+----------------------+----------------------+
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-SXM2-32GB           On  |   00000000:89:00.0 Off |                    0 |
+| N/A   54C    P0            139W /  300W |   28888MiB /  32768MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  Tesla V100-SXM2-32GB           On  |   00000000:8A:00.0 Off |                    0 |
+| N/A   68C    P0            282W /  300W |   28846MiB /  32768MiB |     99%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  Tesla V100-SXM2-32GB           On  |   00000000:B2:00.0 Off |                    0 |
+| N/A   58C    P0            289W /  300W |   28918MiB /  32768MiB |     99%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  Tesla V100-SXM2-32GB           On  |   00000000:B3:00.0 Off |                    0 |
+| N/A   68C    P0            284W /  300W |   28918MiB /  32768MiB |     98%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
 
-+-----------------------------------------------------------------------------+
-| Processes:                                                                  |
-| GPU GI CI PID Type Process name GPU Memory                                  |
-| ID ID Usage                                                                 |
-|=============================================================================|
-| No running processes found                                                  |
-+-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A   3077932      C   ...C-Senate/nmt/tools/venv/bin/python3      28884MiB |
+|    1   N/A  N/A   3077933      C   ...C-Senate/nmt/tools/venv/bin/python3      28842MiB |
+|    2   N/A  N/A   3077934      C   ...C-Senate/nmt/tools/venv/bin/python3      28914MiB |
+|    3   N/A  N/A   3077935      C   ...C-Senate/nmt/tools/venv/bin/python3      28914MiB |
++-----------------------------------------------------------------------------------------+
             </samp>
           </pre>
           </div>
@@ -897,7 +971,9 @@ fi
 
           <div style="text-align: left">
             <p>
-              <code> &gt; sbatch --mem=400G my_wonderful.sh </code>
+              <code class="cli language-bash">
+                sbatch --mem=400G my_wonderful.sh
+              </code>
             </p>
             <samp>
               sbatch: error: Batch job submission failed: Memory required by
@@ -911,14 +987,13 @@ fi
 
           <p>
             Please refer to
-            <a
-              href="https://github.com/ai4d-iasc/trixie/wiki/jobs-conda-jupyterlab"
-              >Jobs Conda JupyterLab</a
+            <a href="https://ai4d-iasc.github.io/trixie/jobs-jupyterlab/">
+              &#x1F4D1; Jobs Conda JupyterLab</a
             >
             as it is a bit more involved
           </p>
 
-          <p style="color: red">
+          <p style="color: red; font-weight: bolder">
             WARNING: Don't let your worker node run if you are not using it
           </p>
 
@@ -934,15 +1009,12 @@ fi
           <h1>Conclusion</h1>
 
           <ul>
+            <li>We want to maximize everyone enjoyment of the cluster</li>
+            <li>We want to maximize the cluster usage</li>
             <li>
               This good-citizen principle doesn't apply only to Trixie but to
               all clusters
             </li>
-            <li>We want to maximize the cluster usage</li>
-            <li>We want to maximize everyone enjoyment of the cluster</li>
-            <li>https://github.com/ai4d-iasc/trixie</li>
-            <li>https://github.com/ai4d-iasc/trixie/wiki</li>
-            <li>https://github.com/ai4d-iasc/trixie/issues</li>
           </ul>
 
           <aside class="notes">
@@ -953,29 +1025,66 @@ fi
             <p>Clusters work best when you sleep.</p>
           </aside>
         </section>
+
+        <section>
+          <h1>Links</h1>
+          <ul>
+            <li>
+              <a href="https://ai4d-iasc.github.io/trixie">
+                &#x1F4D1; https://ai4d-iasc.github.io/trixie</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/ai4d-iasc/trixie"
+                >https://github.com/ai4d-iasc/trixie</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/ai4d-iasc/trixie/issues"
+                >https://github.com/ai4d-iasc/trixie/issues</a
+              >
+            </li>
+          </ul>
+        </section>
       </div>
     </div>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"
-      integrity="sha512-sMRSj1Ns64C2OE6VNS7WrV63OHW7dLAvi96CXRoy9AEe/tKF+868fhUJpc5ZKS166lwhe2ArCYjFitLJUY+VWA=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.js"
+      integrity="sha512-lRYVCjdH7dCPCzqLL6eBn78p6WGK5pZxgYBgzTQfWlfX7yiZFLt/qHOMSETHUIz2aZIU/KbjwYHiMsmrcVgJnA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/highlight/highlight.min.js"
-      integrity="sha512-xkVKkN0o7xECTHSUZ9zdsBYRXiAKH7CZ3aICpW6aQJZsufVVRLhEBTDjTpC1tPzm+gNZiOeW174zXAB2fOLsTg=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/highlight/highlight.min.js"
+      integrity="sha512-IkPzJ3njtxNL2Frm7zr18CEj9HH+CEFAqh+jSKjXTHVFGtWG1+USbIXINU8zdGmyLpf/OBIVfpNLGNgwhlymkA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/plugin/notes/notes.min.js"
-      integrity="sha512-tDzEYXTFwGOO3tWp8oTV3yGeZ4lG4gUt+tJFQTsP7W4jV/MJ1Rgr6m9aICicjh/ymL5GD6jkHXDi9cHKfctFGQ=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/notes/notes.min.js"
+      integrity="sha512-6LAcdj7pQal9JkdALNexzVKd4zWuYUxOXuzdF21iOx7LJSlF5ibFi2TAR7GQ00XhfPAw7/R8f1dZ69gFGhzXtw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
     <script>
       // Reveal.initialize({plugins: [RevealNotes, RevealHighlight], });
-      Reveal.initialize({ plugins: [RevealNotes] });
+      Reveal.initialize({
+        plugins: [RevealNotes],
+
+        // The "normal" size of the presentation, aspect ratio will
+        // be preserved when the presentation is scaled to fit different
+        // resolutions. Can be specified using percentage units.
+        width: 960,
+        height: 700,
+
+        // Factor of the display size that should remain empty around
+        // the content
+        margin: 0.04,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+        maxScale: 2.0,
+      });
     </script>
   </body>
 </html>
