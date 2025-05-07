@@ -28,8 +28,10 @@ Key thing to know is that srun is like a super-ssh which means that when running
 # [Run PyTorch Data Parallel training on ParallelCluster](https://www.hpcworkshops.com/08-ml-on-parallelcluster/03-distributed-data-parallel.html)
 # [slurm SBATCH - Multiple Nodes, Same SLURMD_NODENAME](https://stackoverflow.com/a/51356947)
 
-readonly MASTER_ADDR_JOB=$SLURMD_NODENAME
-readonly MASTER_PORT_JOB="12234"
+export TQDM_MININTERVAL=90
+head_node_ip=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
+readonly head_node_ip
+readonly head_node_port=$(( $SLURM_JOBID % (50000 - 30000 + 1 ) + 30000 ))
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 readonly srun='srun --output=%x-%j.%t.out'
@@ -128,9 +130,11 @@ head -n 112312 "$0" my_huggingface_trainer.py
 # Setup your working environment.
 source setup_env.sh ""
 
+export TQDM_MININTERVAL=90
 # These are required to setup the distributed framework.
 head_node_ip=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
-head_node_port=29507  # You can choose your own port
+readonly head_node_ip
+readonly head_node_port=$(( $SLURM_JOBID % (50000 - 30000 + 1 ) + 30000 ))
 
 # Dump the environment.
 ( set -o posix ; set )
