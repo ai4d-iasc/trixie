@@ -750,6 +750,7 @@ NodeName=cn136 Arch=x86_64 CoresPerSocket=16
 
             <div class="row" style="font-size: 0.8em">
               <div class="column" style="flex: 45%">
+                <h4>Resources request</h4>
                 <pre><code data-trim data-noescape class="language-bash">
 #!/bin/bash
 # vim:nowrap:
@@ -767,15 +768,15 @@ NodeName=cn136 Arch=x86_64 CoresPerSocket=16
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=6
 #SBATCH --mem=96G
-# To reserve a whole node for yourself
-##SBATCH --exclusive
+
 #SBATCH --open-mode=append
+#SBATCH --output=%x-%j.out
 #SBATCH --requeue
 #SBATCH --signal=B:USR1@30
-#SBATCH --output=%x-%j.out
                   </code></pre>
               </div>
               <div class="column" style="flex: 55%">
+                <h4>Automatic requeueing</h>
                 <pre><code data-trim data-noescape class="language-bash">
 # Requeueing on Trixie
 function _requeue {
@@ -785,12 +786,6 @@ function _requeue {
 }
 
 if [[ -n "$SLURM_JOBID" ]]; then
-  SACC_FORMAT="JobID,Submit,Start,End,Elapsed,ExitCode"
-  SACC_FORMAT+=",State,CPUTime,MaxRSS,MaxVMSize"
-  SACC_FORMAT+=",MaxDiskRead,MaxDiskWrite,AllocCPUs"
-  SACC_FORMAT+=",AllocGRES,AllocTRES%-50,NodeList"
-  SACC_FORMAT+=",JobName%-30,Comment%-80"
-  trap "sacct --jobs $SLURM_JOBID --format=$SACC_FORMAT" 0
   trap _requeue USR1
 fi
                   </code></pre>
@@ -879,14 +874,13 @@ sbatch \
             <h1>Make your Job Resumable</h1>
 
             <pre>
-            <code class="language-bash">
+              <code class="language-bash">
 #SBATCH --requeue
 #SBATCH --signal=B:USR1@30
 
 # Requeueing on Trixie
 # [source](https://www.sherlock.stanford.edu/docs/user-guide/running-jobs/)
-#
-[source](https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html)
+# [source](https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html)
 function _requeue {
   echo "BASH - trapping signal 10 - requeueing $SLURM_JOBID"
   date
@@ -897,8 +891,8 @@ if [[ -n "$SLURM_JOBID" ]]; then
   # Only if the job was submitted to SLURM.
   trap _requeue USR1
 fi
-            </code>
-          </pre>
+              </code>
+            </pre>
             <ul>
               <li>
                 Your code needs to be able to handle resuming from a previous
@@ -1108,24 +1102,28 @@ fi
         </section>
       </div>
     </div>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.js"
       integrity="sha512-lRYVCjdH7dCPCzqLL6eBn78p6WGK5pZxgYBgzTQfWlfX7yiZFLt/qHOMSETHUIz2aZIU/KbjwYHiMsmrcVgJnA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/highlight/highlight.min.js"
       integrity="sha512-IkPzJ3njtxNL2Frm7zr18CEj9HH+CEFAqh+jSKjXTHVFGtWG1+USbIXINU8zdGmyLpf/OBIVfpNLGNgwhlymkA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/notes/notes.min.js"
       integrity="sha512-6LAcdj7pQal9JkdALNexzVKd4zWuYUxOXuzdF21iOx7LJSlF5ibFi2TAR7GQ00XhfPAw7/R8f1dZ69gFGhzXtw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
     <script>
       // Reveal.initialize({plugins: [RevealNotes, RevealHighlight], });
       Reveal.initialize({
