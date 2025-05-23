@@ -126,6 +126,22 @@
         </section>
 
         <section>
+          <div style="text-align: left" class="r-fit-text">
+            <h1>What do we want to accomplish?</h1>
+            We have a set of commands that we would like to run on a SLURM
+            cluster.
+            <pre>
+              <code data-trim data-noescape class="language-bash">
+                conda activate my_env
+                python train_nn.py --language="fr" --file=file.fr.txt
+              </code>
+            </pre>
+            We need a wrapper script to encapsulate the command we want to run
+            and tell SLURM what resources our job will require.
+          </div>
+        </section>
+
+        <section>
           <h1>Trixie</h1>
 
           <div>
