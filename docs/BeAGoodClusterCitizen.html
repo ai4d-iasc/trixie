@@ -32,6 +32,9 @@
       code.cli::before {
         content: "\1F449  ";
       }
+      ul.cli li::marker {
+        content: "\1F449  ";
+      }
       table {
         color: white;
       }
@@ -139,6 +142,43 @@
             We need a wrapper script to encapsulate the command we want to run
             and tell SLURM what resources our job will require.
           </div>
+        </section>
+
+        <section>
+          <h1>SLURM commands</h1>
+
+          <ul style="text-align: left;" class="cli r-fit-text">
+            <li>
+              <code class="language-bash">sbatch</code>
+              -
+              <a href="https://slurm.schedmd.com/sbatch.html">
+               Submit a batch script to Slurm
+              </a>
+            </li>
+            <li>
+              <code class="language-bash">squeue</code>
+              -
+              <a href="https://slurm.schedmd.com/squeue.html" >
+              view information about jobs located in the Slurm scheduling queue
+              </a>
+            </li>
+            <li>
+              <code class="language-bash">scancel</code>
+              -
+              <a
+                href="https://slurm.schedmd.com/scancel.html"
+                >Used to signal jobs or job steps that are under the control of Slurm</a
+              >
+            </li>
+            <li>
+              <code class="language-bash">sinfo</code>
+              -
+              <a
+                href="https://slurm.schedmd.com/sinfo.html"
+                >View information about Slurm nodes and partitions</a
+              >
+            </li>
+          </ul>
         </section>
 
         <section>
