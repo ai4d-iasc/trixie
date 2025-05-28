@@ -8,10 +8,12 @@ nav:
   - General Info:
       - Available Software: Available-Software.md
       - Hardware: Hardware.md
-      - External Access Configuration:
-          - Advanced: External-Access-Advanced-Configuration.md
+      - External Access:
           - Basic: External-Access-Setup.md
+          - Advanced: External-Access-Advanced-Configuration.md
           - External HPC: External-HPC-Systems.md
+      - Internal Access:
+          - Basic: Internal-Access-Setup.md
       - Transfer Files: File-Transfers.md
       - TMP FS Backup: Temporary-Filesystem-Backups.md
       - Network and Connection: Networking-and-connectivity.md

@@ -24,7 +24,7 @@ Host trixie-bastion
 
 Host trixie
   HostName trixie.res.nrc.gc.ca 
-  User admin.<firstname>.<lastname>
+  User ext.<firstname>.<lastname>
   ProxyJump trixie-bastion
 ```
 
@@ -37,7 +37,7 @@ Please note that you will be prompted as follows
 
 1. *LoginTC* prompt – enter 1
 1. Prompt for your **PUB** password
-1. Prompt for your **RES** admin password
+1. Prompt for your **RES** ext password
 
 # Windows – Putty
 
@@ -45,7 +45,7 @@ To configure SSH to automatically connect to the Trixie server, please set the f
 in your Putty application, substituting your username where applicable.
 
 1. Under **Connection -> SSH**
-      1. Set **Remote command**: ``ssh –A –Y admin.<firstname>.<lastname>@trixie.res.nrc.gc.ca``
+      1. Set **Remote command**: ``ssh –A –Y ext.<firstname>.<lastname>@trixie.res.nrc.gc.ca``
       1. Select the option **Share SSH connections if possible** – this will enable you to
          establish multiple connections to Trixie<br>
       ![trixie putty](images/trixie-putty-1.png)<br>
@@ -65,7 +65,7 @@ follows
 
 1. *LoginTC* prompt – enter 1
 1. Prompt for your **PUB** password
-1. Prompt for your **RES** admin password
+1. Prompt for your **RES** ext password
 
 # Related Topics
 

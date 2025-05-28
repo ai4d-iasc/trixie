@@ -12,7 +12,7 @@ Once granted access, you will have two sets of credentials issued to access the 
 | Account           |Purpose           | User name format (example: John Doe)            |
 | ----------------- | ---------------- | ----------------------------------------------- |
 | **PUB**           | Provides access to the external bastion host and used for the *LoginTC* second factor authentication | A combination of your first and last name. E.g.: john.doe@pub.nrc-cnrc.gc.ca |
-| **Trixie System** | Provides access to Trixie | admin.firstname.lastname E.g.: admin.john.doe |
+| **Trixie System** | Provides access to Trixie | ext.firstname.lastname E.g.: ext.john.doe |
 
 Your NRC contact, or an NRC system administrator, will provide you with the PUB and Admin user
 names and passwords that you require to access the NRC systems. Note that on first login, you will
@@ -62,8 +62,8 @@ Once the settings have been saved, you can double click on the name in the list 
 
 ## Logging in for the First Time
 
-When you login for the first time you will be forced to change your password for both your **Pub**
-account and your Trixie **admin** account. Please note that when you do this, you will
+When you login for the first time you will be forced to change your password for both your **PUB**
+account and your Trixie **ext** account. Please note that when you do this, you will
 **be prompted for your original (or current) password first** and then you will be prompted to
 enter your new password twice.
 
@@ -94,13 +94,13 @@ Please perform the following steps to access Trixie.
    Otherwise, you will now need to contact the administrator who provided you with your credentials
    for the bastion server to obtain your credentials for the Trixie server
 1. You will need to login to Trixie next. From the bash prompt, use SSH to log into
-   ``trixie.res.nrc.gc.ca`` with your Trixie **admin.<firstname.lastname\>** account and password
+   ``trixie.res.nrc.gc.ca`` with your Trixie **ext.<firstname.lastname\>** account and password
    with a similar command as the following.<br>
-   ``ssh admin.<firstname.lastname>@trixie.res.nrc.gc.ca``
+   ``ssh ext.<firstname.lastname>@trixie.res.nrc.gc.ca``
 1. If a message similar to the one below appears, then simply type in **yes** to the prompt as
    shown below<br>
    ![login2](images/login2.png)
-1. You will be prompted to enter your Trixie **admin** account password and then you will be
+1. You will be prompted to enter your Trixie **ext** account password and then you will be
    forced to change your password. You should see a message similar to the one below – remember to
    enter your original password first and then enter your new password twice.<br>
     ![images/login3.png](images/login3.png)
@@ -120,7 +120,7 @@ information on the cluster and its usage, please see the:
 
 # Changing passwords
 
-Passwords on the **PUB** and **RES** accounts expire after 90 days and must be changed.If you do
+Passwords on the **PUB** and **RES** accounts expire after 90 days and must be changed. If you do
 not change your password, you will be locked out of the system.
 
 Watch for the pop-up message notifying you to change your password, or set yourself a reminder to
@@ -140,7 +140,7 @@ Please note that the **Reset Password** feature will not work if you do not fill
 questions on the website. Therefore it is **strongly recommended** that you fill in the security
 questions so that you can reset your password if necessary.
 
-## Change Your Admin Password via Linux Terminal
+## Change Your Ext Password via Linux Terminal
 
 1. Ensure you are logged into the Trixie server (trixie.res.nrc.gc.ca)
 1. Type **passwd** then hit **Enter**
