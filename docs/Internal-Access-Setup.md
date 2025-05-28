@@ -1,44 +1,59 @@
 # Overview
 
-As an external NRC collaborator, you can access the AI for Design (Trixie) Cluster using the
-Bastion Host. External collaborators include non-NRC researchers, industrial partners, and vendors.
-
-You can access only those folders on Trixie that are required for your project. Requests for access
-to Trixie and specific projects must be made by your NRC research contact; you cannot request
-access to a system yourself.
-
-Once granted access, you will have two sets of credentials issued to access the cluster:
-
-| Account           |Purpose           | User name format (example: John Doe)            |
-| ----------------- | ---------------- | ----------------------------------------------- |
-| **PUB**           | Provides access to the external bastion host and used for the *LoginTC* second factor authentication | A combination of your first and last name. E.g.: john.doe@pub.nrc-cnrc.gc.ca |
-| **Trixie System** | Provides access to Trixie | ext.firstname.lastname E.g.: ext.john.doe |
-
-Your NRC contact, or an NRC system administrator, will provide you with the PUB and Admin user
-names and passwords that you require to access the NRC systems. Note that on first login, you will
-be required to change your password. **Please note:** during the password change, the first prompt
-asks for a confirmation of your existing password prior to requesting a new one.
-
-# LoginTC Application Setup
-
-Before you attempt your first login, the following initial installation and configuration of
-*LoginTC* must be implemented.
-
-* Upon user creation, you will receive an email to setup and initialize the *LoginTC* application
-  (for iOS, Android, or the Chrome web browser) which is used as a second factor authentication
-  into Trixie
-* Set up *LoginTC* using the directions provided to you by email
-
-# Accessing Trixie with LoginTC 2-Factor Authentication
+As an internal NRC employee, you can access the AI for Design (Trixie) Cluster using your
+**SRN/RES** credentials. On your first login, you may be required to change your password.
+**Please note:** during the password change, the first prompt asks for a confirmation of your
+existing password prior to requesting a new one.
 
 In order to access Trixie, you will need to use an SSH client. Please note that you cannot access
 Trixie using a web browser. On Mac OSX and Linux, SSH is installed by default. On Windows you will
-need to install Putty if it is not installed already. You can download Putty from the following
-website:
+need to install Putty if it is not installed already. You can install Putty from the NRC software
+portal which should be an icon on your Windows desktop.
 
-[Putty Website](https://www.putty.org/)
+Trixie can only be accessed from one of two ways
+
+1. The **SRN** network
+1. The **Legacy** network using the bastion host
+
+The following sections will detail the procedures for logging into Trixie from these networks.
+
+# Logging in From the SRN Network
+
+In order to access Trixie from the **SRN** network, you can login to Trixie directly with an SSH
+client.
 
 ## Initialize SSH Connection with Mac OSX / Linux
+
+For Mac OSX and Linux you can open a new terminal and connect to ``trixie.res.nrc.gc.ca`` via ssh
+using your **SRN** credentials and the following command
+
+``ssh -l <username> trixie.res.nrc.gc.ca``
+
+## Initialize SSH Connection with Windows
+
+For Windows, you can create a Putty profile to SSH into Trixie.
+
+Under **Session**
+
+1. Set **Host Name (or IP address)**: *<username\>@trixie.res.nrc.gc.ca*
+1. Set **Port**: *22*
+1. Add a name for **Saved Sessions** – perhaps *Trixie*<br>
+   ![img](images/trixie-putty-4.png)<br>
+1. Click **Save**
+
+Once the settings have been saved, you can double click on the name in the list of
+**Saved Sessions** to open a session to Trixie.
+
+# Logging in From the Legacy Network
+
+### DONE TO HERE ###
+
+In order to access Trixie from the **Legacy** , you will need to use an SSH client. Please note that you cannot access
+Trixie using a web browser. On Mac OSX and Linux, SSH is installed by default. On Windows you will
+need to install Putty if it is not installed already. You can install Putty from the NRC software
+portal which should be an icon on your Windows desktop.
+
+# Accessing Trixie with LoginTC 2-Factor Authentication
 
 For Mac OSX and Linux you can open a new terminal and connect to ``trixie.nrc-cnrc.gc.ca`` via ssh
 using your **PUB** account and the following command
@@ -59,6 +74,16 @@ Under **Session**
 
 Once the settings have been saved, you can double click on the name in the list of
 **Saved Sessions** to open a session to the bastion server.
+
+# LoginTC Application Setup
+
+Before you attempt your first login, the following initial installation and configuration of
+*LoginTC* must be implemented.
+
+* Upon user creation, you will receive an email to setup and initialize the *LoginTC* application
+  (for iOS, Android, or the Chrome web browser) which is used as a second factor authentication
+  into Trixie
+* Set up *LoginTC* using the directions provided to you by email
 
 ## Logging in for the First Time
 
