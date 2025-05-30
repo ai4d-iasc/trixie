@@ -14,6 +14,7 @@ nav:
           - External HPC: External-HPC-Systems.md
       - Internal Access:
           - Basic: Internal-Access-Setup.md
+          - Advanced: Internal-Access-Advanced-Configuration.md
       - Transfer Files: File-Transfers.md
       - TMP FS Backup: Temporary-Filesystem-Backups.md
       - Network and Connection: Networking-and-connectivity.md

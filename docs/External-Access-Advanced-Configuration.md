@@ -69,6 +69,7 @@ follows
 
 # Related Topics
 
-[External Access Setup](External-Access-Setup.md)
-
+[External Access Setup](External-Access-Setup.md)<br>
+[Internal Access Setup](Internal-Access-Setup.md)<br>
+[Internal Access Advanced Configuration](Internal-Access-Advanced-Configuration.md)<br>
 [File Transfers](File-Transfers.md)
