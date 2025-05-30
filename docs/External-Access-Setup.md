@@ -14,7 +14,7 @@ Once granted access, you will have two sets of credentials issued to access the 
 | **PUB**           | Provides access to the external bastion host and used for the *LoginTC* second factor authentication | A combination of your first and last name. E.g.: john.doe@pub.nrc-cnrc.gc.ca |
 | **Trixie System** | Provides access to Trixie | ext.firstname.lastname E.g.: ext.john.doe |
 
-Your NRC contact, or an NRC system administrator, will provide you with the PUB and Admin user
+Your NRC contact, or an NRC system administrator, will provide you with the **PUB** and **ext** user
 names and passwords that you require to access the NRC systems. Note that on first login, you will
 be required to change your password. **Please note:** during the password change, the first prompt
 asks for a confirmation of your existing password prior to requesting a new one.
@@ -153,6 +153,7 @@ questions so that you can reset your password if necessary.
 
 # Related Topics
 
-[External Access Advanced Configuration](External-Access-Advanced-Configuration.md)
-
+[External Access Advanced Configuration](External-Access-Advanced-Configuration.md)<br>
+[Internal Access Setup](Internal-Access-Setup.md)<br>
+[Internal Access Advanced Configuration](Internal-Access-Advanced-Configuration.md)<br>
 [File Transfers](File-Transfers.md)
