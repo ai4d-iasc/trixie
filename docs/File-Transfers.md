@@ -218,7 +218,7 @@ To copy a file from the second HPC cluster to Trixie, use the following **scp** 
 
 To copy a file from Trixie to the second HPC cluster, you basically reverse the arguments to the **scp** command.
 
-``scp trixie:/home/admion.john.doe/test.txt username@cluster.domain:/home/username/test.txt``
+``scp trixie:/home/admin.john.doe/test.txt username@cluster.domain:/home/username/test.txt``
 
 To copy an entire directory instead of just a file, please use the **–r** option (for recursive) to the **scp** command.
 

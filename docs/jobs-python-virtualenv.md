@@ -1,4 +1,4 @@
-This examples will show you how to setup and prepare an environment for Python tensoflow jobs using virtualenv on Trixie:
+This examples will show you how to setup and prepare an environment for Python tensorflow jobs using virtualenv on Trixie:
 
 ### 1. Create a python virtual environment:
 Either run from the command line or create tf-py37-environment.sh and run it:
@@ -117,4 +117,3 @@ cnXXX - <nodename>
 Tensorflow version: 1.15.0
 Default GPU Device:  ..
 ```
-
