@@ -26,7 +26,7 @@ client.
 
 For Mac OSX and Linux you can open a new terminal and connect to ``trixie.res.nrc.gc.ca`` via ssh
 using your **SRN** credentials and the following command, where ``<username>`` is your **SRN** user
-ID consisting of your lastname followed by one or more initals of your first name - like ``doej``
+ID consisting of your lastname followed by one or more initials of your first name - like ``doej``
 for John Doe.
 
 ``ssh -l <username> trixie.res.nrc.gc.ca``
@@ -34,7 +34,7 @@ for John Doe.
 ## Initialize SSH Connection with Windows
 
 For Windows, you can create a Putty profile to SSH into Trixie. Note that ``<username>`` is your
-**SRN** user ID consisting of your lastname followed by one or more initals of your first
+**SRN** user ID consisting of your lastname followed by one or more initials of your first
 name - like ``doej`` for John Doe.
 
 Under **Session**
@@ -97,7 +97,7 @@ Before you attempt your first login, the following initial installation and conf
 
 For Mac OSX and Linux you can open a new terminal and connect to ``trixie.nrc-cnrc.gc.ca`` via ssh
 using your **PUB** account and the following command, where ``<username>`` is your **SRN** user ID
-consisting of your lastname followed by one or more initals of your first name - like ``doej`` for
+consisting of your lastname followed by one or more initials of your first name - like ``doej`` for
 John Doe.
 
 ``ssh -l <username>@pub.nrc-cnrc.gc.ca trixie.nrc-cnrc.gc.ca``
@@ -107,7 +107,7 @@ John Doe.
 ### Initialize SSH Connection with Windows
 
 For Windows, you can create a Putty profile to SSH into the bastion server. Note that ``<username>``
-is your **SRN** user ID consisting of your lastname followed by one or more initals of your first
+is your **SRN** user ID consisting of your lastname followed by one or more initials of your first
 name - like ``doej`` for John Doe.
 
 Under **Session**
@@ -211,4 +211,3 @@ questions so that you can reset your password if necessary.
 [External Access Setup](External-Access-Setup.md)<br>
 [External Access Advanced Configuration](External-Access-Advanced-Configuration.md)<br>
 [File Transfers](File-Transfers.md)
-

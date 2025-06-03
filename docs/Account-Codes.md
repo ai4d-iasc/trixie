@@ -58,7 +58,7 @@ project.
 Teams are typically associated with a team or a particular group within a NRC Research Centre. They
 allow team members to access Trixie for non project based work.
 
-| Reasearch Centre                    | Team Code  | Team Name                                                    |
+| Research Centre                     | Team Code  | Team Name                                                    |
 | ----------------------------------- | ---------- | ------------------------------------------------------------ |
 | Clean Energy                        | ce-amdpo   | Acceleration of Materials Discovery and Process Optimization |
 | Digital Technologies                | dt-cvg     | Computer Vision and Graphics                                 |
