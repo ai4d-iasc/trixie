@@ -25,7 +25,7 @@ nav:
       - abinit: jobs-abinit.md
       - jupyterlab: jobs-jupyterlab.md
       - conda-RAPIDS: jobs-conda-RAPIDS.md
-      - Pytorch Distrbuted on Multiple Nodes: SLURM,-pytorch-distributed-and-Multiple-Nodes.md
+      - Pytorch Distributed on Multiple Nodes: SLURM,-pytorch-distributed-and-Multiple-Nodes.md
       - conda-pytorch: Jobs-conda-pytorch.md
   - Contribute: Contribute.md
 
