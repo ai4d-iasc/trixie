@@ -16,17 +16,17 @@ To copy a file to the Trixie server, please use the **scp** command on your loca
 
 Please note that the use of this method requires that your system be configured as detailed in the [advanced configuration](External-Access-Advanced-Configuration.md) in order to provide a direct link between your local machine and the Trixie server.
 
-The following command will copy the file ``test.txt`` from John Doe’s local machine to his **admin.john.doe** account on Trixie. Please note that using **trixie** as the hostname will only work if you have configured SSH to use **ProxyJump** as detailed in the [advanced configuration](External-Access-Advanced-Configuration.md).
+The following command will copy the file ``test.txt`` from John Doe’s local machine to his **ext.john.doe** account on Trixie. Please note that using **trixie** as the hostname will only work if you have configured SSH to use **ProxyJump** as detailed in the [advanced configuration](External-Access-Advanced-Configuration.md).
 
-``scp test.txt trixie:/home/admin.john.doe``
+``scp test.txt trixie:/home/ext.john.doe``
 
 To copy a file from Trixie to your local machine, you basically reverse the arguments to the **scp** command.
 
-``scp trixie:/home/admin.john.doe/test.txt test.txt``
+``scp trixie:/home/ext.john.doe/test.txt test.txt``
 
 To copy an entire directory instead of just a file, please use the **–r** option (for recursive) to the **scp** command.
 
-``scp –r myWorkFilesDir trixie:/home/admin.john.doe``
+``scp –r myWorkFilesDir trixie:/home/ext.john.doe``
 
 ### Internal Users
 
@@ -57,7 +57,7 @@ First you will need to configure **WinSCP** to connect to Trixie using an SSH tu
 1. In the window that pops up, perform the following
       1. Make sure the **File protocol** is set to *SCP*
       1. Set the **Host name**: *trixie.res.nrc.gc.ca*
-      1. Set the **User name**: *<admin.firstname.lastname\>*<br>
+      1. Set the **User name**: *<ext.firstname.lastname\>*<br>
          The window should now look similar to the following<br>
          ![winscp-2](images/trixie-winscp-2.png)
       1. Click the **Advanced** button
@@ -124,7 +124,7 @@ Follow the procedure below to create the Trixie server profile.
 
 Under **Session**
 
-1. Set **Host Name (or IP address)**: *<admin.firstname.lastname\>@trixie.res.nrc.gc.ca*
+1. Set **Host Name (or IP address)**: *<ext.firstname.lastname\>@trixie.res.nrc.gc.ca*
 1. Set **Port**: *22*
 1. Add a name for **Saved Sessions** – perhaps *Trixie-pscp*<br>
    ![putty1](images/trixie-pscp-putty-1.png)
@@ -136,12 +136,12 @@ Once you have the profiles created and saved, please follow the procedure below 
 1. Login to the bastion server and leave the window open
 1. Open a **Command Prompt** window
 1. Use the **pscp** command in the **Command Prompt** window to copy files to or from the trixie server using the *Trixie-pscp* putty profile
-      1. Copy the file ``test.txt`` from John Doe’s local machine to his **admin.john.doe** account on trixie<br>
-         ``pscp test.txt Trixie-pscp:/home/admin.john.doe``
+      1. Copy the file ``test.txt`` from John Doe’s local machine to his **ext.john.doe** account on trixie<br>
+         ``pscp test.txt Trixie-pscp:/home/ext.john.doe``
       1. To copy a file from trixie to your local machine, you basically reverse the arguments to the **pscp** command<br>
-         ``pscp Trixie-pscp:/home/admin.john.doe/test.txt test.txt ``
+         ``pscp Trixie-pscp:/home/ext.john.doe/test.txt test.txt ``
       1. To copy an entire directory instead of just a file, please use the **–r** option (for recursive) to the **pscp** command<br>
-         ``pscp –r myWorkFilesDir Trixie-pscp:/home/admin.john.doe``
+         ``pscp –r myWorkFilesDir Trixie-pscp:/home/ext.john.doe``
 
 ### Internal Users
 
@@ -214,15 +214,15 @@ This procedure requires that you copy files between the two clusters using your 
 
 To copy a file from the second HPC cluster to Trixie, use the following **scp** command on your local computer.
 
-``scp username@cluster.domain:/home/username/test.txt trixie:/home/admin.john.doe/test.txt``
+``scp username@cluster.domain:/home/username/test.txt trixie:/home/ext.john.doe/test.txt``
 
 To copy a file from Trixie to the second HPC cluster, you basically reverse the arguments to the **scp** command.
 
-``scp trixie:/home/admin.john.doe/test.txt username@cluster.domain:/home/username/test.txt``
+``scp trixie:/home/ext.john.doe/test.txt username@cluster.domain:/home/username/test.txt``
 
 To copy an entire directory instead of just a file, please use the **–r** option (for recursive) to the **scp** command.
 
-``scp –r trixie:/home/admin.john.doe/myWorkFilesDir username@cluster.domain:/home/username/folder``
+``scp –r trixie:/home/ext.john.doe/myWorkFilesDir username@cluster.domain:/home/username/folder``
 
 # Copy Files to a Project Folder
 
@@ -252,6 +252,7 @@ To copy files to a project folder you should create a personal folder under the 
 
 # Related Topics
 
-[External Access Setup](External-Access-Setup.md)
-
-[External Access Advanced Configuration](External-Access-Advanced-Configuration.md)
+[External Access Setup](External-Access-Setup.md)<br>
+[External Access Advanced Configuration](External-Access-Advanced-Configuration.md)<br>
+[Internal Access Setup](Internal-Access-Setup.md)<br>
+[Internal Access Advanced Configuration](Internal-Access-Advanced-Configuration.md)
