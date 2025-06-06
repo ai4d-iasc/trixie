@@ -44,27 +44,29 @@ Please note that you will be prompted as follows
 To configure SSH to automatically connect to the Trixie server, please set the following settings
 in your Putty application, substituting your username where applicable.
 
-1. Under **Connection -> SSH**
-      1. Set **Remote command**: ``ssh –A –Y ext.<firstname>.<lastname>@trixie.res.nrc.gc.ca``
-      1. Select the option **Share SSH connections if possible** – this will enable you to
-         establish multiple connections to Trixie<br>
+1. Under **Connection -> Proxy**
+      1. From the **Proxy type** dropdown, select: *SSH to proxy and use port forwarding*
+      1. Set **Proxy hostname**: *trixie.nrc-cnrc.gc.ca*
+      1. Set **Port**: *22*
+      1. Set **Username**: *<firstname.lastname\>@pub.nrc-cnrc.gc.ca*
+      1. Leave **Password** blank - do not fill it in<br>
       ![trixie putty](images/trixie-putty-1.png)<br>
 1. Under **Connection -> SSH -> X11**
       1. Select the option **Enable X11 forwarding**<br>
       ![putty](images/trixie-putty-2.png)<br>
 1. Under **Session**
-      1. Set **Host Name (or IP address)**: *<firstname.lastname\>@pub.nrc-cnrc.gc.ca@trixie.nrc-cnrc.gc.ca*
+      1. Set **Host Name (or IP address)**: *ext.<firstname.lastname\>@trixie.res.nrc.gc.ca*
       1. Set **Port**: *22*
       1. Add a name for **Saved Sessions** – perhaps *Trixie*<br>
-      ![putty](images/trixie-putty-3.png)<br>
+      ![putty](images/trixie-putty-7.png)<br>
 1. Click **Save**
 
 Once the settings have been saved, you can double click on the name in the list of
 **Saved Sessions** to open a session to the Trixie server. Please note that you will be prompted as
 follows
 
-1. *LoginTC* prompt – enter 1
 1. Prompt for your **PUB** password
+1. *LoginTC* prompt – enter 1
 1. Prompt for your **RES** ext password
 
 # Related Topics

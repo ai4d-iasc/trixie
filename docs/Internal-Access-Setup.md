@@ -12,7 +12,7 @@ need to install Putty if it is not installed already. You can install Putty from
 
 Trixie can only be accessed from one of two ways
 
-1. The **SRN** network
+1. The Secure Research Network (**SRN**)
 1. The **Legacy** network using the bastion host
 
 The following sections will detail the procedures for logging into Trixie from these networks.
