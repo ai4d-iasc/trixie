@@ -10,10 +10,15 @@ performed the [Internal Access Setup](Internal-Access-Setup.md) procedure.
 
 # Mac OSX / Linux
 
-To configure SSH to automatically connect to the Trixie server, please open your ``.ssh/config``
-file with your preferred text editor and add the following lines on your local machine – not the
-servers – while substituting your given usernames in the **User** directive. You will also need to
-create the folder ``.ssh/sockets`` to complete the configuration.
+To configure SSH to automatically connect to the Trixie server, please perform the following steps
+
+1. Create the folder ``.ssh/sockets``
+1. Open your ``.ssh/config`` file with your preferred text editor and add the following lines on
+   your local machine – not the servers – while substituting your given usernames in the **User**
+   directive.<br>
+   **TIP:** Some users have reported that using `doej` did not work for their **PUB** username.
+   Please try using the first.last format - for example `john.doe` - for your **PUB** username if
+   `doej` doesn't work for you
 
 ```
 Host trixie-bastion
@@ -35,8 +40,8 @@ following command
 
 Please note that you will be prompted as follows
 
-1. *LoginTC* prompt – enter 1
 1. Prompt for your **PUB** password
+1. *LoginTC* prompt – enter 1
 1. Prompt for your **SRN** password
 
 # Windows – Putty

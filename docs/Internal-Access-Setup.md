@@ -1,7 +1,7 @@
 # Overview
 
 As an internal NRC employee, you can access the AI for Design (Trixie) Cluster using your
-**SRN** credentials. On your first login, you may be required to change your password.
+**SRN** credentials. On your first login, you may be required to change your password.<br>
 **Please note:** during the password change, the first prompt asks for a confirmation of your
 existing password prior to requesting a new one.
 
@@ -102,13 +102,21 @@ John Doe.
 
 ``ssh -l <username>@pub.nrc-cnrc.gc.ca trixie.nrc-cnrc.gc.ca``
 
-**TIP:** Your **PUB** password is the same password you use to connect to the Legacy VPN
+**TIP 1:** Your **PUB** password is the same password you use to connect to the Legacy VPN.
+
+**TIP 2:** Some users have reported that using `doej` did not work for their username. Please try
+using the first.last format - for example `john.doe` - for your username if `doej` doesn't work
+for you
 
 ### Initialize SSH Connection with Windows
 
 For Windows, you can create a Putty profile to SSH into the bastion server. Note that ``<username>``
-is your **SRN** user ID consisting of your lastname followed by one or more initials of your first
+is your **PUB** user ID consisting of your lastname followed by one or more initials of your first
 name - like ``doej`` for John Doe.
+
+**TIP:** Some users have reported that using `doej` did not work for their username. Please try
+using the first.last format - for example `john.doe` - for your username if `doej` doesn't work
+for you
 
 Under **Session**
 
@@ -186,7 +194,10 @@ The following is an example of the system forcing you to change your password
 ## Change Your **PUB** Password
 
 You can change your **PUB** password by logging into the following website. The site allows you to
-manage your **PUB** account. Please use the following format for your username ``john.doe@pub``
+manage your **PUB** account. Please use one of the following formats for your username
+
+* `john.doe@pub`
+* `doej@pub`
 
 [PUB Account Management](https://login-connexion.nrc-cnrc.gc.ca)
 
