@@ -132,7 +132,10 @@ contact who can have the password reset.
 ## Change Your **PUB** Password
 
 You can change your **PUB** password by logging into the following website. The site allows you to
-manage your **PUB** account. Please use the following format for your username ``john.doe@pub``
+manage your **PUB** account. Please use one of the following formats for your username
+
+* `john.doe@pub`
+* `doej@pub`
 
 [PUB Account Management](https://login-connexion.nrc-cnrc.gc.ca)
 
