@@ -7,6 +7,7 @@ nav:
       - Be a Good Cluster Citizen: BeAGoodClusterCitizen.html
   - General Info:
       - Available Software: Available-Software.md
+      - Disk Quotas: quota.md
       - Hardware: Hardware.md
       - External Access:
           - Basic: External-Access-Setup.md
