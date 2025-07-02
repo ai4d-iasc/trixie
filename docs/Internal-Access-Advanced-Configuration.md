@@ -53,7 +53,10 @@ in your Putty application, substituting your username where applicable.
       1. From the **Proxy type** dropdown, select: *SSH to proxy and use port forwarding*
       1. Set **Proxy hostname**: *trixie.nrc-cnrc.gc.ca*
       1. Set **Port**: *22*
-      1. Set **Username**: *<username\>@pub.nrc-cnrc.gc.ca*
+      1. Set **Username**: *<username\>@pub.nrc-cnrc.gc.ca*<br>
+         **TIP:** Some users have reported that using `doej` did not work for their **PUB** username.
+         Please try using the first.last format - for example `john.doe` - for your **PUB** username if
+         `doej` doesn't work for you
       1. Leave **Password** blank - do not fill it in<br>
       ![trixie putty](images/trixie-putty-5.png)<br>
 1. Under **Connection -> SSH -> X11**
