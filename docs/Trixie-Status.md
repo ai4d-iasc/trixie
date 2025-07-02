@@ -6,6 +6,10 @@
 maintenance performed on Beatrix on from July 7th – 7AM to the 9th - 5PM. The cluster will be
 unavailable to users during this time window. Jobs will remain in the queues and will resume when
 the maintenance is over. Research Platform Support
+ ---
+Veuillez noter qu'un entretien sera effectué sur Beatrix du 7 juillet à 7h au 9 juillet à 17h. La
+grappe sera hors d’usage durant cette période. Les tâches resteront en file d'attente et
+reprendront une fois la maintenance terminée. Soutien à la plateforme de recherche
 
 ## Current Issues / Outages
 
