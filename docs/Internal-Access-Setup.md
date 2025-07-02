@@ -114,7 +114,9 @@ For Windows, you can create a Putty profile to SSH into the bastion server. Note
 is your **PUB** user ID consisting of your lastname followed by one or more initials of your first
 name - like ``doej`` for John Doe.
 
-**TIP:** Some users have reported that using `doej` did not work for their username. Please try
+**TIP 1:** Your **PUB** password is the same password you use to connect to the Legacy VPN.
+
+**TIP 2:** Some users have reported that using `doej` did not work for their username. Please try
 using the first.last format - for example `john.doe` - for your username if `doej` doesn't work
 for you
 
