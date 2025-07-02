@@ -2,7 +2,10 @@
 
 ## Upcoming Planned Downtime
 
-### None
+**Monday, July 7th, 2025 - Wednesday, July 9th, 2025** - Please note that there will be a
+maintenance performed on Beatrix on from July 7th – 7AM to the 9th - 5PM. The cluster will be
+unavailable to users during this time window. Jobs will remain in the queues and will resume when
+the maintenance is over. Research Platform Support
 
 ## Current Issues / Outages
 
