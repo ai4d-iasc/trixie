@@ -1,10 +1,6 @@
 # Welcome to the Trixie HPC wiki
 
-# [Trixie Status](Trixie-Status.md)
-
-# Trixe Success Stories
-
-There is an upcoming tour of Trixie and they are looking for any success stories that you may have had using Trixie. If you have such a story, could you please post it in a reply the post in the **Trixie** channel of the **AI 4 Design** Slack workspace at your earliest convenience? Thank you.
+# [Trixie Status](Trixie-Status.md) Scheduled maintenance July 7 - 9
 
 # Trixie - not just an GPU Cluster
 
