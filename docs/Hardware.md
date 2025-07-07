@@ -1,22 +1,24 @@
+# Hardware
+
 Trixie is a GPU cluster consisting of 36 nodes, each with NVIDIA V100 GPU, a fast, Infiniband Interconnect, and a large 1 PB global filesystem
 
-# Operating system
+## Operating system
 
 Runs RHEL 9
 
-# Job scheduler
+## Job scheduler
 
 https://slurm.schedmd.com
 `slurm 22.05.9`
 (for example run scripts on Trixie see [Running-jobs](Running-jobs.md))
 
-# Headnode (2 available)
+## Headnode (2 available)
 
 * processor_type = Intel Xeon Gold 6130 CPU clocked at 2.1GHZ 16 cores / CPU
 * processors_per_node = 2
 * RAM = 96 GB memory
 
-# Node Profile
+## Node Profile
 
 * processor_type = Intel Xeon Gold 6130 CPU clocked at 2.1GHZ 16 cores / CPU
 * processors_per_node = 2
@@ -28,7 +30,7 @@ https://slurm.schedmd.com
 * GPU_per_node = 4
 * local scratch size =
 
-# Filesystem
+## Filesystem
 
 * 1 PB of GPFS storage total, with the following mount points and quotas
 * /home/usernameUser space. Not backed up. Soft quota 1 TB.

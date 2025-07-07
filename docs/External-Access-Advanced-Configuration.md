@@ -1,4 +1,6 @@
-# Overview
+# External Access Advanced Configuration
+
+## Overview
 
 To ease usage of the bastion host to easily connect to Trixie, there are some steps which can be
 taken, especially making use of the SSH **ProxyJump** and **ControlMaster** parameters. Basically,
@@ -8,7 +10,7 @@ a connector between your local computer and the Trixie server.
 **Important Note:** Before proceeding with this configuration, please ensure that you have
 performed the [External Access Setup](External-Access-Setup.md) procedure.
 
-# Mac OSX / Linux
+## Mac OSX / Linux
 
 To configure SSH to automatically connect to the Trixie server, please perform the following steps
 
@@ -44,7 +46,7 @@ Please note that you will be prompted as follows
 1. *LoginTC* prompt – enter 1
 1. Prompt for your **RES** ext password
 
-# Windows – Putty
+## Windows – Putty
 
 To configure SSH to automatically connect to the Trixie server, please set the following settings
 in your Putty application, substituting your username where applicable.
@@ -74,7 +76,7 @@ follows
 1. *LoginTC* prompt – enter 1
 1. Prompt for your **RES** ext password
 
-# Related Topics
+## Related Topics
 
 [External Access Setup](External-Access-Setup.md)<br>
 [Internal Access Setup](Internal-Access-Setup.md)<br>

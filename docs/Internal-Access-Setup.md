@@ -1,4 +1,6 @@
-# Overview
+# Internal Access Setup
+
+## Overview
 
 As an internal NRC employee, you can access the AI for Design (Trixie) Cluster using your
 **SRN** credentials. On your first login, you may be required to change your password.<br>
@@ -17,12 +19,12 @@ Trixie can only be accessed from one of two ways
 
 The following sections will detail the procedures for logging into Trixie from these networks.
 
-# Logging in From the SRN Network
+## Logging in From the SRN Network
 
 In order to access Trixie from the **SRN** network, you can login to Trixie directly with an SSH
 client.
 
-## Initialize SSH Connection with Mac OSX / Linux
+### Initialize SSH Connection with Mac OSX / Linux
 
 For Mac OSX and Linux you can open a new terminal and connect to ``trixie.res.nrc.gc.ca`` via ssh
 using your **SRN** credentials and the following command, where ``<username>`` is your **SRN** user
@@ -31,7 +33,7 @@ for John Doe.
 
 ``ssh -l <username> trixie.res.nrc.gc.ca``
 
-## Initialize SSH Connection with Windows
+### Initialize SSH Connection with Windows
 
 For Windows, you can create a Putty profile to SSH into Trixie. Note that ``<username>`` is your
 **SRN** user ID consisting of your lastname followed by one or more initials of your first
@@ -48,7 +50,7 @@ Under **Session**
 Once the settings have been saved, you can double click on the name in the list of
 **Saved Sessions** to open a session to Trixie.
 
-## Logging into Trixie - a Tutorial
+### Logging into Trixie - a Tutorial
 
 In the following procedure, the information printed in the images may not be the same as what you
 will see when you login. However the steps will be the same.
@@ -74,17 +76,17 @@ information on the cluster and its usage, please see the:
 
 [Home Page](index.md)
 
-# Logging in From the Legacy Network
+## Logging in From the Legacy Network
 
 In order to access Trixie from the **Legacy** network, you will need to use an SSH client to login
 to a bastion host with the *LoginTC* authentication application.
 
-## Accessing Trixie with LoginTC 2-Factor Authentication
+### Accessing Trixie with LoginTC 2-Factor Authentication
 
 LoginTC is an authentication application that you should have installed on your mobile phone. It
 implements a two-factor authentication system for secure access to Trixie.
 
-### LoginTC Application Setup
+#### LoginTC Application Setup
 
 Before you attempt your first login, the following initial installation and configuration of
 *LoginTC* must be implemented.
@@ -93,7 +95,7 @@ Before you attempt your first login, the following initial installation and conf
   (for iOS, Android, or the Chrome web browser)
 * Set up *LoginTC* using the directions provided to you by email
 
-### Initialize SSH Connection with Mac OSX / Linux
+#### Initialize SSH Connection with Mac OSX / Linux
 
 For Mac OSX and Linux you can open a new terminal and connect to ``trixie.nrc-cnrc.gc.ca`` via ssh
 using your **PUB** account and the following command, where ``<username>`` is your **SRN** user ID
@@ -108,7 +110,7 @@ John Doe.
 using the first.last format - for example `john.doe` - for your username if `doej` doesn't work
 for you
 
-### Initialize SSH Connection with Windows
+#### Initialize SSH Connection with Windows
 
 For Windows, you can create a Putty profile to SSH into the bastion server. Note that ``<username>``
 is your **PUB** user ID consisting of your lastname followed by one or more initials of your first
@@ -131,7 +133,7 @@ Under **Session**
 Once the settings have been saved, you can double click on the name in the list of
 **Saved Sessions** to open a session to the bastion server.
 
-### Logging into Trixie - a Tutorial
+#### Logging into Trixie - a Tutorial
 
 In the following procedure, the information printed in the images may not be the same as what you
 will see when you login. However the steps will be the same.
@@ -169,7 +171,7 @@ information on the cluster and its usage, please see the:
 
 [Home Page](index.md)
 
-# Changing passwords
+## Changing passwords
 
 Passwords on the **PUB** and **SRN** accounts expire after a certain amount of time and must be
 changed. If you do not change your password, you could be locked out of the system.
@@ -177,7 +179,7 @@ changed. If you do not change your password, you could be locked out of the syst
 Watch for the pop-up message notifying you to change your password, or set yourself a reminder to
 change your password every so often - perhaps every 90 days.
 
-## Being Forced to Change Your Password
+### Being Forced to Change Your Password
 
 If your password has expired, or you are using a password for the first time, then the system will
 likely force you to change your password. Please note that you will
@@ -193,7 +195,7 @@ The following is an example of the system forcing you to change your password
 1. The system will automatically log you out, thus, you will need to login again using your new
    password
 
-## Change Your **PUB** Password
+### Change Your **PUB** Password
 
 You can change your **PUB** password by logging into the following website. The site allows you to
 manage your **PUB** account. Please use one of the following formats for your username
@@ -207,7 +209,7 @@ Please note that the **Reset Password** feature will not work if you do not fill
 questions on the website. Therefore it is **strongly recommended** that you fill in the security
 questions so that you can reset your password if necessary.
 
-## Change Your SRN Password via Linux Terminal
+### Change Your SRN Password via Linux Terminal
 
 1. Ensure you are logged into the Trixie server (trixie.res.nrc.gc.ca)
 1. Type **passwd** then hit **Enter**
@@ -218,7 +220,7 @@ questions so that you can reset your password if necessary.
 1. The system will automatically log you out, thus, you will need to login again using your new
    password
 
-# Related Topics
+## Related Topics
 
 [Internal Access Advanced Configuration](Internal-Access-Advanced-Configuration.md)<br>
 [External Access Setup](External-Access-Setup.md)<br>

@@ -1,4 +1,6 @@
-# Overview
+# External Access Setup
+
+## Overview
 
 As an external NRC collaborator, you can access the AI for Design (Trixie) Cluster using the
 Bastion Host. External collaborators include non-NRC researchers, industrial partners, and vendors.
@@ -19,7 +21,7 @@ names and passwords that you require to access the NRC systems. Note that on fir
 be required to change your password. **Please note:** during the password change, the first prompt
 asks for a confirmation of your existing password prior to requesting a new one.
 
-# LoginTC Application Setup
+## LoginTC Application Setup
 
 Before you attempt your first login, the following initial installation and configuration of
 *LoginTC* must be implemented.
@@ -29,7 +31,7 @@ Before you attempt your first login, the following initial installation and conf
   into Trixie
 * Set up *LoginTC* using the directions provided to you by email
 
-# Accessing Trixie with LoginTC 2-Factor Authentication
+## Accessing Trixie with LoginTC 2-Factor Authentication
 
 In order to access Trixie, you will need to use an SSH client. Please note that you cannot access
 Trixie using a web browser. On Mac OSX and Linux, SSH is installed by default. On Windows you will
@@ -38,14 +40,14 @@ website:
 
 [Putty Website](https://www.putty.org/)
 
-## Initialize SSH Connection with Mac OSX / Linux
+### Initialize SSH Connection with Mac OSX / Linux
 
 For Mac OSX and Linux you can open a new terminal and connect to ``trixie.nrc-cnrc.gc.ca`` via ssh
 using your **PUB** account and the following command
 
 ``ssh -l <firstname.lastname>@pub.nrc-cnrc.gc.ca trixie.nrc-cnrc.gc.ca``
 
-## Initialize SSH Connection with Windows
+### Initialize SSH Connection with Windows
 
 For Windows, you can create a Putty profile to SSH into the bastion server
 
@@ -60,7 +62,7 @@ Under **Session**
 Once the settings have been saved, you can double click on the name in the list of
 **Saved Sessions** to open a session to the bastion server.
 
-## Logging in for the First Time
+### Logging in for the First Time
 
 When you login for the first time you will be forced to change your password for both your **PUB**
 account and your Trixie **ext** account. Please note that when you do this, you will
@@ -118,7 +120,7 @@ information on the cluster and its usage, please see the:
 
 [Home Page](index.md)
 
-# Changing passwords
+## Changing passwords
 
 Passwords on the **PUB** and **RES** accounts expire after 90 days and must be changed. If you do
 not change your password, you will be locked out of the system.
@@ -129,7 +131,7 @@ change your password before the 90-day expiry.
 If you get locked out of your account due to an expired password for any account, notify your NRC
 contact who can have the password reset.
 
-## Change Your **PUB** Password
+### Change Your **PUB** Password
 
 You can change your **PUB** password by logging into the following website. The site allows you to
 manage your **PUB** account. Please use one of the following formats for your username
@@ -143,7 +145,7 @@ Please note that the **Reset Password** feature will not work if you do not fill
 questions on the website. Therefore it is **strongly recommended** that you fill in the security
 questions so that you can reset your password if necessary.
 
-## Change Your Ext Password via Linux Terminal
+### Change Your Ext Password via Linux Terminal
 
 1. Ensure you are logged into the Trixie server (trixie.res.nrc.gc.ca)
 1. Type **passwd** then hit **Enter**
@@ -154,7 +156,7 @@ questions so that you can reset your password if necessary.
 1. The system will automatically log you out, thus, you will need to login again using your new
    password
 
-# Related Topics
+## Related Topics
 
 [External Access Advanced Configuration](External-Access-Advanced-Configuration.md)<br>
 [Internal Access Setup](Internal-Access-Setup.md)<br>
