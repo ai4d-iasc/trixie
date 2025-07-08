@@ -49,7 +49,8 @@ Filesystem Fileset    type         blocks      quota      limit   in_doubt    gr
 scale      projects   GRP               0       100G       100G          0     none |        1       0        0        0     none trixie3500-scale.gpfs.net
 ```
 ## Requesting additional space for `/projects`
-Please reach out to Research Platform Support [rps-spr@nrc-cnrc.gc.ca](mailto:rps-spr@nrc-cnrc.gc.ca) to request additional space for projects. Existing quotas were based on the greater of either 100GiB or (current usage + current-usage/total-project-usage * 20TiB).
+Please reach out to Research Platform Support [rps-spr@nrc-cnrc.gc.ca](mailto:rps-spr@nrc-cnrc.gc.ca?subject=Beatrix%20%2Fprojects%20quota%20request&body=%2Fprojects%20directory%3A%20%5Bput%20path%20to%20your%20directory%20here%5D%0AIncrease%20requested%3A%20%5BN%5D%20GiB%0AHas%20the%20user%20representative%20been%20consulted%3A%20%5BY%2FN%5D%0ANotes%3A%20%5BPlease%20provide%20any%20comments%2Fnotes%2Fquestions%20here%5D%0A)
+to request additional space for projects. Existing quotas were based on the greater of either 100GiB or (current usage + current-usage/total-project-usage * 20TiB).
 
 ## Cleaning to Free Up Some Space
 
@@ -144,3 +145,31 @@ uv cache clean
 ```
 ### `ncdu`
 [ncdu](https://dev.yorhel.nl/ncdu) is a nCurses terminal-user-interface which will walk the specified directory tree then provide a user interface to navigate it and display disk and inode usage.
+```sh
+ncdu 1.19 ~ Use the arrow keys to navigate, press ? for help
+--- /home/lover/git/trixie/trixie/docs -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  692.0 KiB [##################################] /files
+  280.0 KiB [#############                     ] /images
+   44.0 KiB [##                                ]  BeAGoodClusterCitizen.html
+   20.0 KiB [                                  ]  Trixie-Status.md
+   16.0 KiB [                                  ]  File-Transfers.md
+   12.0 KiB [                                  ]  quota.md
+   12.0 KiB [                                  ]  Internal-Access-Setup.md
+   12.0 KiB [                                  ]  jobs-jupyterlab.md
+   12.0 KiB [                                  ]  External-Access-Setup.md
+    8.0 KiB [                                  ]  jobs-abinit.md
+    8.0 KiB [                                  ]  index.md
+    8.0 KiB [                                  ]  jobs-conda-RAPIDS.md
+    8.0 KiB [                                  ]  Account-Codes.md
+    8.0 KiB [                                  ]  SLURM,-pytorch-distributed-and-Multiple-Nodes.md
+    4.0 KiB [                                  ]  Internal-Access-Advanced-Configuration.md
+    4.0 KiB [                                  ]  External-Access-Advanced-Configuration.md
+    4.0 KiB [                                  ]  jobs-python-virtualenv.md
+    4.0 KiB [                                  ]  Networking-and-connectivity.md
+    4.0 KiB [                                  ]  Automatically-Resuming-Requeueing.md
+    4.0 KiB [                                  ]  Jobs-conda-pytorch.md
+    4.0 KiB [                                  ]  Hardware.md
+    4.0 KiB [                                  ]  Available-Software.md
+    4.0 KiB [                                  ]  External-HPC-Systems.md
+*Total disk usage:   1.2 MiB   Apparent size:   1.1 MiB   Items: 53
+```
