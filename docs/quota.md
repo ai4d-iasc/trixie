@@ -1,17 +1,19 @@
-# Disk Quota
+# Disk Quotas
+
+Users may have several quotas to manage on Trixie. At the least, each user has their own home and work disk and inode (i.e., number of files and directories) quotas. As well, depending upon the number of research groups they belong to, they will also have disk quotas under `/projects` for each group to which they belong.
 
 When you log to Trixie, you will see your disk quota as part of the login message.
 
 ```sh
 Home Quota Disk Usage: 41.4%; Home Quota Inode Usage: 37.0%
 Work Quota Disk Usage: 22.4%; Work Quota Inode Usage: 16.7%
-Check quota limits with gpfs-quota command
+Check quota limits with gpfs-quota and gpfs-group-quota commands
 ```
 
-- `Home` is `/home/$USER/`
-- `Work` is `/gpfs/work/$USER/`
+- `Home` is `/gpfs/home/$USER` and `/home/$USER/`
+- `Work` is `/gpfs/work/$USER/` and `/work/$USER`
 
-To get a more detailed report, run `gpfs-quota`.
+To get a more detailed report about your user-level quotas, run `gpfs-quota`.
 
 ```sh
 Filesystem Fileset    type         blocks      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
@@ -20,6 +22,34 @@ scale      home       USR           20.7G        50G        51G     426.2M     n
 scale      projects   USR          59.35T          0          0     1.614G     none |  9892887       0        0      419     none trixie3500-scale.gpfs.net
 scale      work       USR          112.2G       500G       550G          0     none |   167220 1000000  1100000        0     none trixie3500-scale.gpfs.net
 ```
+
+To get a more detailed report about your group level quotas run `gpfs-group-quota`.
+
+```sh
+Disk quotas for group ai4d-cluster-aero-apdc-01-project (gid 171971877):
+                         Block Limits                                               |     File Limits
+Filesystem Fileset    type         blocks      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
+scale      projects   GRP               0       100G       100G          0     none |        1       0        0        0     none trixie3500-scale.gpfs.net
+
+Disk quotas for group ai4d-cluster-ai4d-core-03-project (gid 171971331):
+                         Block Limits                                               |     File Limits
+Filesystem Fileset    type         blocks      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
+scale      projects   GRP               0       100G       100G          0     none |        1       0        0        0     none trixie3500-scale.gpfs.net
+
+Disk quotas for group ai4d-cluster-ai4d-core-08-project (gid 171971449):
+                         Block Limits                                               |     File Limits
+Filesystem Fileset    type         blocks      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
+scale      projects   GRP          2.339T     2.671T     2.671T          0     none |   130669       0        0        0     none trixie3500-scale.gpfs.net
+
+...
+
+Disk quotas for group ai4d-cluster-covid-covid-02-project (gid 171971328):
+                         Block Limits                                               |     File Limits
+Filesystem Fileset    type         blocks      quota      limit   in_doubt    grace |    files   quota    limit in_doubt    grace  Remarks
+scale      projects   GRP               0       100G       100G          0     none |        1       0        0        0     none trixie3500-scale.gpfs.net
+```
+## Requesting additional space for `/projects`
+Please reach out to Research Platform Support [rps-spr@nrc-cnrc.gc.ca](mailto:rps-spr@nrc-cnrc.gc.ca) to request additional space for projects. Existing quotas were based on the greater of either 100GiB or (current usage + current-usage/total-project-usage * 20TiB).
 
 ## Cleaning to Free Up Some Space
 
@@ -112,3 +142,5 @@ To reclaim some space and inodes you can do
 ```sh
 uv cache clean
 ```
+### `ncdu`
+[ncdu](https://dev.yorhel.nl/ncdu) is a nCurses terminal-user-interface which will walk the specified directory tree then provide a user interface to navigate it and display disk and inode usage.
