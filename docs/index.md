@@ -1,6 +1,6 @@
 # Welcome to the Trixie HPC wiki
 
-## [Trixie Status](Trixie-Status.md) Scheduled maintenance July 7 - 9
+## [Trixie Status](Trixie-Status.md)
 
 ## Trixie - not just an GPU Cluster
 
