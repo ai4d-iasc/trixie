@@ -6,7 +6,7 @@ Please see the [project wiki](https://ai4d-iasc.github.io/trixie/)
 
 ## Trixie Status
 
-The current status of Trixie is available on the [status page](https://ai4d-iasc.github.io/trixie/Trixie-Status/) - Scheduled maintenance July 7 - 9
+The current status of Trixie is available on the [status page](https://ai4d-iasc.github.io/trixie/Trixie-Status/)
 
 ## Issues
 
