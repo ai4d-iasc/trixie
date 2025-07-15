@@ -14,7 +14,6 @@ performed the [External Access Setup](External-Access-Setup.md) procedure.
 
 To configure SSH to automatically connect to the Trixie server, please perform the following steps
 
-1. Create the folder ``.ssh/sockets``
 1. Open your ``.ssh/config`` file with your preferred text editor and add the following lines on
    your local machine – not the servers – while substituting your given usernames in the **User**
    directive.<br>
@@ -25,9 +24,8 @@ To configure SSH to automatically connect to the Trixie server, please perform t
 ```
 Host trixie-bastion
   HostName trixie.nrc-cnrc.gc.ca
-  User <firstname>.<lastname>@pub.nrc-cnrc.gc.ca 
-  ControlMaster auto
-  ControlPath ~/.ssh/sockets/%r@%h-%p
+  User <firstname>.<lastname>@pub.nrc-cnrc.gc.ca
+  ForwardAgent true
 
 Host trixie
   HostName trixie.res.nrc.gc.ca 
