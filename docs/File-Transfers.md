@@ -30,7 +30,7 @@ To copy an entire directory instead of just a file, please use the **–r** opti
 
 ``scp –r myWorkFilesDir trixie:/home/ext.john.doe``
 
-#### Internal Users
+#### Internal Users - From the SRN Network
 
 The following command will copy the file ``test.txt`` from John Doe’s local machine to his account on Trixie. Please note that the example assumes the username on Trixie is different than the username on the local machine.
 
@@ -43,6 +43,22 @@ To copy a file from Trixie to your local machine, you basically reverse the argu
 To copy an entire directory instead of just a file, please use the **–r** option (for recursive) to the **scp** command.
 
 ``scp –r myWorkFilesDir doej@trixie.res.nrc.gc.ca:/home/doej``
+
+#### Internal Users - From the Legacy Network
+
+Please note that the use of this method requires that your system be configured as detailed in the [advanced configuration](External-Access-Advanced-Configuration.md) in order to provide a direct link between your local machine and the Trixie server.
+
+The following command will copy the file ``test.txt`` from John Doe’s local machine to his account on Trixie. Please note that using **trixie** as the hostname will only work if you have configured SSH to use **ProxyJump** as detailed in the [advanced configuration](External-Access-Advanced-Configuration.md).
+
+``scp test.txt trixie:/home/doej``
+
+To copy a file from Trixie to your local machine, you basically reverse the arguments to the **scp** command.
+
+``scp trixie:/home/doej/test.txt test.txt``
+
+To copy an entire directory instead of just a file, please use the **–r** option (for recursive) to the **scp** command.
+
+``scp –r myWorkFilesDir trixie:/home/doej``
 
 ### Windows Using *WinSCP*
 
@@ -81,7 +97,7 @@ First you will need to configure **WinSCP** to connect to Trixie using an SSH tu
    You will be prompted to authenticate with **LoginTC** (you will need to type **1**) and both your **Pub** and **Trixie** passwords
 1. Once you are logged into your session, you can drag and drop the files you need to transfer between the two file listings
 
-#### Internal Users
+#### Internal Users - From the SRN Network
 
 If you need to install **WinSCP** then please install it from the **NRC Software Portal** on your desktop.
 
@@ -103,6 +119,39 @@ First you will need to configure **WinSCP** to connect to Trixie. Open **WinSCP*
       1. Click the **OK** button
 1. Click the **Login** button in the previous popup window<br>
    You will be prompted to authenticate with your **Trixie** password
+1. Once you are logged into your session, you can drag and drop the files you need to transfer between the two file listings
+
+#### Internal Users - From the Legacy Legacy
+
+If you need to install **WinSCP** then please download and install it from [this site](https://winscp.net/eng/download.php)
+
+First you will need to configure **WinSCP** to connect to Trixie using an SSH tunnel. Open **WinSCP** and follow the procedure below to configure it to access Trixie via an SSH tunnel.
+
+1. Click the **New Session** button<br>
+   ![winscp-1](images/trixie-winscp-1.png)
+1. In the window that pops up, perform the following
+      1. Make sure the **File protocol** is set to *SCP*
+      1. Set the **Host name**: *trixie.res.nrc.gc.ca*
+      1. Set the **User name**: *<ext.firstname.lastname\>*<br>
+         The window should now look similar to the following<br>
+         ![winscp-2](images/trixie-winscp-2.png)
+      1. Click the **Advanced** button
+1. In the window that pops up, perform the following
+      1. Click the **Tunnel** item in the left pane
+      1. Select the **Connect through SSH tunnel** option
+      1. Set **Host name**: *trixie.nrc-cnrc.gc.ca*
+      1. Set **User name**: *<username\>@pub.nrc-cnrc.gc.ca*<br>
+         The window should now look similar to the following<br>
+         ![winscp-3](images/trixie-winscp-3.png)
+      1. Click the **OK** button
+1. Click the **Save** button in the previous popup window
+1. In the window that pops up, perform the following
+      1. Type in a **Site name** - perhaps *Trixie*<br>
+         The window should now look similar to the following<br>
+         ![winscp-4](images/trixie-winscp-4.png)
+      1. Click the **OK** button
+1. Click the **Login** button in the previous popup window<br>
+   You will be prompted to authenticate with **LoginTC** (you will need to type **1**) and both your **Pub** and **Trixie** passwords
 1. Once you are logged into your session, you can drag and drop the files you need to transfer between the two file listings
 
 ### Windows Using the *pscp* Command From Putty
