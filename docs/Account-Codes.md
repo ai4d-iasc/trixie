@@ -16,42 +16,46 @@ Projects are typically designated for a fixed period of time and are associated 
 defined in SAP. They allow project members access to Trixie and usage can be tracked for each
 project.
 
-| Project        | Description                                     |
-| -------------- | ----------------------------------------------- |
-| aero-apdc-01   | Genric Project for Aero APDC                    |
-| aero-dtvt-01   | Genric Project for Aero DTVT                    |
-| ai4d-bio-02    | Precision Discovery in Bio Systems              |
-| ai4d-bio-04a   | Protein Design Drugs & Gene                     |
-| ai4d-bio-145   | The Digital Mouse                               |
-| ai4d-bio-146   | Designing Motif-specific Scaffolds              |
-| ai4d-core-01   | AI-based Shape Optimization                     |
-| ai4d-core-06   | Intelligent Design                              |
-| ai4d-core-08   | Graph Representation Learning                   |
-| ai4d-core-09   | Simulation Comparison                           |
-| ai4d-core-132  | Machine Learning for Molecule Discovery         |
-| ai4d-core-147  | Model Predictive Control for Robot Manipulators |
-| ai4d-core-148  | Model Based Reinforcement Learning Robots       |
-| ai4d-core-149  | Learning-based Model Predictive Control         |
-| ai4d-core-150  | Accelerating Scientific Discovery with LLM      |
-| ai4d-core-uk1  | Artificial Intelligent Tomography Systems       |
-| ai4d-mat-02    | Automated Material Synthesis                    |
-| ai4d-mat-03    | Simulation and Design of Materials              |
-| ai4d-mat-04    | Spectroscopic Signatures                        |
-| ai4d-mat-09    | AI Accelerated Mapping and Design               |
-| ai4d-photo-01a | Miniaturization HP Components                   |
-| ai4d-photo-01c | AI-assisted Inverse Design                      |
-| ai4d-photo-08  | Usinig AI for Modelling Nanophotonic Devices    |
-| ai4d-photo-135 | Reinforcement Learning                          |
-| ai4d-photo-164 | Bridging Simulation and Measurement Data        |
-| ai4l-taw-110   | Logistics Networks Optimization for Trucks      |
-| ai4l-taw-133   | Regional Truck Hours Optimization               |
-| aip-adl-05     | Pattern Detection for Analysis of Movement      |
-| aip-iot-032    | Security and Privacy Assessment                 |
-| aip-jpn-302    | Intelligent Assistive Robots for Caregiving     |
-| dt-asec-01     | Large Satellite Image Classification            |
-| dt-caisi-01    | Data Contamination Detection                    |
-| dt-wat-ai      | AI Enabled Security for IoT Networks            |
-| irap-larus-01  | SME project                                     |
+| Projects        |
+| --------------- |
+| aero-apdc-01    |
+| aero-dtvt-01    |
+| aero-inbr6-01   |
+| aero-smpl-070-1 |
+| ai4d-bio-02     |
+| ai4d-bio-04a    |
+| ai4d-bio-145    |
+| ai4d-bio-146    |
+| ai4d-core-01    |
+| ai4d-core-06    |
+| ai4d-core-08    |
+| ai4d-core-09    |
+| ai4d-core-132   |
+| ai4d-core-147   |
+| ai4d-core-148   |
+| ai4d-core-150   |
+| ai4d-core-uk1   |
+| ai4d-mat-03     |
+| ai4d-mat-04     |
+| ai4d-mat-09     |
+| ai4d-photo-01a  |
+| ai4d-photo-01c  |
+| ai4d-photo-08   |
+| ai4d-photo-135  |
+| ai4d-photo-164  |
+| ai4l-taw-110    |
+| ai4l-taw-133    |
+| aip-adl-05      |
+| aip-iot-032     |
+| aip-jpn-302     |
+| dt-asec-01      |
+| dt-caisi-01     |
+| dt-cbmi-01      |
+| dt-inbr6-1156   |
+| irap-larus-01   |
+| sdt-aqc-007     |
+| sdt-aqc-208     |
+| sdt-qsp-051     |
 
 ## Teams
 
@@ -61,10 +65,12 @@ allow team members to access Trixie for non project based work.
 | Research Centre                     | Team Code  | Team Name                                                    |
 | ----------------------------------- | ---------- | ------------------------------------------------------------ |
 | Clean Energy                        | ce-amdpo   | Acceleration of Materials Discovery and Process Optimization |
-| Digital Technologies                | dt-cvg     | Computer Vision and Graphics                                 |
+| Digital Technologies                | dt-cdro    | Chief Digital Research Office                                |
+|                                     | dt-cvg     | Computer Vision and Graphics                                 |
 |                                     | dt-cyber   | Cybersecurity                                                |
 |                                     | dt-dac     | Data Analytics Centre                                        |
 |                                     | dt-dscs    | Data Science for Complex Systems                             |
+|                                     | dt-hci     | Human-Computer Interaction                                   |
 |                                     | dt-mtp     | Multilingual Text Processing                                 |
 |                                     | dt-student | Team for student access to Trixie                            |
 |                                     | dt-ta      | Text Analytics                                               |
