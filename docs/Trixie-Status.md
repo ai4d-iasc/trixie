@@ -1,8 +1,21 @@
 # Current Trixie Operational Status
 
 ## Upcoming Planned Downtime
+All upcoming planned maintenance dates are subject to change to better meet operational needs
+### 2025-Q4-Maint 
+StartTime=2025-10-06T00:00:00 EndTime=2025-10-08T00:00:00 Duration=2-00:00:00
 
-### None
+### 2026-Q1-Maint 
+StartTime=2026-01-12T00:00:00 EndTime=2026-01-14T00:00:00 Duration=2-00:00:00
+
+### 2026-Q2-Maint 
+StartTime=2026-04-06T00:00:00 EndTime=2026-04-11T00:00:00 Duration=5-00:00:00
+
+### 2026-Q3-Maint 
+StartTime=2026-07-06T00:00:00 EndTime=2026-07-08T00:00:00 Duration=2-00:00:00
+
+### 2026-Q4-Maint
+StartTime=2026-10-05T00:00:00 EndTime=2026-10-07T00:00:00 Duration=2-00:00:00
 
 ## Current Issues / Outages
 
