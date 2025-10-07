@@ -2,8 +2,6 @@
 
 ## Upcoming Planned Downtime
 All upcoming planned maintenance dates are subject to change to better meet operational needs
-### 2025-Q4-Maint 
-StartTime=2025-10-06T00:00:00 EndTime=2025-10-08T00:00:00 Duration=2-00:00:00
 
 ### 2026-Q1-Maint 
 StartTime=2026-01-12T00:00:00 EndTime=2026-01-14T00:00:00 Duration=2-00:00:00
