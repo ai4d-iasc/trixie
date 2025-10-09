@@ -62,16 +62,17 @@ project.
 Teams are typically associated with a team or a particular group within a NRC Research Centre. They
 allow team members to access Trixie for non project based work.
 
-| Research Centre                     | Team Code  | Team Name                                                    |
-| ----------------------------------- | ---------- | ------------------------------------------------------------ |
-| Clean Energy                        | ce-amdpo   | Acceleration of Materials Discovery and Process Optimization |
-| Digital Technologies                | dt-cdro    | Chief Digital Research Office                                |
-|                                     | dt-cvg     | Computer Vision and Graphics                                 |
-|                                     | dt-cyber   | Cybersecurity                                                |
-|                                     | dt-dac     | Data Analytics Centre                                        |
-|                                     | dt-dscs    | Data Science for Complex Systems                             |
-|                                     | dt-hci     | Human-Computer Interaction                                   |
-|                                     | dt-mtp     | Multilingual Text Processing                                 |
-|                                     | dt-student | Team for student access to Trixie                            |
-|                                     | dt-ta      | Text Analytics                                               |
-|Security and Disruptive Technologies | sdt-clean  | Computational Laboratory for Energy And Nanoscience          |
+| Research Centre                       | Team Code  | Team Name                                                    |
+| -----------------------------------   | ---------- | ------------------------------------------------------------ |
+| Aquatic and Crop Resource Development | acrd-base  | Default base                                                 |
+| Clean Energy                          | ce-amdpo   | Acceleration of Materials Discovery and Process Optimization |
+| Digital Technologies                  | dt-cdro    | Chief Digital Research Office                                |
+|                                       | dt-cvg     | Computer Vision and Graphics                                 |
+|                                       | dt-cyber   | Cybersecurity                                                |
+|                                       | dt-dac     | Data Analytics Centre                                        |
+|                                       | dt-dscs    | Data Science for Complex Systems                             |
+|                                       | dt-hci     | Human-Computer Interaction                                   |
+|                                       | dt-mtp     | Multilingual Text Processing                                 |
+|                                       | dt-student | Team for student access to Trixie                            |
+|                                       | dt-ta      | Text Analytics                                               |
+|Security and Disruptive Technologies   | sdt-clean  | Computational Laboratory for Energy And Nanoscience          |
