@@ -17,11 +17,10 @@ StartTime=2026-10-05T00:00:00 EndTime=2026-10-07T00:00:00 Duration=2-00:00:00
 
 ## Current Issues / Outages
 
-### Planned Maintenance 
-Please note that the Beatrix cluster has scheduled maintenance from 2025-10-06 00:00EDT to 2025-10-08 00:00EDT. The cluster will be unavailable to users during this time window. Jobs will remain in the queues and will resume when the maintenance is over.
- 
-Veuillez noter qu'une maintenance est prévue sur le cluster Beatrix du 6 octobre 2025 à 00h00 HAE au 8 octobre 2025 à 00h00 HAE. Le cluster sera indisponible pendant cette période. Les tâches resteront en file d'attente et reprendront une fois la maintenance terminée.
 ## Past Events / Incidents
+- [RESOLVED] Monday October 6th, 2025 - Wednesday October 8th, 2025
+Please note that the Beatrix cluster has scheduled maintenance from 2025-10-06 00:00EDT to 2025-10-08 00:00EDT. The cluster will be unavailable to users during this time window. Jobs will remain in the queues and will resume when the maintenance is over.
+Veuillez noter qu'une maintenance est prévue sur le cluster Beatrix du 6 octobre 2025 à 00h00 HAE au 8 octobre 2025 à 00h00 HAE. Le cluster sera indisponible pendant cette période. Les tâches resteront en file d'attente et reprendront une fois la maintenance terminée.
 - [RESOLVED] Monday, July 7th, 2025 - Wednesday, July 9th, 2025 - Please note that there will be a
 maintenance performed on Beatrix on from July 7th – 7AM to the 9th - 5PM. The cluster will be
 unavailable to users during this time window. Jobs will remain in the queues and will resume when
