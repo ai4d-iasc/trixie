@@ -1,0 +1,1148 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Presentation: Trixie - Be a Good Cluster Citizen</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.css"
+      integrity="sha512-ZIo9ivf88U0L1S+0D/npMNTTkjez5B9cK5xIecN4IA2OmtbTNBbPAZo/0cBC195sq7FU7cEOVPwtit37f/+1rQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/theme/dracula.min.css"
+      integrity="sha512-z3Sd/5xZxnlQgNwMsvuE8OJ/EY83taM+YPl/TqNIfq3BDj6V2LoIlszakfn/OHxiJXV10CeBmZDGw+ODNgHZbQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/highlight/monokai.min.css"
+      integrity="sha512-z8wQkuDRFwCBfoj7KOiu1MECaRVoXx6rZQWL21x0BsVVH7JkqCp1Otf39qve6CrCycOOL5o9vgfII5Smds23rg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code:wght@300..700&family=Signika+Negative:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      code.cli::before {
+        content: "\1F449  ";
+      }
+      ul.cli li::marker {
+        content: "\1F449  ";
+      }
+      table {
+        color: white;
+      }
+      .reveal table {
+        border: none;
+      }
+
+      .reveal table td,
+      .reveal table th {
+        border: none;
+      }
+      code {
+        color: lime;
+      }
+      ul.multicolumns {
+        list-style-type: none;
+        column-count: 3;
+      }
+
+      h2.striked {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #000;
+        line-height: 0.1em;
+        margin: 0.5em;
+        font-size: 1em;
+      }
+
+      h2.striked span {
+        background-color: #282a36;
+        padding: 0 10px;
+      }
+
+      .modulepath {
+        color: dodgerblue;
+      }
+
+      .loaded {
+        background: lightgrey;
+      }
+
+      .autoloaded {
+        background: grey;
+        color: lightgrey;
+      }
+
+      .keyDefinition p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+      }
+
+      .keyDefinition p span {
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .reveal pre {
+        box-shadow: none;
+        margin: 0em;
+      }
+      .row {
+        display: flex;
+      }
+
+      /* Create two equal columns that sits next to each other */
+      .column {
+        flex: 50%;
+      }
+
+      .cli_output {
+        color: darkgrey;
+        font-family:
+          Courier Prime,
+          Fira Code,
+          Menlo,
+          Consolas,
+          Monaco,
+          Liberation Mono,
+          Lucida Console,
+          monospace;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Trixie</h1>
+          <h2>Be a Good Cluster-Citizen</h2>
+          <h4>Samuel Larkin</h4>
+        </section>
+
+        <section>
+          <div style="text-align: left" class="r-fit-text">
+            <h1>What do we want to accomplish?</h1>
+            We have a set of commands that we would like to run on a SLURM
+            cluster.
+            <pre>
+              <code data-trim data-noescape class="language-bash">
+                conda activate my_env
+                python train_nn.py --language="fr" --file=file.fr.txt
+              </code>
+            </pre>
+            We need a wrapper script to encapsulate the command we want to run
+            and tell SLURM what resources our job will require.
+          </div>
+        </section>
+
+        <section>
+          <h1>SLURM commands</h1>
+
+          <ul style="text-align: left;" class="cli r-fit-text">
+            <li>
+              <code class="language-bash">sbatch</code>
+              -
+              <a href="https://slurm.schedmd.com/sbatch.html">
+               Submit a batch script to Slurm
+              </a>
+            </li>
+            <li>
+              <code class="language-bash">squeue</code>
+              -
+              <a href="https://slurm.schedmd.com/squeue.html" >
+              view information about jobs located in the Slurm scheduling queue
+              </a>
+            </li>
+            <li>
+              <code class="language-bash">scancel</code>
+              -
+              <a
+                href="https://slurm.schedmd.com/scancel.html"
+                >Used to signal jobs or job steps that are under the control of Slurm</a
+              >
+            </li>
+            <li>
+              <code class="language-bash">sinfo</code>
+              -
+              <a
+                href="https://slurm.schedmd.com/sinfo.html"
+                >View information about Slurm nodes and partitions</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Trixie</h1>
+
+          <div>
+            <ul style="text-align: left" class="r-fit-text">
+              <li>
+                <em>trixie.res.nrc.gc.ca</em> from the
+                <b style="color: black">black</b> &
+                <b style="color: orange">orange</b> networks
+              </li>
+
+              <li>
+                <code class="cli language-bash">
+                  /gpfs/work/onboarding.sh
+                </code>
+              </li>
+
+              <li>
+                <b><samp>/home/${USER}</samp></b> has a quota of 50GB and has
+                <b>snapshots disabled</b>.
+              </li>
+
+              <li>
+                <b><samp>/gpfs/work/${USER}</samp> </b> is your primary
+                work-space and has a quota of 500GB and 1M inodes with snapshots
+                enabled
+              </li>
+
+              <li>
+                <b><samp>/gpfs/projects</samp></b> a common work-space
+              </li>
+
+              <li>
+                <b
+                  >We request that users not create conda, mamba, venvs, etc
+                  within the <samp>/gpfs/work</samp> space</b
+                >, and instead use their <samp>$HOME</samp> and create symlinks
+                to their projects. The snapshot feature of GPFS does not perform
+                optimally when many small files are created and destroyed as
+                with such utilities. We understand that some workflows on Trixie
+                have this behaviour inherently, but an effort to reduce this
+                behaviour is appreciated
+              </li>
+            </ul>
+          </div>
+
+          <aside class="notes">
+            Running RHEL 9
+
+            <code class="cli language-bash">sbatch --version</code
+            ><samp> slurm 22.05.9 </samp>
+
+            https://ai4d-iasc.github.io/trixie/Hardware/
+
+            <pre>
+************************************************************************
+** On first log-in to the RHEL9 setup, please run onboarding.sh in    **
+** your /home/${USER} directory. If you do not have onboarding.sh in  **
+** your home directory, copy it from /gpfs/work/                      **
+** Note the new quotas:                                               **
+** /home/${USER} : 50GiB/1M inodes                                    **
+** /gpfs/work/${USER} : 500GiB/1M inodes                              **
+************************************************************************
+            </pre>
+          </aside>
+        </section>
+
+        <section>
+          <div style="text-align: left" class="r-fit-text">
+            <h1>Getting some Software</h1>
+
+            <p>
+              <code class="cli language-bash">module avail </code>
+            </p>
+
+            <div class="cli_output" style="font-size: 0.32em">
+              <h2 class="striked">
+                <span class="modulepath"> /usr/share/Modules/modulefiles </span>
+              </h2>
+              <div>
+                <ul class="multicolumns" style="column-count: 6">
+                  <li>dot</li>
+                  <li>module-git</li>
+                  <li>module-info</li>
+                  <li>modules</li>
+                  <li>null</li>
+                  <li>use.own</li>
+                </ul>
+              </div>
+
+              <h2 class="striked">
+                <span class="modulepath"> /usr/share/modulefiles </span>
+              </h2>
+              <div>
+                <ul class="multicolumns">
+                  <li>mpi/openmpi-x86_64</li>
+                </ul>
+              </div>
+
+              <h2 class="striked">
+                <span class="modulepath">
+                  /gpfs/share/Modules/modulefiles
+                </span>
+              </h2>
+              <div>
+                <ul class="multicolumns">
+                  <li>mathematica/14.0</li>
+                </ul>
+              </div>
+
+              <h2 class="striked">
+                <span class="modulepath">
+                  /gpfs/share/rhel9/opt/spack/share/spack/modules/linux-rhel9-skylake_avx512
+                </span>
+              </h2>
+              <ul class="multicolumns" style="column-count: 4">
+                <li>anaconda3/2023.09-0-gcc-11.3.1-4njg4u3</li>
+                <li>autoconf-archive/2023.02.20-gcc-11.3.1-x3v3e3k</li>
+                <li>autoconf/2.72-gcc-11.3.1-zigeprh</li>
+                <li>automake/1.16.5-gcc-11.3.1-fiei3qm</li>
+                <li>bdftopcf/1.1-gcc-11.3.1-pjei4lg</li>
+                <li>berkeley-db/18.1.40-gcc-11.3.1-imacxi5</li>
+                <li>binutils/2.42-gcc-11.3.1-k2azs5r</li>
+                <li>bison/3.8.2-gcc-11.3.1-5ymaspt</li>
+                <li>bzip2/1.0.8-gcc-11.3.1-jftbk52</li>
+                <li>ca-certificates-mozilla/2023-05-30-gcc-11.3.1-3q7ngqu</li>
+                <li>cmake/3.27.9-gcc-11.3.1-ddiy5al</li>
+                <li>cpio/2.15-gcc-11.3.1-gysadjq</li>
+                <li>curl/8.7.1-gcc-11.3.1-ct7pjm2</li>
+                <li>diffutils/3.10-gcc-11.3.1-i2xxusk</li>
+                <li>expat/2.6.2-gcc-11.3.1-i6fawb2</li>
+                <li>findutils/4.9.0-gcc-11.3.1-vrwwaoy</li>
+                <li>fixesproto/5.0-gcc-11.3.1-rzgygqz</li>
+                <li>flex/2.6.3-gcc-11.3.1-lvm5eg4</li>
+                <li>font-util/1.4.0-gcc-11.3.1-kdzp4kf</li>
+                <li>fontconfig/2.15.0-gcc-11.3.1-oknygy4</li>
+                <li>fontsproto/2.1.3-gcc-11.3.1-hnnw5wr</li>
+                <li>freeglut/3.2.2-gcc-11.3.1-bj2wnkh</li>
+                <li>freetype/2.13.2-gcc-11.3.1-mukuuf4</li>
+                <li>gawk/5.3.0-gcc-11.3.1-uuiqxd2</li>
+                <li class="autoloaded">
+                  gcc-runtime/11.3.1-gcc-11.3.1-ts54e2r
+                </li>
+                <li>gcc/13.2.0-gcc-11.3.1-5cmgvey</li>
+                <li>gdbm/1.23-gcc-11.3.1-hf42icl</li>
+                <li>gettext/0.22.5-gcc-11.3.1-acdclxk</li>
+                <li class="autoloaded">glibc/2.34-gcc-11.3.1-rv4ofgg</li>
+                <li>glproto/1.4.17-gcc-11.3.1-xwh2ngh</li>
+                <li>glx/1.4-gcc-11.3.1-exlgy5j</li>
+                <li>gmake/4.4.1-gcc-11.3.1-jpbz7dw</li>
+                <li>gmp/6.2.1-gcc-11.3.1-j2qp7w7</li>
+                <li>gperf/3.1-gcc-11.3.1-umkvi7d</li>
+                <li>htop/3.2.2-gcc-11.3.1-oa7ttvf</li>
+                <li>hwloc/2.9.1-gcc-11.3.1-weybm2e</li>
+                <li>inputproto/2.3.2-gcc-11.3.1-bo7qinx</li>
+                <li>intel-mpi/2019.7.217-gcc-11.3.1-o2z3fjd</li>
+                <li>
+                  intel-oneapi-compilers-classic/2021.10.0-gcc-11.3.1-nocpr5m
+                </li>
+                <li>intel-oneapi-compilers/2023.2.4-gcc-11.3.1-ddcm4wi</li>
+                <li>intel-oneapi-mpi/2021.12.1-gcc-11.3.1-4kgjxio</li>
+                <li>kbproto/1.0.7-gcc-11.3.1-6uzvk2c</li>
+                <li>libbsd/0.12.1-gcc-11.3.1-tca36ex</li>
+                <li>libedit/3.1-20230828-gcc-11.3.1-ysouu3l</li>
+                <li>libffi/3.4.6-gcc-11.3.1-clmfd4j</li>
+                <li>libfontenc/1.1.8-gcc-11.3.1-w44jsoi</li>
+                <li>libice/1.1.1-gcc-11.3.1-76rcd55</li>
+                <li>libiconv/1.17-gcc-11.3.1-sqkuf4t</li>
+                <li>libmd/1.0.4-gcc-11.3.1-2yooftr</li>
+                <li>libpciaccess/0.17-gcc-11.3.1-niczctf</li>
+                <li>libpng/1.2.57-gcc-11.3.1-oqex7om</li>
+                <li>libpthread-stubs/0.5-gcc-11.3.1-xfbnr2b</li>
+                <li>libsigsegv/2.14-gcc-11.3.1-5kireuc</li>
+                <li>libsm/1.2.4-gcc-11.3.1-sgdfk4e</li>
+                <li>libtool/2.4.7-gcc-11.3.1-gtphuga</li>
+                <li>libunwind/1.6.2-gcc-11.3.1-6mtzyno</li>
+                <li>libx11/1.8.7-gcc-11.3.1-d5xeazl</li>
+                <li>libxau/1.0.11-gcc-11.3.1-dkkx74b</li>
+                <li>libxcb/1.16-gcc-11.3.1-fulboi2</li>
+                <li>libxcrypt/4.4.35-gcc-11.3.1-7kd52bn</li>
+                <li>libxdmcp/1.1.4-gcc-11.3.1-7fe4723</li>
+                <li>libxext/1.3.5-gcc-11.3.1-7d2ci6d</li>
+                <li>libxfixes/5.0.3-gcc-11.3.1-k53yjzd</li>
+                <li>libxfont/1.5.4-gcc-11.3.1-etmwjjy</li>
+                <li>libxft/2.3.8-gcc-11.3.1-vwyuhmz</li>
+                <li>libxi/1.7.10-gcc-11.3.1-rgytoua</li>
+                <li>libxml2/2.10.3-gcc-11.3.1-e5zt4m2</li>
+                <li>libxrandr/1.5.4-gcc-11.3.1-qxmrns4</li>
+                <li>libxrender/0.9.11-gcc-11.3.1-ao2tic2</li>
+                <li>libxscrnsaver/1.2.4-gcc-11.3.1-zs6aqfi</li>
+                <li>libxt/1.3.0-gcc-11.3.1-lwme3qs</li>
+                <li>libxxf86vm/1.1.5-gcc-11.3.1-6pze4ei</li>
+                <li>llvm/17.0.6-gcc-11.3.1-xlwz53w</li>
+                <li>lua/5.3.6-gcc-11.3.1-hn2ac7j</li>
+                <li>lumerical/2019b-r2-gcc-11.3.1-ejm6mo6</li>
+                <li>lumerical/2021-R1.1-2599-gcc-11.3.1-vvyw6z6</li>
+                <li>m4/1.4.19-gcc-11.3.1-tncckyq</li>
+                <li>mesa-glu/9.0.1-gcc-11.3.1-glwxfkj</li>
+                <li>mesa-glu/9.0.2-gcc-11.3.1-bd2lm7d</li>
+                <li>mesa/23.3.6-gcc-11.3.1-mx6glm4</li>
+                <li>meson/1.3.2-gcc-11.3.1-w7cv5bi</li>
+                <li>mkfontdir/1.0.7-gcc-11.3.1-3xvst7e</li>
+                <li>mkfontscale/1.2.3-gcc-11.3.1-4vmnuo2</li>
+                <li>mpc/1.3.1-gcc-11.3.1-ifuk5gu</li>
+                <li>mpfr/4.2.1-gcc-11.3.1-i6gtxh6</li>
+                <li class="loaded">ncurses/6.5-gcc-11.3.1-z54b6d4</li>
+                <li>nghttp2/1.57.0-gcc-11.3.1-7c6bk73</li>
+                <li>ninja/1.11.1-gcc-11.3.1-wcew5xr</li>
+                <li>openssl/3.3.0-gcc-11.3.1-y2icle5</li>
+                <li>parallel/20220522-gcc-11.3.1-juzq7oy</li>
+                <li>patchelf/0.17.2-gcc-11.3.1-t6bdsvg</li>
+                <li>pcre2/10.43-gcc-11.3.1-3y4lcyt</li>
+                <li>perl-data-dumper/2.173-gcc-11.3.1-xwk47wz</li>
+                <li>perl/5.38.0-gcc-11.3.1-4wtgagw</li>
+                <li>pigz/2.8-gcc-11.3.1-bswu4yx</li>
+                <li>pkgconf/2.2.0-gcc-11.3.1-reshpid</li>
+                <li>py-mako/1.2.4-gcc-11.3.1-qzty4ic</li>
+                <li>py-markupsafe/2.1.3-gcc-11.3.1-xwc652n</li>
+                <li>py-pip/23.1.2-gcc-11.3.1-bmelf66</li>
+                <li>py-setuptools/69.2.0-gcc-11.3.1-vjtezkl</li>
+                <li>py-wheel/0.41.2-gcc-11.3.1-k5uxoxo</li>
+                <li>python-venv/1.0-gcc-11.3.1-jtnjye4</li>
+                <li>python/3.10.13-gcc-11.3.1-73qnjae</li>
+                <li>python/3.11.7-gcc-11.3.1-hsfwjwr</li>
+                <li>python/3.12.1-gcc-11.3.1-7tuhjhr</li>
+                <li>python/3.9.18-gcc-11.3.1-tc7dyca</li>
+                <li>randrproto/1.5.0-gcc-11.3.1-b6ssnsk</li>
+                <li>re2c/2.2-gcc-11.3.1-vxkdcjq</li>
+                <li>readline/8.2-gcc-11.3.1-qu4mv62</li>
+                <li>renderproto/0.11.1-gcc-11.3.1-uhoybj4</li>
+                <li>scrnsaverproto/1.2.2-gcc-11.3.1-cw3khfj</li>
+                <li>sqlite/3.43.2-gcc-11.3.1-bodsqyx</li>
+                <li>swig/4.1.1-gcc-11.3.1-zaf4wit</li>
+                <li>tar/1.34-gcc-11.3.1-wcuczap</li>
+                <li>tcl/8.6.12-gcc-11.3.1-o3atwx3</li>
+                <li>texinfo/7.0.3-gcc-11.3.1-bhmkpv4</li>
+                <li>tk/8.6.11-gcc-11.3.1-wz3kgh7</li>
+                <li>unzip/6.0-gcc-11.3.1-kptkztv</li>
+                <li>util-linux-uuid/2.38.1-gcc-11.3.1-ekl7sit</li>
+                <li>util-macros/1.19.3-gcc-11.3.1-3ocj656</li>
+                <li>xcb-proto/1.16.0-gcc-11.3.1-scf7ljj</li>
+                <li>xextproto/7.3.0-gcc-11.3.1-6mytvtp</li>
+                <li>xf86vidmodeproto/2.3.1-gcc-11.3.1-gc624cq</li>
+                <li>xproto/7.0.31-gcc-11.3.1-hhddgfu</li>
+                <li>xrandr/1.5.2-gcc-11.3.1-nbhkevq</li>
+                <li>xtrans/1.5.0-gcc-11.3.1-67qr5rx</li>
+                <li>xz/5.4.6-gcc-11.3.1-pswkf4y</li>
+                <li>zlib-ng/2.1.6-gcc-11.3.1-snhalql</li>
+                <li>zlib/1.3.1-gcc-11.3.1-fk7flnb</li>
+                <li>zstd/1.5.6-gcc-11.3.1-mldt4gi</li>
+              </ul>
+
+              <div class="keyDefinition">
+                <p>Key:</p>
+                <p>
+                  <span class="loaded"> loaded </span>
+                  <span class="autoloaded"> auto-loaded </span>
+                  <span class="modulepath"> modulepath </span>
+                </p>
+              </div>
+            </div>
+
+            <p>
+              <code class="cli language-bash">module load MODULE </code>
+            </p>
+          </div>
+
+          <aside class="notes">
+            <p>Trixie comes with bare minimum software.</p>
+            <p>You might have to invest some time setting up.</p>
+          </aside>
+        </section>
+
+        <section>
+          <div style="text-align: left" class="r-fit-text">
+            <h1>Partitions, JobTesting</h1>
+
+            <p>
+              <code class="cli language-bash">sinfo</code>
+            </p>
+            <table class="cli_output" style="font-size: 0.7em">
+              <tr>
+                <th>PARTITION</th>
+                <th>AVAIL</th>
+                <th>TIMELIMIT</th>
+                <th>NODES</th>
+                <th>STATE</th>
+                <th>NODELIST</th>
+              </tr>
+              <tr>
+                <td>TrixieMain*</td>
+                <td>up</td>
+                <td>12:00:00</td>
+                <td>4</td>
+                <td>drain</td>
+                <td>cn[131-134]</td>
+              </tr>
+              <tr>
+                <td>TrixieMain*</td>
+                <td>up</td>
+                <td>12:00:00</td>
+                <td>2</td>
+                <td>mix</td>
+                <td>cn[108-109]</td>
+              </tr>
+              <tr>
+                <td>TrixieMain*</td>
+                <td>up</td>
+                <td>12:00:00</td>
+                <td>22</td>
+                <td>idle</td>
+                <td>cn[107,110-130]</td>
+              </tr>
+              <tr>
+                <td>TrixieLong</td>
+                <td>up</td>
+                <td>2-00:00:00</td>
+                <td>1</td>
+                <td>drain</td>
+                <td>cn131</td>
+              </tr>
+              <tr>
+                <td>TrixieLong</td>
+                <td>up</td>
+                <td>2-00:00:00</td>
+                <td>2</td>
+                <td>mix</td>
+                <td>cn[108-109]</td>
+              </tr>
+              <tr>
+                <td>TrixieLong</td>
+                <td>up</td>
+                <td>2-00:00:00</td>
+                <td>22</td>
+                <td>idle</td>
+                <td>cn[107,110-130]</td>
+              </tr>
+              <tr>
+                <td>JobTesting</td>
+                <td>up</td>
+                <td>6:00:00</td>
+                <td>2</td>
+                <td>idle</td>
+                <td>cn[135-136]</td>
+              </tr>
+            </table>
+            <p>
+              <code class="cli language-bash"
+                >sbatch --partition=JobTesting ...
+              </code>
+            </p>
+          </div>
+
+          <aside class="notes">
+            <p>
+              If you have to have jupyter running on a worker node, use a
+              JobTesting node and don’t hold it if your not using it aka during
+              the night.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h1>Account Name</h1>
+
+          <div style="text-align: left" class="r-fit-text">
+            <p>
+              See
+              <a @href="https://ai4d-iasc.github.io/trixie/Account-Codes/">
+                &#x1F4D1; Account-Codes</a
+              >
+              for a list of codes
+            </p>
+            <p>DT Digital Technologies / Technologies Num&eacute;riques</p>
+            <ul>
+              <li>dt-dac</li>
+              <li>dt-dscs</li>
+              <li>dt-mtp</li>
+              <li>dt-ta</li>
+            </ul>
+
+            <p>
+              <code class="cli language-bash"
+                >sbatch --account=account_code ...</code
+              >
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h1>Node's Resources</h1>
+
+          <div style="text-align: left" class="r-fit-text">
+            <code class="cli language-bash"
+              >sinfo --Node --responding --long</code
+            >
+
+            <table class="cli_output" style="font-size: 0.7em">
+              <tr>
+                <th>NODELIST</th>
+                <th>NODES</th>
+                <th>PARTITION</th>
+                <th>STATE</th>
+                <th>CPUS</th>
+                <th>S:C:T</th>
+                <th>MEMORY</th>
+                <th>TMP_DISK</th>
+                <th>WEIGHT</th>
+                <th>AVAIL_FE</th>
+                <th>REASON</th>
+              </tr>
+              <tr>
+                <td>cn106</td>
+                <td>1</td>
+                <td>DevTest</td>
+                <td>idle</td>
+                <td>64</td>
+                <td>2:16:2</td>
+                <td>192777</td>
+                <td>0</td>
+                <td>1</td>
+                <td>(null)</td>
+                <td>none</td>
+              </tr>
+              <tr>
+                <td>cn107</td>
+                <td>1</td>
+                <td>TrixieLong</td>
+                <td>idle</td>
+                <td>64</td>
+                <td>2:16:2</td>
+                <td>192777</td>
+                <td>0</td>
+                <td>1</td>
+                <td>(null)</td>
+                <td>none</td>
+              </tr>
+              <tr>
+                <td>cn107</td>
+                <td>1</td>
+                <td>TrixieMain*</td>
+                <td>idle</td>
+                <td>64</td>
+                <td>2:16:2</td>
+                <td>192777</td>
+                <td>0</td>
+                <td>1</td>
+                <td>(null)</td>
+                <td>none</td>
+              </tr>
+              <tr>
+                <td>cn108</td>
+                <td>1</td>
+                <td>TrixieLong</td>
+                <td>idle</td>
+                <td>64</td>
+                <td>2:16:2</td>
+                <td>192777</td>
+                <td>0</td>
+                <td>1</td>
+                <td>(null)</td>
+                <td>none</td>
+              </tr>
+              <tr>
+                <td colspan="11">...</td>
+              </tr>
+            </table>
+          </div>
+
+          <aside class="notes">
+            https://slurm.schedmd.com/sinfo.html S:C:T Count of sockets (S),
+            cores (C), and threads (T) on these nodes. Note: I don’t know if it
+            is still the case but trying to use all 64 CPUs may result in slower
+            performances
+          </aside>
+        </section>
+
+        <section>
+          <div style="text-align: left" class="r-fit-text">
+            <h1>What Do Nodes Have to Offer?</h1>
+
+            <p>
+              <code class="cli language-bash">scontrol show nodes</code>
+            </p>
+
+            <pre class="cli_output">
+            <samp>
+NodeName=cn136 Arch=x86_64 CoresPerSocket=16
+  CPUAlloc=0 CPUTot=64 CPULoad=0.01
+  AvailableFeatures=(null)
+  ActiveFeatures=(null)
+  Gres=gpu:4
+  NodeAddr=cn136 NodeHostName=cn136
+  OS=Linux 3.10.0-1160.62.1.el7.x86_64 #1 SMP Tue Apr 5 16:57:59 UTC 2022
+  RealMemory=192777 AllocMem=0 FreeMem=183181 Sockets=2 Boards=1
+  State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
+  Partitions=JobTesting
+  BootTime=2024-05-29T14:23:15 SlurmdStartTime=2024-05-29T14:23:36
+  CfgTRES=cpu=64,mem=192777M,billing=64,gres/gpu=4
+  AllocTRES=
+  CapWatts=n/a
+  CurrentWatts=0 AveWatts=0
+  ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
+            </samp>
+          </pre>
+          </div>
+
+          <aside class="notes">
+            <a href="https://ai4d-iasc.github.io/trixie/Hardware/"
+              >Trixie's Hardware Wiki page</a
+            >
+          </aside>
+        </section>
+
+        <section>
+          <div>
+            <h1>The GPUs</h1>
+            <div>
+              <ul style="text-align: left" class="r-fit-text">
+                <li>Tesla V100-SXM2-32GB</li>
+                <li>May 10, 2017</li>
+                <li>NVIDIA-SMI 565.57.01</li>
+                <li>Driver Version: 565.57.01</li>
+                <li>CUDA Version: 12.7</li>
+                <li style="color: orange">CUDA Compute Capabilities 7.0</li>
+                <li>Single Precision: 15 TFLOPS</li>
+                <li>Tensor Performance (Deep Learning): 120 TFLOPS</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="notes">
+            While trying to install unsloth.ai on previous Trixie’s
+            configuration:
+            <samp>
+              WARNING: Compute capability &lt; 7.5 detected! Only slow 8-bit
+              matmul is supported for your GPU!
+            </samp>
+
+            https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units
+            https://www.anandtech.com/show/11367/nvidia-volta-unveiled-gv100-gpu-and-tesla-v100-accelerator-announced
+            https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-capability-7-x
+            https://www.anandtech.com/show/11559/nvidia-formally-announces-pcie-tesla-v100-available-later-this-year
+            https://ai4d-iasc.github.io/trixie/Hardware/
+          </aside>
+        </section>
+
+        <section>
+          <h1>CPUs</h1>
+          <div>
+            <ul style="text-align: left" class="r-fit-text">
+              <li>
+                processor_type = Intel Xeon Gold 6130 CPU clocked at 2.1GHZ 16
+                cores / CPU
+              </li>
+              <li>processors_per_node = 2</li>
+              <li>cores_per_socket = 16</li>
+              <li>threads_per_core = 2 (hyper-threading on)</li>
+              <li>RAM = 192 GB memory</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <div style="text-align: left" class="r-fit-text">
+            <h1>Slurm Header Example</h1>
+
+            <div class="row" style="font-size: 0.8em">
+              <div class="column" style="flex: 45%">
+                <h4>Resources request</h4>
+                <pre><code data-trim data-noescape class="language-bash">
+#!/bin/bash
+# vim:nowrap:
+
+#SBATCH --job-name=My_Wonderful
+#SBATCH --comment="My Wonderful Script"
+
+# On Trixie
+#SBATCH --partition=TrixieMain
+#SBATCH --account=dt-mtp
+
+#SBATCH --gres=gpu:4
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=4
+#SBATCH --cpus-per-task=6
+#SBATCH --mem=96G
+
+#SBATCH --open-mode=append
+#SBATCH --output=%x-%j.out
+#SBATCH --requeue
+#SBATCH --signal=B:USR1@30
+                  </code></pre>
+              </div>
+              <div class="column" style="flex: 55%">
+                <h4>Automatic requeueing</h>
+                <pre><code data-trim data-noescape class="language-bash">
+# Requeueing on Trixie
+function _requeue {
+  echo "~requeueing $SLURM_JOBID"
+  date
+  scontrol requeue $SLURM_JOBID
+}
+
+if [[ -n "$SLURM_JOBID" ]]; then
+  trap _requeue USR1
+fi
+                  </code></pre>
+              </div>
+            </div>
+
+            <code class="cli language-bash">sbatch my_wonderful.sh</code>
+          </div>
+
+          <aside class="notes">
+            Q: Do I need to wrap my commands in a slurm script? A: No you don’t,
+            you can specify all your parameters on the command line. Trixie -
+            not just an GPU Cluster. It can also be used to preprocess your data
+            on CPU-only. Make sure you run your jobs with the minimum resources
+            required plus some buffer
+          </aside>
+        </section>
+
+        <section>
+          <div style="text-align: left" class="r-fit-text">
+            <h1>Do I Really Need a Script?</h1>
+            <div>
+              Explicitly specifying all options at each invocation
+              <div class="row">
+                <div class="column">
+                  <pre>
+            <code class="cli language-bash">
+sbatch \
+    --job-name=My_Wonderful \
+    --comment="My Wonderful Script" \
+    --partition=TrixieMain \
+    --account=dt-mtp \
+    --gres=gpu:4 \
+    --time=12:00:00 \
+    --nodes=1 \
+    --ntasks-per-node=4 \
+    --cpus-per-task=6 \
+    --mem=96G \
+    --open-mode=append \
+    --requeue \
+    --signal=B:USR1@30 \
+    --output=%x-%j.out \
+    my_wonderful.sh args ...
+            </code>
+          </pre>
+                </div>
+                <div class="column">
+                  <p style="font-size: 8em">&#x1F628;</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p>Overriding what is different</p>
+              <code class="cli language-bash">
+                sbatch --job-name=OtherName my_wonderful.sh</code
+              >
+              <span style="font-size: 1.5em"> &#x1F60F; </span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Set the Expected RAM Limit</h2>
+
+          <div style="text-align: left">
+            <code class="language-bash"> #SBATCH --mem=96G </code>
+
+            <p>
+              Otherwise the scheduler assumes that you want all of the memory
+              which implies exclusive access to that node, preventing other jobs
+              to use the remainder of the resources of that node.
+            </p>
+          </div>
+
+          <aside class="notes">
+            <p>
+              Your first run can be more generous on resources but you should
+              monitor it and dial it down for the subsequent runs, with some
+              head room.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <div style="text-align: left" class="r-fit-text">
+            <h1>Make your Job Resumable</h1>
+
+            <pre>
+              <code class="language-bash">
+#SBATCH --requeue
+#SBATCH --signal=B:USR1@30
+
+# Requeueing on Trixie
+# [source](https://www.sherlock.stanford.edu/docs/user-guide/running-jobs/)
+# [source](https://hpc-uit.readthedocs.io/en/latest/jobs/examples.html)
+function _requeue {
+  echo "BASH - trapping signal 10 - requeueing $SLURM_JOBID"
+  date
+  scontrol requeue $SLURM_JOBID
+}
+
+if [[ -n "$SLURM_JOBID" ]]; then
+  # Only if the job was submitted to SLURM.
+  trap _requeue USR1
+fi
+              </code>
+            </pre>
+            <ul>
+              <li>
+                Your code needs to be able to handle resuming from a previous
+                checkpoint.
+              </li>
+              <li>
+                <code class="language-bash">--signal=B:USR1@30</code> Ask the
+                scheduler to send a
+                <code class="language-bash">USR1</code> signal 30 seconds before
+                the time limit
+              </li>
+              <li>
+                <code class="language-bash">trap _requeue USR1</code> Act on
+                <code class="language-bash">USR1</code> signal by calling
+                <code class="language-bash">_requeue()</code>
+              </li>
+              <li>
+                <a
+                  href="https://ai4d-iasc.github.io/trixie/Automatically-Resuming-Requeueing/"
+                >
+                  &#x1F4D1; Automatically Requeueing to Resume</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <aside class="notes">
+            <p>
+              There are even some framework that are Slurm aware and can handle
+              resuming for you.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <div style="text-align: left" class="r-fit-text">
+            <h1>Submit my Job</h1>
+
+            <h2>queue your job</h2>
+            <p>
+              <code class="cli language-bash">sbatch my_wonderful.sh</code>
+            </p>
+
+            <h2>check that your job is running</h2>
+            <p>
+              <code class="cli language-bash">squeue</code>
+            </p>
+
+            <table class="cli_output" style="font-size: 0.7em">
+              <tr>
+                <th>JOBID</th>
+                <th>NAME</th>
+                <th>USER</th>
+                <th>ST</th>
+                <th>TIME</th>
+                <th>NODES</th>
+                <th>NODELIST(REASON)</th>
+                <th>SUBMIT_TIME</th>
+                <th>COMMENT</th>
+              </tr>
+              <tr>
+                <td>733</td>
+                <td>My_Wonderful</td>
+                <td>larkins</td>
+                <td>R</td>
+                <td>7:43:44</td>
+                <td>1</td>
+                <td>trixie-cn101</td>
+                <td>2024-07-17T02:26:0</td>
+                <td>My Wonderful Script</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <div style="text-align: left" class="r-fit-text">
+            <h2>
+              Check <code class="cli language-bash"> nvidia-smi -l </code> for
+              Good GPU Usage
+            </h2>
+            <code class="cli language-bash">ssh -t cn101 nvidia-smi -l </code>
+            <pre class="cli_output" style="font-size: 0.35em">
+            <samp>
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 565.57.01              Driver Version: 565.57.01      CUDA Version: 12.7     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla V100-SXM2-32GB           On  |   00000000:89:00.0 Off |                    0 |
+| N/A   54C    P0            139W /  300W |   28888MiB /  32768MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  Tesla V100-SXM2-32GB           On  |   00000000:8A:00.0 Off |                    0 |
+| N/A   68C    P0            282W /  300W |   28846MiB /  32768MiB |     99%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  Tesla V100-SXM2-32GB           On  |   00000000:B2:00.0 Off |                    0 |
+| N/A   58C    P0            289W /  300W |   28918MiB /  32768MiB |     99%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  Tesla V100-SXM2-32GB           On  |   00000000:B3:00.0 Off |                    0 |
+| N/A   68C    P0            284W /  300W |   28918MiB /  32768MiB |     98%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A   3077932      C   ...C-Senate/nmt/tools/venv/bin/python3      28884MiB |
+|    1   N/A  N/A   3077933      C   ...C-Senate/nmt/tools/venv/bin/python3      28842MiB |
+|    2   N/A  N/A   3077934      C   ...C-Senate/nmt/tools/venv/bin/python3      28914MiB |
+|    3   N/A  N/A   3077935      C   ...C-Senate/nmt/tools/venv/bin/python3      28914MiB |
++-----------------------------------------------------------------------------------------+
+            </samp>
+          </pre>
+          </div>
+        </section>
+
+        <section>
+          <h1>Asking For Too Much</h1>
+
+          <div style="text-align: left">
+            <p>
+              <code class="cli language-bash">
+                sbatch --mem=400G my_wonderful.sh
+              </code>
+            </p>
+            <samp>
+              sbatch: error: Batch job submission failed: Memory required by
+              task is not available
+            </samp>
+          </div>
+        </section>
+
+        <section>
+          <h1>Jupyter Notebook</h1>
+
+          <p>
+            Please refer to
+            <a href="https://ai4d-iasc.github.io/trixie/jobs-jupyterlab/">
+              &#x1F4D1; Jobs Conda JupyterLab</a
+            >
+            as it is a bit more involved
+          </p>
+
+          <p style="color: red; font-weight: bolder">
+            WARNING: Don't let your worker node run if you are not using it
+          </p>
+
+          <aside class="notes">
+            <p>
+              A cluster is not met to be used like a Jupyter Notebook, it is met
+              to be used as a submit and forget.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h1>Conclusion</h1>
+
+          <ul>
+            <li>We want to maximize everyone enjoyment of the cluster</li>
+            <li>We want to maximize the cluster usage</li>
+            <li>
+              This good-citizen principle doesn't apply only to Trixie but to
+              all clusters
+            </li>
+          </ul>
+
+          <aside class="notes">
+            <p>
+              This is just the basic and you will have to do some work to get
+              your own software stack to work properly.
+            </p>
+            <p>Clusters work best when you sleep.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h1>Links</h1>
+          <ul>
+            <li>
+              <a href="https://ai4d-iasc.github.io/trixie">
+                &#x1F4D1; https://ai4d-iasc.github.io/trixie</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/ai4d-iasc/trixie"
+                >https://github.com/ai4d-iasc/trixie</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com/ai4d-iasc/trixie/issues"
+                >https://github.com/ai4d-iasc/trixie/issues</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Excercise?</h1>
+        </section>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/reveal.min.js"
+      integrity="sha512-lRYVCjdH7dCPCzqLL6eBn78p6WGK5pZxgYBgzTQfWlfX7yiZFLt/qHOMSETHUIz2aZIU/KbjwYHiMsmrcVgJnA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/highlight/highlight.min.js"
+      integrity="sha512-IkPzJ3njtxNL2Frm7zr18CEj9HH+CEFAqh+jSKjXTHVFGtWG1+USbIXINU8zdGmyLpf/OBIVfpNLGNgwhlymkA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.2.1/plugin/notes/notes.min.js"
+      integrity="sha512-6LAcdj7pQal9JkdALNexzVKd4zWuYUxOXuzdF21iOx7LJSlF5ibFi2TAR7GQ00XhfPAw7/R8f1dZ69gFGhzXtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      // Reveal.initialize({plugins: [RevealNotes, RevealHighlight], });
+      Reveal.initialize({
+        plugins: [RevealNotes],
+
+        // The "normal" size of the presentation, aspect ratio will
+        // be preserved when the presentation is scaled to fit different
+        // resolutions. Can be specified using percentage units.
+        width: 960,
+        height: 700,
+
+        // Factor of the display size that should remain empty around
+        // the content
+        margin: 0.04,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+        maxScale: 2.0,
+      });
+    </script>
+  </body>
+</html>
