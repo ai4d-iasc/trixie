@@ -12,7 +12,7 @@ Trixie is designated for collaborative research in support of the NRC AI4D Chall
 
 Trixie access requests can be completed by the NRC PI in consultation with their external collaborators.  Access will only be granted for approved NRC (internal or collaborative) projects.
 
-The access request form is available [here](files/Beatrix-Request-Form-v2.1.docx "Trixie access form"). Once completed, the form can be submitted to the Trixie program manager, Mark Stoochnoff.
+The access request form is available [here](files/BeatrixRequestForm-v2.6.pdf "Trixie access form"). Once completed, the form can be submitted to the Trixie program manager, Mark Stoochnoff.
 
 ## NRC authorized users only - Utilisateurs autorisés du CNRC seulement
 

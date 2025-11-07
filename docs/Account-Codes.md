@@ -52,7 +52,6 @@ project.
 | dt-caisi-01     |
 | dt-cbmi-01      |
 | dt-inbr6-1156   |
-| irap-larus-01   |
 | sdt-aqc-007     |
 | sdt-aqc-208     |
 | sdt-qsp-051     |
