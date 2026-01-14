@@ -1,0 +1,4 @@
+# Containers on Beatrix
+There are two main container services available on the cluster. Jobs can leverage Singularity/Apptainer container runtime for containers which run best as discrete jobs (e.g., numerical models with specific library requirements that are easier to package into a container vs. setting up in a specific directory tree). For containers exposing a service within the cluster (e.g., a database server) users can use the trixie-containers host to run OCI containers via podman or rootless docker (actually a translation layer to convert docker calls to podman). 
+# Requirements
+Prior to running containers on the clusters users need to request access via a ticket to Research Platform Support. Both Singularity and Podman/Docker require some per-user configuration due to how network accounts and container runtimes interact.
