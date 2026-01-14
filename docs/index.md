@@ -58,6 +58,9 @@ The connection path will vary depending from which network you are trying to acc
 
 Jobs on Trixie must be run via the SLURM job scheduler. Do NOT run jobs on the headnode. Users who run on the head node risk account suspension. [Running jobs](Running-jobs.md)
 
+## [Containers](containerServices.md)
+Containers can be run on the cluster either as jobs (via singularity/podman) or as services within the cluster (via podman/rootless-docker). See [Containers](containerServices.md) for more details.
+
 ## Description of the cluster
 
 [Hardware](Hardware.md)
