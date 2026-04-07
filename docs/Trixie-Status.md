@@ -3,12 +3,6 @@
 ## Upcoming Planned Downtime
 All upcoming planned maintenance dates are subject to change to better meet operational needs
 
-### 2026-Q1-Maint 
-StartTime=2026-01-12T00:00:00 EndTime=2026-01-14T00:00:00 Duration=2-00:00:00
-
-### 2026-Q2-Maint 
-StartTime=2026-04-06T00:00:00 EndTime=2026-04-11T00:00:00 Duration=5-00:00:00
-
 ### 2026-Q3-Maint 
 StartTime=2026-07-06T00:00:00 EndTime=2026-07-08T00:00:00 Duration=2-00:00:00
 
@@ -16,8 +10,7 @@ StartTime=2026-07-06T00:00:00 EndTime=2026-07-08T00:00:00 Duration=2-00:00:00
 StartTime=2026-10-05T00:00:00 EndTime=2026-10-07T00:00:00 Duration=2-00:00:00
 
 ## Current Issues / Outages
-- [ONGOING] Please note that the Beatrix cluster has scheduled maintenance from 2026-02-02 00:00 Eastern Time to 2026-02-07 00:00ET. The cluster will be unavailable to users during this time window. Jobs will remain in the queues and will resume when the maintenance is over.
-Veuillez noter qu'une maintenance est prévue sur la grappe de calcul Beatrix du 2026-02-02 à 00:00 Heure de l'est au 2026-02-07 à 00:00 HE. La grappe ne sera pas disponible pendant cette période. Les tâches resteront en file d'attente et reprendront une fois la maintenance terminée.
+- [ONGOING] Please note that there will be a maintenance window between April 7th to April 10th. During the maintenance, the head node will be inaccessible. Jobs that were in the queues at the start time of the maintenance will resume course after the maintenance. Veuillez noter qu'une maintenance aura lieu du 7 au 10 avril. Pendant cette période le nœud principal ne sera pas accessible. Les tâches en file d’attente au début de la maintenance reprendront leur cours normal après celle-ci.
 ## Past Events / Incidents
 - [RESOLVED] Monday October 6th, 2025 - Wednesday October 8th, 2025
 Please note that the Beatrix cluster has scheduled maintenance from 2025-10-06 00:00EDT to 2025-10-08 00:00EDT. The cluster will be unavailable to users during this time window. Jobs will remain in the queues and will resume when the maintenance is over.
