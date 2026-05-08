@@ -12,9 +12,7 @@ StartTime=2026-10-05T00:00:00 EndTime=2026-10-07T00:00:00 Duration=2-00:00:00
 ## Current Issues / Outages
 ## Past Events / Incidents
 
-- [RESOLVED] (2026-05-08) Critical Vulnerabilty Shutdown
-
-A new vulnerability (Dirty-Frag) which affects the Beatrix cluster has been disclosed. Access to the cluster has been closed until CIOB-Research Platform Support can implement mitigation measures to the environments. Jobs currently running will not be affected. We will inform you when the cluster is back online. | Une nouvelle vulnérabilité (Dirty-Frag) affectant le cluster Beatrix a été découverte. L'accès au cluster est actuellement suspendu  usqu'à ce que l'équipe d'assistance de la plateforme de recherche DDPI mette en œuvre des mesures d'atténuation. Les tâches en cours ne seront pas affectées. Nous vous informerons dès que le cluster sera de nouveau accessible.
+- [RESOLVED] (2026-05-08) Critical Vulnerabilty Shutdown : A new vulnerability (Dirty-Frag) which affects the Beatrix cluster has been disclosed. Access to the cluster has been closed until CIOB-Research Platform Support can implement mitigation measures to the environments. Jobs currently running will not be affected. We will inform you when the cluster is back online. | Une nouvelle vulnérabilité (Dirty-Frag) affectant le cluster Beatrix a été découverte. L'accès au cluster est actuellement suspendu  usqu'à ce que l'équipe d'assistance de la plateforme de recherche DDPI mette en œuvre des mesures d'atténuation. Les tâches en cours ne seront pas affectées. Nous vous informerons dès que le cluster sera de nouveau accessible.
 
 - [RESOLVED] Please note that there will be a maintenance window between April 7th to April 10th. During the maintenance, the head node will be inaccessible. Jobs that were in the queues at the start time of the maintenance will resume course after the maintenance. Veuillez noter qu'une maintenance aura lieu du 7 au 10 avril. Pendant cette période le nœud principal ne sera pas accessible. Les tâches en file d’attente au début de la maintenance reprendront leur cours normal après celle-ci.
 
