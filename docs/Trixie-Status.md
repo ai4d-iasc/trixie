@@ -1,23 +1,4 @@
-# Current Trixie Operational Status [![#FF0000](https://placehold.co/18x18/ff0000/ff0000.png) **OFFLINE** ![#FF0000](https://placehold.co/18x18/ff0000/ff0000.png)]
-
-## Critical Vulnerabilty Shutdown
-
-A new vulnerability (Dirty-Frag) which affects the Beatrix cluster has been disclosed.
-Access to the cluster has been closed until CIOB-Research Platform Support can implement mitigation measures to the environments. 
-Jobs currently running will not be affected. 
-We will inform you when the cluster is back online. 
-
-Research Platform Support
-
----
-Bonjour à tous,
-
-Une nouvelle vulnérabilité (Dirty-Frag) affectant le cluster Beatrix a été découverte.
-L'accès au cluster est actuellement suspendu jusqu'à ce que l'équipe d'assistance de la plateforme de recherche DDPI mette en œuvre des mesures d'atténuation.
-Les tâches en cours ne seront pas affectées.
-Nous vous informerons dès que le cluster sera de nouveau accessible.
-
-Support des plateformes de recherche
+# Current Trixie Operational Status [![#00FF00](https://placehold.co/18x18/00FF00/00ff00.png) **ONLINE** ![#00FF00](https://placehold.co/18x18/00FF00/00ff00.png)]
 
 ## Upcoming Planned Downtime
 All upcoming planned maintenance dates are subject to change to better meet operational needs
@@ -29,8 +10,14 @@ StartTime=2026-07-06T00:00:00 EndTime=2026-07-08T00:00:00 Duration=2-00:00:00
 StartTime=2026-10-05T00:00:00 EndTime=2026-10-07T00:00:00 Duration=2-00:00:00
 
 ## Current Issues / Outages
-- [RESOLVED] Please note that there will be a maintenance window between April 7th to April 10th. During the maintenance, the head node will be inaccessible. Jobs that were in the queues at the start time of the maintenance will resume course after the maintenance. Veuillez noter qu'une maintenance aura lieu du 7 au 10 avril. Pendant cette période le nœud principal ne sera pas accessible. Les tâches en file d’attente au début de la maintenance reprendront leur cours normal après celle-ci.
 ## Past Events / Incidents
+
+- [RESOLVED] (2026-05-08) Critical Vulnerabilty Shutdown
+
+A new vulnerability (Dirty-Frag) which affects the Beatrix cluster has been disclosed. Access to the cluster has been closed until CIOB-Research Platform Support can implement mitigation measures to the environments. Jobs currently running will not be affected. We will inform you when the cluster is back online. | Une nouvelle vulnérabilité (Dirty-Frag) affectant le cluster Beatrix a été découverte. L'accès au cluster est actuellement suspendu  usqu'à ce que l'équipe d'assistance de la plateforme de recherche DDPI mette en œuvre des mesures d'atténuation. Les tâches en cours ne seront pas affectées. Nous vous informerons dès que le cluster sera de nouveau accessible.
+
+- [RESOLVED] Please note that there will be a maintenance window between April 7th to April 10th. During the maintenance, the head node will be inaccessible. Jobs that were in the queues at the start time of the maintenance will resume course after the maintenance. Veuillez noter qu'une maintenance aura lieu du 7 au 10 avril. Pendant cette période le nœud principal ne sera pas accessible. Les tâches en file d’attente au début de la maintenance reprendront leur cours normal après celle-ci.
+
 - [RESOLVED] Monday October 6th, 2025 - Wednesday October 8th, 2025
 Please note that the Beatrix cluster has scheduled maintenance from 2025-10-06 00:00EDT to 2025-10-08 00:00EDT. The cluster will be unavailable to users during this time window. Jobs will remain in the queues and will resume when the maintenance is over.
 Veuillez noter qu'une maintenance est prévue sur le cluster Beatrix du 6 octobre 2025 à 00h00 HAE au 8 octobre 2025 à 00h00 HAE. Le cluster sera indisponible pendant cette période. Les tâches resteront en file d'attente et reprendront une fois la maintenance terminée.
