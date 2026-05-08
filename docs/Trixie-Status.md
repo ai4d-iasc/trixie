@@ -1,4 +1,4 @@
-# Current Trixie Operational Status
+# Current Trixie Operational Status [![#FF0000](https://placehold.co/18x18/ff0000/ff0000.png) **OFFLINE** ![#FF0000](https://placehold.co/18x18/ff0000/ff0000.png)]
 
 ## Critical Vulnerabilty Shutdown
 
