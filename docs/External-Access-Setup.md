@@ -38,7 +38,7 @@ Trixie using a web browser. On Mac OSX and Linux, SSH is installed by default. O
 need to install Putty if it is not installed already. You can download Putty from the following
 website:
 
-[Putty Website](https://www.putty.org/)
+[Putty Website](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
 ### Initialize SSH Connection with Mac OSX / Linux
 
