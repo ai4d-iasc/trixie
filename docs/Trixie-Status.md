@@ -1,4 +1,4 @@
-# Current Trixie Operational Status [![#FF0000](https://placehold.co/18x18/FF0000/ff0000.png) **OFFLINE** ![#FF0000](https://placehold.co/18x18/FF0000/ff0000.png)]
+# Current Trixie Operational Status [![#00FF00](https://placehold.co/18x18/00FF00/00ff00.png) **ONLINE** ![#00FF00](https://placehold.co/18x18/00FF00/00ff00.png)]
 
 ## Upcoming Planned Downtime
 All upcoming planned maintenance dates are subject to change to better meet operational needs
@@ -10,9 +10,9 @@ StartTime=2026-07-06T00:00:00 EndTime=2026-07-08T00:00:00 Duration=2-00:00:00
 StartTime=2026-10-05T00:00:00 EndTime=2026-10-07T00:00:00 Duration=2-00:00:00
 
 ## Current Issues / Outages
-One of Trixies’ Infiniband switches has failed on Sunday morning. CIOB engaged with the service contract provider of the cluster and a repair framework is ongoing. We are unable to provide an estimated time for the repair, but will keep you informed as the situation progresses. 
 
 ## Past Events / Incidents
+- [RESOLVED] (2026-09-23)  One of Trixies’ Infiniband switches has failed on Sunday morning. CIOB engaged with the service contract provider of the cluster and a repair framework is ongoing. We are unable to provide an estimated time for the repair, but will keep you informed as the situation progresses. 
 
 - [RESOLVED] (2026-05-08) Critical Vulnerabilty Shutdown : A new vulnerability (Dirty-Frag) which affects the Beatrix cluster has been disclosed. Access to the cluster has been closed until CIOB-Research Platform Support can implement mitigation measures to the environments. Jobs currently running will not be affected. We will inform you when the cluster is back online. | Une nouvelle vulnérabilité (Dirty-Frag) affectant le cluster Beatrix a été découverte. L'accès au cluster est actuellement suspendu  usqu'à ce que l'équipe d'assistance de la plateforme de recherche DDPI mette en œuvre des mesures d'atténuation. Les tâches en cours ne seront pas affectées. Nous vous informerons dès que le cluster sera de nouveau accessible.
 
