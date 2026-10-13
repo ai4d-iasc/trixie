@@ -3,11 +3,8 @@
 ## Upcoming Planned Downtime
 All upcoming planned maintenance dates are subject to change to better meet operational needs
 
-### 2026-Q3-Maint 
-StartTime=2026-07-06T00:00:00 EndTime=2026-07-08T00:00:00 Duration=2-00:00:00
-
 ### 2026-Q4-Maint
-StartTime=2026-10-05T00:00:00 EndTime=2026-10-07T00:00:00 Duration=2-00:00:00
+CIOB will be performing a preventive maintenance from October 19th to the 23th. The cluster will not be accessible during that time. ; DDPI effectuera une maintenance préventive du 19 au 23 octobre. La grappe sera inaccessible pendant cette période.
 
 ## Current Issues / Outages
 
