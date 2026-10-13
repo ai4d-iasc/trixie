@@ -1,0 +1,1568 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../jobs-abinit/">
+      
+      
+        <link rel="next" href="../jobs-conda-RAPIDS/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>jupyterlab - Trixie Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#experimentation-jupyter-notebook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Trixie Wiki" class="md-header__button md-logo" aria-label="Trixie Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Trixie Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              jupyterlab
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Trixie Wiki" class="md-nav__button md-logo" aria-label="Trixie Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Trixie Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Trixie-Status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trixie Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Account-Codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Account Codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Presentations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Presentations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BeAGoodClusterCitizen.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Be a Good Cluster Citizen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    General Info
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            General Info
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Available-Software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Available Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quota/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disk Quotas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Hardware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hardware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    External Access
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            External Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External-Access-Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External-Access-Advanced-Configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../External-HPC-Systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Internal Access
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Internal Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internal-Access-Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Internal-Access-Advanced-Configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../File-Transfers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transfer Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Temporary-Filesystem-Backups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TMP FS Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Networking-and-connectivity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network and Connection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Slurm-Fairshare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Fairshare
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FAQ & Example Workflows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            FAQ & Example Workflows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Running-jobs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quickstart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Automatically-Resuming-Requeueing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Requeue Job
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jobs-python-virtualenv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python venv
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jobs-abinit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    abinit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    jupyterlab
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    jupyterlab
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-conda-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating conda environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-a-my_project_rootjobsjupyter-cpujob-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      example of a $MY_PROJECT_ROOT/jobs/jupyter-cpu.job file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-a-my_project_rootjobsjupyter-gpujob-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      example of a $MY_PROJECT_ROOT/jobs/jupyter-gpu.job file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling-a-gpu-enabled-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling a GPU enabled Jupyter notebook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#releasing-resources-for-others-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Releasing Resources for others to use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Releasing Resources for others to use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-python-script-that-shows-devices-available-to-use-by-tensorflow-220" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample python script that shows devices available to use by tensorflow 2.2.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful tip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-a-ssh-tunnel-straight-to-the-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making a SSH Tunnel Straight to the Node
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Making a SSH Tunnel Straight to the Node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scientificpythonstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      ScientificPythonStack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-job-jupyterslurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLURM job jupyter.slurm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-tunnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Tunnel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-your-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access your Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finally-stop-your-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finally Stop your Worker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jobs-conda-RAPIDS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    conda-RAPIDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SLURM%2C-pytorch-distributed-and-Multiple-Nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pytorch Distributed on Multiple Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Jobs-conda-pytorch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    conda-pytorch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Contribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-conda-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating conda environments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-a-my_project_rootjobsjupyter-cpujob-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      example of a $MY_PROJECT_ROOT/jobs/jupyter-cpu.job file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-a-my_project_rootjobsjupyter-gpujob-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      example of a $MY_PROJECT_ROOT/jobs/jupyter-gpu.job file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling-a-gpu-enabled-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling a GPU enabled Jupyter notebook
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#releasing-resources-for-others-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Releasing Resources for others to use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Releasing Resources for others to use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-python-script-that-shows-devices-available-to-use-by-tensorflow-220" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample python script that shows devices available to use by tensorflow 2.2.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful tip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-a-ssh-tunnel-straight-to-the-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making a SSH Tunnel Straight to the Node
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Making a SSH Tunnel Straight to the Node">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scientificpythonstack" class="md-nav__link">
+    <span class="md-ellipsis">
+      ScientificPythonStack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-job-jupyterslurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLURM job jupyter.slurm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-tunnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH Tunnel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-your-jupyter-notebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access your Jupyter Notebook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finally-stop-your-worker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finally Stop your Worker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="experimentation-jupyter-notebook">Experimentation - Jupyter Notebook<a class="headerlink" href="#experimentation-jupyter-notebook" title="Permanent link">&para;</a></h1>
+<p>At the end of this tutorial you will have:</p>
+<ul>
+<li>created a "env" directory inside a project directory with:</li>
+<li>an environment running keras using CPU(s)</li>
+<li>an environment running keras using GPU(s)</li>
+<li>defined 2 slurm jobs starting jupyter making use of respective environment</li>
+</ul>
+<h3 id="creating-conda-environments">Creating conda environments<a class="headerlink" href="#creating-conda-environments" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">#load conda module
+module load conda/3-24.9.0
+
+#define a project variable
+export MY_PROJECT_ROOT=$HOME/sample_project
+
+#go to project root
+cd $MY_PROJECT_ROOT
+
+#create a directory for all the environments
+mkdir env
+
+#create the CPU variant
+conda create -c conda-forge -p $MY_PROJECT_ROOT/env/Covid-Net-cpu python=3 jupyterlab imutils opencv
+matplotlib keras scikit-learn pandas
+
+#create the GPU variant
+conda create -c conda-forge -p $MY_PROJECT_ROOT/env/Covid-Net-gpu python=3 jupyterlab imutils opencv
+matplotlib keras scikit-learn pandas tensorflow-gpu
+
+#create a directory to hold jobfiles
+mkdir $MY_PROJECT_ROOT/jobs
+</code></pre>
+<h3 id="example-of-a-my_project_rootjobsjupyter-cpujob-file">example of a $MY_PROJECT_ROOT/jobs/jupyter-cpu.job file<a class="headerlink" href="#example-of-a-my_project_rootjobsjupyter-cpujob-file" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">#!/bin/bash -l
+#SBATCH --account=covid-01
+#SBATCH --partition=TrixieMain
+#SBATCH --time=04:00:00 ####MAXIMUM 48:00:00 on Trixie
+#SBATCH --job-name=My_Awesome_Jupyter.cpu ####Try to be a bit descriptive or use the comment if you prefer shorter job names
+##SBATCH --comment=&quot;Comment on job&quot; ####Optional comment
+#SBATCH --mem=5G
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=2
+#SBATCH --output=%x-%j.out
+
+##### To help debugging
+#set -x
+
+export MY_PROJECT_ROOT=$HOME/sample_project
+
+module load conda/3-24.9.0
+
+source activate $MY_PROJECT_ROOT/env/Covid-Net-cpu
+jupyter-lab --ip=*
+</code></pre>
+<h3 id="example-of-a-my_project_rootjobsjupyter-gpujob-file">example of a $MY_PROJECT_ROOT/jobs/jupyter-gpu.job file<a class="headerlink" href="#example-of-a-my_project_rootjobsjupyter-gpujob-file" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">#!/bin/bash -l
+#SBATCH --account=covid-01
+#SBATCH --partition=TrixieMain
+#SBATCH --gres=gpu:1
+#SBATCH --time=04:00:00 ####MAXIMUM 48:00:00 on Trixie
+#SBATCH --job-name=My_Awesome_Jupyter.gpu ####Try to be a bit descriptive or use the comment if you prefer shorter job names
+##SBATCH --comment=&quot;Comment on job&quot; ####Optional comment
+#SBATCH --mem=5G
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=2
+#SBATCH --output=%x-%j.out
+
+##### To help debugging
+#set -x
+
+export MY_PROJECT_ROOT=$HOME/sample_project
+
+module load conda/3-24.9.0
+
+source activate $MY_PROJECT_ROOT/env/Covid-Net-gpu
+
+jupyter-lab --ip=*
+</code></pre>
+<h3 id="scheduling-a-gpu-enabled-jupyter-notebook">Scheduling a GPU enabled Jupyter notebook<a class="headerlink" href="#scheduling-a-gpu-enabled-jupyter-notebook" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">#starting a GPU enabled Jupyter notebook
+sbatch $MY_PROJECT_ROOT/jobs/jupyter-gpu.job
+Submitted batch job 4502
+
+#you will get a jobid look for your log file names based on the job-name and the jobid
+tail -f My_Awesome_Jupyter.gpu-4502.out
+
+#look for the Jupyter notebook output you will get the node it is running on and the port number it is listening on. for example:
+#[...]
+To access the notebook, open this file in a browser:
+file:///gpfs/home/paulp/.local/share/jupyter/runtime/nbserver-24429-open.html
+Or copy and paste one of these URLs:
+http://cn122:8888/?token=388199bb6ef0cad54ef195f1286301548fc15ec2a39eee3c
+or http://127.0.0.1:8888/?token=388199bb6ef0cad54ef195f1286301548fc15ec2a39eee3c
+
+#At that moment a GPU enabled Jupyter notebook is running on compute node &quot;cn122&quot; on port 8888
+#Using an ssh tunnel 8888:cn122:8888 (using the following ssh command from the hn2 command line prompt)
+ssh -Y -R 8888:cn122:8888 hn2
+#would allow you to access the remote jupyter notebook by connecting to
+#http://127.0.0.1:8888/?token=388199bb6ef0cad54ef195f1286301548fc15ec2a39eee3c
+</code></pre>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /></p>
+<h2 id="releasing-resources-for-others-to-use">Releasing Resources for others to use<a class="headerlink" href="#releasing-resources-for-others-to-use" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">#Don't forget to release resources when done by canceling your job
+scancel 4502
+</code></pre>
+<p><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /><img alt="⚠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/26a0.svg" title=":warning:" /></p>
+<h3 id="sample-python-script-that-shows-devices-available-to-use-by-tensorflow-220">sample python script that shows devices available to use by tensorflow 2.2.0<a class="headerlink" href="#sample-python-script-that-shows-devices-available-to-use-by-tensorflow-220" title="Permanent link">&para;</a></h3>
+<pre><code class="language-python">import tensorflow as tf
+
+#display tensorflow version
+print(tf.__version__)
+
+from tensorflow.python.client import device_lib
+
+#output tensorflow devices
+print(device_lib.list_local_devices())
+</code></pre>
+<h3 id="useful-tip">Useful tip<a class="headerlink" href="#useful-tip" title="Permanent link">&para;</a></h3>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4a1.svg" title=":bulb:" /><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4a1.svg" title=":bulb:" /><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4a1.svg" title=":bulb:" /></p>
+<ul>
+<li>check on the queue using "squeue" or "squeue -u $USER" - a running job will have the "R" state a job waiting to run will show "PD" in the state column</li>
+<li>you can as some information on the partitions using "sinfo"</li>
+<li>you can get some details on accounting using "sacct"</li>
+<li>The Terminal within jupyter-lab runs within your job so it is safe to use to perform monitoring or other tasks that could be bothersome to others if ran on the head node. If you intend to use a lot of resource like this consider raising how many cores/cpus you request and maybe the RAM also...</li>
+<li>a nice one liner to run a monitoring task for the GPU, this command will run indefinitely each second and output the listed parameters.</li>
+</ul>
+<pre><code class="language-bash">nvidia-smi --query-gpu=timestamp,name,pci.bus_id,driver_version,pstate,pcie.link.gen.max,pcie.link.gen.current,temperature.gpu,utilization.gpu,utilization.memory,memory.total,memory.free,memory.used --format=csv -l 1
+</code></pre>
+<p><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4a1.svg" title=":bulb:" /><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4a1.svg" title=":bulb:" /><img alt="💡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f4a1.svg" title=":bulb:" /></p>
+<h2 id="making-a-ssh-tunnel-straight-to-the-node">Making a SSH Tunnel Straight to the Node<a class="headerlink" href="#making-a-ssh-tunnel-straight-to-the-node" title="Permanent link">&para;</a></h2>
+<p>This is somewhat of a rehash of the previous section but here's another way by creating a tunnel straight to the node.</p>
+<h3 id="scientificpythonstack"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 3C9.23 3 6.19 5.95 6 9.66l-1.92 2.53c-.24.31 0 .81.42.81H6v3c0 1.11.89 2 2 2h1v3h7v-4.69c2.37-1.12 4-3.51 4-6.31 0-3.86-3.12-7-7-7m1 11h-2v-2h2v2m1.75-5.19c-.29.4-.66.69-1.11.93-.25.16-.42.33-.51.52-.09.18-.13.43-.13.74h-2c0-.5.11-.92.31-1.18.19-.27.54-.57 1.05-.91.26-.16.47-.36.61-.59.16-.23.23-.5.23-.82 0-.3-.08-.56-.26-.75-.18-.18-.44-.28-.75-.28a1 1 0 0 0-.66.23c-.18.16-.27.39-.28.69h-1.93l-.01-.03c-.01-.79.25-1.36.77-1.77.54-.39 1.24-.59 2.11-.59.93 0 1.66.23 2.19.68.54.45.81 1.06.81 1.82 0 .5-.15.91-.44 1.31Z"/></svg></span> ScientificPythonStack<a class="headerlink" href="#scientificpythonstack" title="Permanent link">&para;</a></h3>
+<p><code>ScientificPythonStack</code> is essentially a community suggested set of commonly used python tools/libraries for scientific work.</p>
+<pre><code class="language-sh">pip install numpy scipy matplotlib ipython pandas sympy jupyterlab notebook
+</code></pre>
+<h3 id="slurm-job-jupyterslurm">SLURM job <code>jupyter.slurm</code><a class="headerlink" href="#slurm-job-jupyterslurm" title="Permanent link">&para;</a></h3>
+<p>This is an example <code>slurm</code> script to start a job running <code>jupyter</code>.
+It uses 6 CPU cores and 16G or RAM.
+In its current state, the following script doesn't ask for a GPU.
+If you need a GPU, uncomment <code>##SBATCH --gres=gpu:1</code> to <code>#SBATCH --gres=gpu:1</code>.</p>
+<pre><code class="language-sh">#!/bin/bash
+# vim:nowrap:
+
+#SBATCH --job-name=Jupyter
+#SBATCH --comment=&quot;Jupyter Notebook&quot;
+
+# On Trixie
+#SBATCH --partition=JobTesting
+#SBATCH --account=dt-mtp
+
+##SBATCH --gres=gpu:1
+#SBATCH --time=6:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=6
+#SBATCH --mem=16G
+#SBATCH --open-mode=append
+#SBATCH --requeue
+#SBATCH --signal=B:USR1@30
+#SBATCH --output=%x-%j.out
+
+# Fix SLURM environment variables.
+SLURM_JOB_CPUS_PER_NODE=${SLURM_JOB_CPUS_PER_NODE%%(*)}   # '24(x2)' =&gt; 24
+SLURM_TASKS_PER_NODE=${SLURM_TASKS_PER_NODE%%(*)}   # '4(x2)' =&gt; '4'
+
+# NOTE: We set OMP_NUM_THREADS or else we get the following Warning:
+# WARNING:torch.distributed.run:
+# *****************************************
+# Setting OMP_NUM_THREADS environment variable for each process to be 1 in
+# default, to avoid your system being overloaded, please further tune the
+# variable for optimal performance in your application as needed.
+# *****************************************
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK:-$(nproc)}
+
+source /gpfs/projects/DT/mtp/venv/ScientificPythonStack/bin/activate &quot;&quot;
+
+jupyter notebook --no-browser --port 8889  --ip=*
+</code></pre>
+<p>Then start the notebook.</p>
+<pre><code class="language-sh">sbatch jupyter.slurm
+</code></pre>
+<p>If you need a GPU, you can start your job using:</p>
+<pre><code class="language-sh">sbatch jupyter.slurm --gres=gpu:1
+</code></pre>
+<p>You will need to know on what node your job is running in order to properly setup a ssh tunnel to it.
+Use <code>squeue --user $USER</code> to get the worker node name.</p>
+<pre><code class="language-sh">   JOBID NAME                               USER ST       TIME  NODES NODELIST(REASON) SUBMIT_TIME        COMMENT
+   90324 Jupyter                         larkins  R       0:06      1 trixie-cn101     2024-11-21T10:06:2 Jupyter
+</code></pre>
+<h3 id="ssh-tunnel">SSH Tunnel<a class="headerlink" href="#ssh-tunnel" title="Permanent link">&para;</a></h3>
+<h4 id="putty">Putty<a class="headerlink" href="#putty" title="Permanent link">&para;</a></h4>
+<p>To create a tunnel with <code>Putty</code> replacing <code>cnXXX</code> with your worker's hostname (trixie-cnXXX):</p>
+<p><img alt="putty ssh tunnel for Jupyter" src="../images/ssh_jupyter_tunnel_configuration.png" /></p>
+<ul>
+<li>right click putty's title bar</li>
+<li>Change Settings...</li>
+<li>Connection &gt; SSH&gt; Tunnels</li>
+<li>Source port <code>8889</code></li>
+<li>Destination <code>trixie-cnXXX:8889</code></li>
+<li>CLICK ADD</li>
+<li>then <code>Apply</code></li>
+</ul>
+<h4 id="ssh">ssh<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h4>
+<pre><code class="language-sh">ssh -L 8889:trixie-cnXXX:8889 trixie.res.nrc.gc.ca
+</code></pre>
+<h3 id="access-your-jupyter-notebook">Access your Jupyter Notebook<a class="headerlink" href="#access-your-jupyter-notebook" title="Permanent link">&para;</a></h3>
+<p>You can look at the log <code>tail -f Jupyter*.out</code> to grab your jupyter's url which has a secret token.
+This url looks like <code>http://localhost:8889/tree?token=f3e7dee8b55e94912fb4769b4cb0896cc57eeaa1fb7b317d</code>.
+Using your favorite browser, use the url to access your Jupyter Notebook.</p>
+<h3 id="finally-stop-your-worker"><span class="twemoji pulsing important"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m18.75 22.16-2.75-3L17.16 18l1.59 1.59L22.34 16l1.16 1.41-4.75 4.75M13 13V7h-2v6h2m0 4v-2h-2v2h2M12 2c5.5 0 10 4.5 10 10l-.09 1.31A6.005 6.005 0 0 0 14 19c0 .95.22 1.85.62 2.65-.84.23-1.71.35-2.62.35-5.5 0-10-4.5-10-10S6.5 2 12 2Z"/></svg></span> Finally Stop your Worker<a class="headerlink" href="#finally-stop-your-worker" title="Permanent link">&para;</a></h3>
+<p>It is IMPORTANT to <code>scancel &lt;JOBID&gt;</code> when you are not using your jupyter notebook.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
