@@ -1,4 +1,4 @@
-# Current Trixie Operational Status [![#00FF00](https://placehold.co/18x18/00FF00/00ff00.png) **OFFLINE** ![#00FF00](https://placehold.co/18x18/00FF00/00ff00.png)]
+# Current Trixie Operational Status [![#00FF00](https://placehold.co/18x18/00FF00/00ff00.png) **ONLINE** ![#00FF00](https://placehold.co/18x18/00FF00/00ff00.png)]
 
 ## Upcoming Planned Downtime
 All upcoming planned maintenance dates are subject to change to better meet operational needs
